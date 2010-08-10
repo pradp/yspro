@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="com.ht.article.search.ArticleIndexService" class="com.ht.article.search.impl.ArticleIndexServiceImpl">
+		<property name="solrUpdateURL" value="${solr.solrUpdateURL}" />
+	</bean>
+
+	<bean id="com.ht.article.search.ArticleSearchService" class="com.ht.article.search.impl.ArticleSearchServiceImpl">
+		<property name="solrSelectURL" value="${solr.solrSelectURL}" />
+		<property name="articleManager">
+			<ref bean="com.ht.article.service.ArticleManager" />
+		</property>
+	</bean>
+	<bean id="com.ht.article.search.ArticleSearchServiceWSImpl" class="com.ht.article.search.impl.ArticleSearchServiceWSImpl">
+		<property name="solrSelectURL" value="${solr.solrSelectURL}" />
+	</bean>
+	<bean id="com.ht.article.service.ArticleManager" class="com.ht.article.service.impl.GeneralArticleManagerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate" />
+		</property>
+		<property name="urlPattern" value="${news.urlPattern}" />
+	</bean>
+
+</beans>
