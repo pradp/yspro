@@ -1,0 +1,70 @@
+
+.pagination-info {
+    padding: 5px;
+    line-height: 130%;
+}
+
+.pagination-info span {
+    display: block;
+    float: left;
+    padding: 2px 6px;
+}
+
+.pagination-info a, .pagination-info div, .pagination-info span {
+    display: block;
+    float: left;
+    border: 1px solid #DFE2E7;
+    padding: 2px 6px;
+    margin: 0 2px;
+}
+
+.pagination-info div {
+    font-weight: bold;
+    color: #000;
+    background: #eee;
+}
+
+.pagination-info a:hover {
+    background: #eee;
+    color: #00c;
+}
+.search-form {
+	padding: 20px;
+}
+
+.search-form input {
+	padding: 1px;
+}
+
+.search-content {
+	width: 70%;
+	padding: 20px;
+}
+
+.search-result {
+	margin: 20px 0;
+}
+
+.search-top {
+	background: #eee;
+	padding: 4px;
+}
+
+.result-title a {
+	font-size: 16px;
+	text-decoration: underline;
+}
+
+.result-info {
+	color: #aaa;
+	padding: 0 10px;
+	white-space: nowrap;
+}
+
+.result-content {
+	line-height: 150%;
+}
+
+.result-site {
+	color: #080;
+}

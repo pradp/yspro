@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="htSearch"
+  id="myeclipse.1280455863921"
+  context-root="/htSearch"
+  j2ee-spec="5.0"
+  archive="htSearch.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebContent" />
+  </attributes>
+</project-module>
+
