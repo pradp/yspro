@@ -18,9 +18,9 @@ import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrException;
 import org.apache.solr.common.SolrException.ErrorCode;
 
-import com.ht.article.search.ArticleSearchService;
-import com.ht.article.search.model.Article;
 import com.ht.util.DateUtil;
+import com.imchooser.article.search.ArticleSearchService;
+import com.imchooser.article.search.model.Article;
 
 /**
  * 全文检索服务实现
@@ -36,7 +36,7 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearch implements
 	 * @see com.ht.article.search.ArticleSearchService#search(java.lang.String,
 	 * java.lang.String)
 	 */
-	public List<?> search(String term, String userid) {
+	public List<Article> search(String term, String userid) {
 		SolrDocumentList queryResult = null;
 		try {
 			SolrServer server = getSolrServer();
