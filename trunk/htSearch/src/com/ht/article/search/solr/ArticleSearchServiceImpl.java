@@ -41,11 +41,13 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearch implements
 			SolrQuery query = getSolrQuery(term, userid);
 			QueryResponse qr = server.query(query);
 			queryResult = qr.getResults();
+			//below also support, because Article add solr @Field
+//			return qr.getBeans(Article.class);
+			return solrList2bizList(queryResult);
 		} catch (SolrServerException e) {
 			throw new SolrException(ErrorCode.SERVER_ERROR, "error when querying data", e);
 		}
 		
-		return solrList2bizList(queryResult);
 	}
 	
 	/**

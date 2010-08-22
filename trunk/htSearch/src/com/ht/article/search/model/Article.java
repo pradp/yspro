@@ -2,16 +2,24 @@ package com.ht.article.search.model;
 
 import java.util.Date;
 
+import org.apache.solr.client.solrj.beans.Field;
+
 /**
  * 
  * @author cdji 2010-5-13
  */
 public class Article {
+	@Field
 	private int artId;
+	@Field
 	private String artTitle;
+	@Field
 	private String artContent;
+	@Field
 	private String artNavigation;
+	@Field
 	private String artUrl;
+	@Field
 	private Date artDate;
 
 	public int getArtId() {
