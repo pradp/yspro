@@ -38,7 +38,7 @@ public class AbstractSolrSearch {
 			CoreContainer coreContainer;
 			try {
 				coreContainer = initializer.initialize();
-				solrServer = new EmbeddedSolrServer(coreContainer, "");
+				solrServer = new EmbeddedSolrServer(coreContainer, "");//TODO core name?
 			} catch (IOException e) {
 				log.error(e);
 				throw new RuntimeException("getSolrServer() failed!! " + e);
@@ -49,7 +49,7 @@ public class AbstractSolrSearch {
 				log.error(e);
 				throw new RuntimeException("getSolrServer() failed!! " + e);
 			}
-			//also can like this : return new CommonsHttpSolrServer(new URL(solrUrl));
+			//also can like this : return new CommonsHttpSolrServer(solrUrl);
 		}
 		return solrServer;
 	}
