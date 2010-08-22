@@ -21,6 +21,8 @@ public class Article {
 	private String artUrl;
 	@Field
 	private Date artDate;
+	@Field
+	private String artSort;
 
 	public int getArtId() {
 		return artId;
@@ -68,6 +70,14 @@ public class Article {
 
 	public void setArtDate(Date artDate) {
 		this.artDate = artDate;
+	}
+
+	public String getArtSort() {
+		return artSort;
+	}
+
+	public void setArtSort(String artSort) {
+		this.artSort = artSort;
 	}
 
 }
