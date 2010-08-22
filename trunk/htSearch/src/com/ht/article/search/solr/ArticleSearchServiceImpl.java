@@ -43,6 +43,8 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearch implements
 			SolrQuery query = getSolrQuery(term, userid);
 			QueryResponse qr = server.query(query);
 			queryResult = qr.getResults();
+			long passTime = qr.getElapsedTime();
+			long numFound = queryResult.getNumFound();
 			//below also support, because Article add solr @Field
 //			return qr.getBeans(Article.class);
 			return solrList2bizList(queryResult);
