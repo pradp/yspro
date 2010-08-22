@@ -3,6 +3,7 @@
  */
 package com.ht.article.search.solr;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -19,6 +20,7 @@ import org.apache.solr.common.SolrException.ErrorCode;
 
 import com.ht.article.search.ArticleSearchService;
 import com.ht.article.search.model.Article;
+import com.ht.util.DateUtil;
 
 /**
  * 全文检索服务实现
@@ -63,12 +65,16 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearch implements
 		for (Iterator<SolrDocument> it = queryResult.iterator(); it.hasNext();) {
 			SolrDocument doc = it.next();
 			Article article = new Article();
-			article.setArtId( Integer.parseInt(String.valueOf(doc.getFieldValue(""))) );
-			article.setArtTitle( String.valueOf(doc.getFieldValue("")) );
-			article.setArtContent( String.valueOf(doc.getFieldValue("")) );
-			article.setArtUrl( String.valueOf(doc.getFieldValue("")) );
-//			article.setArtDate( String.valueOf(doc.getFieldValue("")) );
-			article.setArtNavigation( String.valueOf(doc.getFieldValue("")) );
+			article.setArtId( Integer.parseInt(String.valueOf(doc.getFieldValue("art_id"))) );
+			article.setArtTitle( String.valueOf(doc.getFieldValue("art_title")) );
+			article.setArtContent( String.valueOf(doc.getFieldValue("art_content")) );
+			article.setArtUrl( String.valueOf(doc.getFieldValue("art_url")) );
+			try {
+				article.setArtDate( DateUtil.stringToDate(String.valueOf(doc.getFieldValue("art_date"))) );
+			} catch (ParseException e) {
+				log.error(e);
+			}
+			article.setArtNavigation( String.valueOf(doc.getFieldValue("art_navigation")) );
 			articles.add(article);
 		}
 		return articles;
