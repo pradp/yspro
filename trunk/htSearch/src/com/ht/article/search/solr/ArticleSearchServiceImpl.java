@@ -91,13 +91,7 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearch implements
 	public SolrQuery getSolrQuery(String term, String userid) {
 		//TODO 构建业务查询    分页处理
 		SolrQuery query = new SolrQuery();
-		String queryStr = "atr_sort:"
-				
-				+ " AND text:"
-				+ term;
-		// SolrUtil.filterStringValue(locContent.getContent());
-		// locContent.getContent() 是从数据库里得到的数据 可能包含中文 数据库编码是（UTF8）
-		// SolrUtil.filterStringValue 是对数据库里的数据进行过滤 把一些特殊字符转义 在这里也没有进行什么编码
+		String queryStr = "art_sort:" + " AND text:" + term;
 		query.setQuery(queryStr);
 		query.setFields("*,score");
 		query.setRows(10);//TODO
