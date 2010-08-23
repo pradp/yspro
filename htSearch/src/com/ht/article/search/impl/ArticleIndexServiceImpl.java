@@ -43,8 +43,8 @@ public class ArticleIndexServiceImpl extends AbstractSolrIndexService implements
 		Element add = document.addElement("add");
 		Element doc = add.addElement("doc");
 
-		// base64¼òµ¥¼ÓÃÜ£¬½â¾öÄ³Ğ©ÌØÊâ×Ö·ûÔÚ½¨Ë÷ÒıÓÃdom½âÎöÊ±»áÅ×´í¡£
-		// ÔÚ²éÑ¯µÄÊ±ºò½«²éÑ¯Ìõ¼şÒ²ĞèÒªÓÃbase64¼ÓÃÜ²éÑ¯£¬·µ»Ø½á¹ûĞèÒª½«ËùÓĞ×Ö·û½âÃÜ new
+		// base64ç®€å•åŠ å¯†ï¼Œè§£å†³æŸäº›ç‰¹æ®Šå­—ç¬¦åœ¨å»ºç´¢å¼•ç”¨domè§£ææ—¶ä¼šæŠ›é”™ã€‚
+		// åœ¨æŸ¥è¯¢çš„æ—¶å€™å°†æŸ¥è¯¢æ¡ä»¶ä¹Ÿéœ€è¦ç”¨base64åŠ å¯†æŸ¥è¯¢ï¼Œè¿”å›ç»“æœéœ€è¦å°†æ‰€æœ‰å­—ç¬¦è§£å¯† new
 		// String(Base64.encodeBase64(s.getBytes()));
 
 		Element art_id = doc.addElement("field").addAttribute("name", "art_id");

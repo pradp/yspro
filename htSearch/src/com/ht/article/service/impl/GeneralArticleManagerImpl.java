@@ -55,7 +55,7 @@ public class GeneralArticleManagerImpl implements ArticleManager {
 
 	public List getUesrArticles(final String userId) {
 		//String sql = "select article_id from webcms.article where category_id in (select category_id from webcms.category where category_id in (select category_id from webcms.category_role where role_id in ( select roleid  from  lportal.Users_Roles where userid=? ) ) )";
-		String sql = "select article_id from  article where category_id in (select category_id from  category where category_id in (select category_id from category_role where role_id in ( select roleid  from   Users_Roles where userid=? ) ) )";
+		String sql = "select article_id from  article where category_id in (select category_id from  category where category_id in (select category_id from category_role where role_id in ( select roleid  from lportal.Users_Roles where userid=? ) ) )";
 		logger.info(sql);
 		return jdbcTemplate.queryForList(sql, new Object[] { userId });
 
