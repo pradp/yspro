@@ -20,7 +20,7 @@ public class testHttpClient {
 		String results = null;
 		HttpClient client = new HttpClient();
 		String url="http://localhost:8080/solr/select";
-		String key="东奔西走大规模大规模大规模大规模大规模大规模城";
+		String key="鍗″崱";
 		StringBuffer queryString=new StringBuffer();
 		queryString.append("fl=art_title,art_content,art_navigation,art_date,art_url&hl=true&hl.fl=url,art_title&hl.simple.pre=<font color='red'>&hl.simple.post=</font>&hl.snippets=2&q=");
 		queryString.append(key);

@@ -21,7 +21,7 @@ import org.apache.solr.common.SolrDocumentList;
 
 public class SolrJSearch {
 
-	private static final String SOLR_URL = "http://localhost:7080/solr/";
+	private static final String SOLR_URL = "http://localhost:8080/solr/";
 	private CommonsHttpSolrServer solrServer = null;
 
 	public SolrJSearch() {
@@ -34,7 +34,7 @@ public class SolrJSearch {
 
 	public void search(List list) {
 		SolrQuery query = new SolrQuery();
-		query.setQuery("text:Ë¿ Ğ¡ĞÖµÜ ¿İ");
+		query.setQuery("å¡");
 		String groups[] = splitListToArray(list);
 		//String groups[] = new String[]{"56147","56151","56157","56158","56165","56173","56182","56186","56193","56194"};
 		StringBuffer filterQuery = new StringBuffer();
@@ -43,21 +43,21 @@ public class SolrJSearch {
 			filterQuery.append(" (art_id:").append(StringUtils.join(groups, " OR art_id:")).append(")");
 		}
 
-		query.setFilterQueries(filterQuery.toString());
+//		query.setFilterQueries(filterQuery.toString());
 		
 		query.setStart(new Integer(1));
 		query.setRows(new Integer(100));
 		
 		System.out.println(query.toString());
-		//ÅÅĞòÓÃµÄ  
+		//æ’åºç”¨çš„  
 		//query.addSortField( "price", SolrQuery.ORDER.asc );    
 		try {
 			QueryResponse rsp = solrServer.query(query);
 
 			SolrDocumentList docs = rsp.getResults();
 
-			System.out.println("ÎÄµµ¸öÊı£º" + docs.getNumFound());
-			System.out.println("²éÑ¯Ê±¼ä£º" + rsp.getQTime());
+			System.out.println("æ–‡æ¡£ä¸ªæ•°ï¼š" + docs.getNumFound());
+			System.out.println("æŸ¥è¯¢æ—¶é—´ï¼š" + rsp.getQTime());
 			for (SolrDocument doc : docs) {
 				String title = (String) doc.getFieldValue("art_id");
 				String id = (String) doc.getFieldValue("art_title");
@@ -137,7 +137,7 @@ public class SolrJSearch {
 			Connection conn = DriverManager.getConnection(url, user, password);
 
 			if (!conn.isClosed())
-				System.out.println("Êı¾İ¿âÁ¬½Ó³É¹¦£¡");
+				System.out.println("æ•°æ®åº“è¿æ¥æˆåŠŸï¼");
 			stmt = conn.createStatement();
 			
 			String sql = "select article_id from  article where category_id in (select category_id from  category where category_id in (select category_id from category_role where role_id in ( select roleid  from   Users_Roles where userid='10113' ) ) )";
@@ -146,10 +146,10 @@ public class SolrJSearch {
 				articles.add(rs.getString("article_id"));
 
 			}
-			System.out.println("¿É¿´ÎÄÕÂÊı£½£½£½£½" + articles.size());
+			System.out.println("å¯çœ‹æ–‡ç« æ•°ï¼ï¼ï¼ï¼" + articles.size());
 			conn.close();
 		} catch (ClassNotFoundException e) {
-			System.out.println("ÕÒ²»µ½Çı¶¯³ÌĞò");
+			System.out.println("æ‰¾ä¸åˆ°é©±åŠ¨ç¨‹åº");
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();

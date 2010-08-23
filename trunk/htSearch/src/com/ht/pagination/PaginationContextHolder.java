@@ -1,7 +1,7 @@
 package com.ht.pagination;
 
 /**
- * 分页上下文对象的Hodler,基于ThreadLocal
+ * 鍒嗛〉涓婁笅鏂囧璞＄殑Hodler,鍩轰簬ThreadLocal
  *
  * 
  */

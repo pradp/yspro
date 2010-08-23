@@ -76,7 +76,7 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearchService implemen
 		try {
 			Document document = reader.read(new StringReader(queryResult));
 			Element resultE = (Element) document.selectSingleNode("//result[@name='response']");
-			// ÉèÖÃ·ÖÒ³µÄ¼ÇÂ¼Êı
+			// è®¾ç½®åˆ†é¡µçš„è®°å½•æ•°
 
 			Iterator docs = resultE.elementIterator("doc");
 
@@ -89,7 +89,7 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearchService implemen
 					Element url = (Element) doc.selectSingleNode("str[@name='art_url']");
 					article.setArtUrl(url.getTextTrim());
 
-					// ÈÕÆÚÓĞÎÊÌâ£¬ÔİÎ´´¦Àí
+					// æ—¥æœŸæœ‰é—®é¢˜ï¼Œæš‚æœªå¤„ç†
 					// Element createTimeE = (Element)
 					// doc.selectSingleNode("long[@name='art_date']");
 					// article.setArtDate(DateUtil.stringToDate(createTimeE.getTextTrim()));
@@ -197,8 +197,8 @@ public class ArticleSearchServiceImpl extends AbstractSolrSearchService implemen
 	}
 /**
  * 
- * @param preList ËùÓĞµÄÎÄÕÂ 
- * @param articles ¿É¶ÁµÄÎÄÕÂ
+ * @param preList æ‰€æœ‰çš„æ–‡ç«  
+ * @param articles å¯è¯»çš„æ–‡ç« 
  * @return
  */
 	protected List processArticles(List preList, List articles) {

@@ -16,6 +16,7 @@ import com.ht.article.service.ArticleManager;
  * 
  * @author cdji 2010-5-13
  */
+@Deprecated
 public class ArticleIndexJob extends QuartzJobBean {
 
 	protected final Log logger = LogFactory.getLog(getClass());
@@ -33,13 +34,13 @@ public class ArticleIndexJob extends QuartzJobBean {
 			logger.info("needs " + pages + " times to build index ");
 			long startTime = System.currentTimeMillis();
 			List articles = new ArrayList();
-			//´´½¨Ê±ÏÈÉ¾³ýËùÓÐµÄË÷Òý
+			//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 			CommonsHttpSolrServer server;
 			server = new CommonsHttpSolrServer("http://localhost:7080/solr/");
 			server.deleteByQuery("*:*");
 			server.commit();
 			//********************
-			//ÖØ½¨ËùÓÐµÄË÷Òý
+			//ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 			for (int i = 1; i < pages; i++) {
 				logger.info("process times==" + i);
 				articles = articleManager.getAllArticle(start, pageSize);
