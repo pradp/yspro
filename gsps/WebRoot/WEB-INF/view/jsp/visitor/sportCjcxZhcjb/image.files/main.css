@@ -1,0 +1,291 @@
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: url(/SportsScore/resources/images/pages/indexbg.jpg) repeat-x left top
+}
+A {
+	FONT-SIZE: 12px; COLOR: #000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #009b00
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#header {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_header.jpg) no-repeat left top
+}
+#header H1.home {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/SportsScore/resources/images/pages/logo.jpg) no-repeat left top; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 101px
+}
+#header H1.home SPAN {
+	DISPLAY: block; TEXT-INDENT: -9999px
+}
+#nav {
+	HEIGHT: 32px; BACKGROUND-COLOR: transparent
+}
+#nav UL.mainnav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 32px; BACKGROUND-COLOR: transparent
+}
+#nav UL.mainnav LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 1px 0px 0px; PADDING-TOP: 0px
+}
+#nav UL.mainnav LI A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; BACKGROUND: url(/SportsScore/resources/images/pages/nav_act.png) no-repeat right top; PADDING-BOTTOM: 0px; WIDTH: 100px; COLOR: #fffeff; PADDING-TOP: 8px; HEIGHT: 24px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+#nav UL.mainnav LI A.active {
+	BACKGROUND-IMAGE: url(/SportsScore/resources/images/pages/nav.png); COLOR: #000
+}
+#nav UL.mainnav LI A:hover {
+	BACKGROUND-IMAGE: url(/SportsScore/resources/images/pages/nav.png); COLOR: #000
+}
+#nav P.subnav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/SportsScore/resources/images/pages/subnav.png) no-repeat right 50%; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 4px 0px 0px; WIDTH: 300px; COLOR: #fffeff; PADDING-TOP: 8px; HEIGHT: 20px; TEXT-ALIGN: center
+}
+#nav P.subnav A {
+	COLOR: #fffeff; TEXT-DECORATION: none
+}
+#info {
+	HEIGHT: 42px
+}
+#info P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #fffeff; PADDING-TOP: 12px
+}
+#info P SPAN {
+	FONT-WEIGHT: bold; COLOR: #ffd800
+}
+#shi {
+	BORDER-RIGHT: #3b9dca 1px solid; BACKGROUND: url(/SportsScore/resources/images/pages/bg_riqiwip.png) repeat-x left top; MARGIN-BOTTOM: 20px; BORDER-LEFT: #3b9dca 1px solid; WIDTH: 938px; BORDER-BOTTOM: #3b9dca 1px solid
+}
+#scinfo {
+	BORDER-RIGHT: #3b9dca 1px solid; BACKGROUND: url(/SportsScore/resources/images/pages/bg_riqiwip.png) repeat-x left top; MARGIN-BOTTOM: 20px; BORDER-LEFT: #3b9dca 1px solid; WIDTH: 938px; BORDER-BOTTOM: #3b9dca 1px solid
+}
+#xmlb {
+	BORDER-RIGHT: #3b9dca 1px solid; BACKGROUND: url(/SportsScore/resources/images/pages/bg_tableheader.jpg) repeat-x left top; MARGIN-BOTTOM: 20px; BORDER-LEFT: #3b9dca 1px solid; WIDTH: 938px; BORDER-BOTTOM: #3b9dca 1px solid
+}
+#scinfo {
+	HEIGHT: 134px
+}
+#shi {
+	MARGIN: 0px; HEIGHT: 35px; BORDER-BOTTOM-STYLE: none
+}
+#qu UL LI {
+	FLOAT: left
+}
+#shi UL LI {
+	FLOAT: left
+}
+#xmlb UL LI {
+	FLOAT: left
+}
+#qu UL LI A {
+	DISPLAY: block; WIDTH: 72px; PADDING-TOP: 10px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+#shi UL LI A {
+	DISPLAY: block; WIDTH: 72px; PADDING-TOP: 10px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+#qu {
+	BORDER-RIGHT: #3b9dca 1px solid; MARGIN-BOTTOM: 20px; BORDER-LEFT: #3b9dca 1px solid; WIDTH: 938px; BORDER-BOTTOM: #3b9dca 1px solid
+}
+#qu {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_tableheader.jpg) repeat-x center top
+}
+#shi UL LI A.active {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_tableheader.jpg) repeat-x center top
+}
+#shi UL LI A:hover {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_tableheader.jpg) repeat-x center top
+}
+#xmlb UL LI A {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_tableheader.jpg) repeat-x center top
+}
+#qu UL LI A.active {
+	COLOR: #ff9700
+}
+#mainTable TBODY TR.top TH H6 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#scinfo A {
+	TEXT-DECORATION: none
+}
+#saicheng H2 {
+	PADDING-LEFT: 40px; FONT-SIZE: 12px; MARGIN: 5px 0px
+}
+#saicheng UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#saicheng .c2 {
+	CLEAR: both
+}
+#saicheng .c2 .k1 {
+	FLOAT: left; WIDTH: 35px; TEXT-ALIGN: center
+}
+#saicheng .c2 .k1 IMG {
+	MARGIN-TOP: 36px
+}
+#saicheng .c2 .k1 A {
+	DISPLAY: block; WIDTH: 35px; HEIGHT: 104px; TEXT-ALIGN: center
+}
+#saicheng .c2 UL {
+	
+}
+#saicheng .c2 LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/SportsScore/resources/images/pages/bg_riqi.png) no-repeat 0px 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 2px; WIDTH: 84px; PADDING-TOP: 0px; HEIGHT: 93px
+}
+#saicheng .c2 LI A {
+	DISPLAY: block; HEIGHT: 93px
+}
+#saicheng .c2 LI A:hover {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_riqi_act.png); TEXT-DECORATION: none
+}
+#saicheng .c2 LI H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #00477c; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+#saicheng .c2 LI H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 30px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #fff; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+#saicheng .c2 LI H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #00477c; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+#saicheng .c2 LI H4 A {
+	COLOR: #000
+}
+#saicheng .c2 LI H4 A:visited {
+	COLOR: #000
+}
+#saicheng .c2 LI H4 A:hover {
+	COLOR: #000
+}
+#saicheng .c2 .on {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_riqi_act.png)
+}
+#saicheng .c2 .on H3 {
+	COLOR: #fffc00
+}
+#today {
+	MARGIN-TOP: 7px; BACKGROUND: url(/SportsScore/resources/images/pages/bg_richeng.png) no-repeat left top; HEIGHT: 118px
+}
+#today H2 {
+	PADDING-LEFT: 12px; FONT-SIZE: 12px; MARGIN: 0px; WIDTH: 190px; PADDING-TOP: 4px
+}
+#today UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px
+}
+#today UL LI {
+	MARGIN-BOTTOM: 3px
+}
+#jinpai {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_jpb.jpg) no-repeat center top; PADDING-TOP: 95px
+}
+#jiangpai {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_jiangpb.jpg) no-repeat center top; PADDING-TOP: 95px
+}
+#jifen {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_jfb.jpg) no-repeat center top; PADDING-TOP: 95px
+}
+.mytable {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 220px; PADDING-TOP: 0px
+}
+TH {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; FONT: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; TEXT-TRANSFORM: uppercase; PADDING-TOP: 2px; LETTER-SPACING: 2px; TEXT-ALIGN: center
+}
+TH.nobg {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+TD {
+	BORDER-RIGHT: white 1px solid; PADDING-RIGHT: 2px; PADDING-LEFT: 2px; BACKGROUND: #f7f7f7; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: white 1px solid; TEXT-ALIGN: center
+}
+TD.alt {
+	BACKGROUND: #e8fae5
+}
+TH.spec {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; BACKGROUND: url(/SportsScore/resources/images/pages/bullet1.gif) #f7f7f7 no-repeat; FONT: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+TH.specalt {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; BACKGROUND: url(/SportsScore/resources/images/pages/bullet2.gif) #e8fae5 no-repeat; FONT: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+TH.title {
+	PADDING-TOP: 8px; HEIGHT: 15px
+}
+TD.gpai {
+	BACKGROUND-COLOR: #fceca0
+}
+TD.spai {
+	BACKGROUND-COLOR: #e1e1e1
+}
+TD.bpai {
+	BACKGROUND-COLOR: #e9cfb6
+}
+#login {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_login.png) no-repeat center top; MARGIN-BOTTOM: 20px; WIDTH: 220px; HEIGHT: 159px
+}
+#login H2 {
+	PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN: 0px; PADDING-TOP: 11px; HEIGHT: 27px
+}
+.rp_loginpad {
+	DISPLAY: inline; BACKGROUND: url(/SportsScore/resources/images/pages/rp_loginbg.jpg) repeat-y; FLOAT: left; PADDING-BOTTOM: 15px; WIDTH: 282px; BORDER-BOTTOM: #434444 1px solid
+}
+.rp_login {
+	MARGIN-TOP: 13px; FLOAT: left
+}
+.rp_titxt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 12px; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #333; PADDING-TOP: 16px; HEIGHT: 23px
+}
+.rp_membrusr {
+	CLEAR: left; PADDING-LEFT: 10px; FONT-SIZE: 12px; FLOAT: left; MARGIN: 10px 0px 0px; WIDTH: 60px; COLOR: #8a8987
+}
+.rp_membrpwd {
+	CLEAR: left; PADDING-LEFT: 10px; FONT-SIZE: 12px; FLOAT: left; MARGIN: 10px 0px 0px; WIDTH: 60px; COLOR: #8a8987
+}
+.rp_membrpwd2 {
+	CLEAR: left; PADDING-LEFT: 10px; FONT-SIZE: 12px; FLOAT: left; MARGIN: 10px 0px 0px; WIDTH: 60px; COLOR: #8a8987
+}
+.rp_membrpwd3 {
+	CLEAR: left; PADDING-LEFT: 10px; FONT-SIZE: 12px; FLOAT: left; MARGIN: 10px 0px 0px; WIDTH: 60px; COLOR: #8a8987
+}
+.rp_pwdrip {
+	BORDER-RIGHT: #666562 1px solid; BORDER-TOP: #666562 1px solid; FLOAT: left; MARGIN: 15px 0px 0px; FONT: 12px Arial, Helvetica, sans-serif; BORDER-LEFT: #666562 1px solid; WIDTH: 130px; COLOR: #000000; BORDER-BOTTOM: #666562 1px solid; HEIGHT: 15px
+}
+.rp_usrip1 {
+	BORDER-RIGHT: #666562 1px solid; BORDER-TOP: #666562 1px solid; FLOAT: left; MARGIN: 20px 0px 0px; FONT: 12px Arial, Helvetica, sans-serif; BORDER-LEFT: #666562 1px solid; WIDTH: 130px; COLOR: #000000; BORDER-BOTTOM: #666562 1px solid; HEIGHT: 16px
+}
+.rp_usrip2 {
+	BORDER-RIGHT: #666562 1px solid; BORDER-TOP: #666562 1px solid; FLOAT: left; MARGIN: 15px 0px 0px; FONT: 12px Arial, Helvetica, sans-serif; BORDER-LEFT: #666562 1px solid; WIDTH: 130px; COLOR: #000000; BORDER-BOTTOM: #666562 1px solid; HEIGHT: 16px
+}
+.rp_pwdrip {
+	MARGIN: 13px 0px 0px; WIDTH: 34px
+}
+.rp_membrpwd {
+	PADDING-LEFT: 12px; MARGIN: 22px 0px 0px
+}
+.rp_membrpwd2 {
+	PADDING-LEFT: 12px; MARGIN: 18px 0px 0px
+}
+.rp_membrpwd3 {
+	PADDING-LEFT: 12px; MARGIN: 13px 0px 0px
+}
+.rp_notmem {
+	CLEAR: left; MARGIN-TOP: 7px; FLOAT: left; MARGIN-BOTTOM: 0px; FONT: 12px Arial, Helvetica, sans-serif; WIDTH: 220px; COLOR: #4e4b4a; MARGIN-RIGHT: 0px; TEXT-ALIGN: center
+}
+#histry {
+	BACKGROUND: url(/SportsScore/resources/images/pages/bg_lscj.png) no-repeat center top
+}
+#histry H2 {
+	PADDING-LEFT: 20px; FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; PADDING-TOP: 10px; HEIGHT: 30px
+}
+#histry SPAN {
+	DISPLAY: block; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(/SportsScore/resources/images/pages/point.png) no-repeat 7px center; MARGIN-BOTTOM: 5px; WIDTH: 200px; COLOR: #009b22
+}
+#histry UL {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 7px; PADDING-BOTTOM: 5px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px dashed
+}
+#footer {
+	PADDING-RIGHT: 10px; BORDER-TOP: #888 1px solid; MARGIN-TOP: 20px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+#footer P {
+	MARGIN-BOTTOM: 10px; COLOR: #919191; TEXT-ALIGN: center
+}
+#footer P A {
+	COLOR: #919191
+}

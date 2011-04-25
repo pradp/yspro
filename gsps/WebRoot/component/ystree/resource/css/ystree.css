@@ -1,0 +1,51 @@
+/*---------------------------------------------------|
+ | ysTree 3.1 | www.imchooser.com                    |
+ |---------------------------------------------------|
+ | Copyright (c) 2009-2014 Jason Yang?               |
+ |                                                   |
+ | This script can be used freely as long as all     |
+ | copyright messages are intact.                    |
+ |                                                   |
+ | Updated: 17.04.2009                               |
+ |--------------------------------------------------*/
+
+.ystree li {
+    font-size: 12pt;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 15px;
+    padding-top: 1px;
+    line-height: 14px;
+    vertical-align: text-top;
+}
+.ystree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	white-space: nowrap;
+}
+.ystree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.ystree a {
+	color: #333;
+	text-decoration: none;
+}
+.ystree a.node, .ystree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+	cursor:pointer;
+}
+.ystree a.node:hover, .ystree a.nodeSel:hover {
+	color: #333;
+	text-decoration: none;
+}
+.ystree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.ystree .clip {
+	overflow: hidden;
+}

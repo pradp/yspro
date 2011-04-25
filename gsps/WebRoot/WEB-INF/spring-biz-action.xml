@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--带入成绩表-->
+	<bean id="sportDrcjbAction" class="com.imchooser.infoms.action.biz.SportDrcjbAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportDrcjbService" />
+	</bean>
+	<!-- 比赛项目维护 -->
+	<bean id="sportBsxmAction" class="com.imchooser.infoms.action.biz.SportBsxmAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportBsxmService" />
+	</bean>
+	<!-- 赛事日程维护  -->
+	<bean id="sportSsrcAction" class="com.imchooser.infoms.action.biz.SportSsrcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSsrcService" />
+	</bean>
+	<!-- 市县汇总成绩预览维护-->
+	<bean id="sportSxCjHzYlAction" class="com.imchooser.infoms.action.biz.SportSxCjHzYlAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSxCjHzYlService" />
+	</bean>
+	<!-- 破纪录成绩查询  -->
+	<bean id="sportCjcxPjlAction" class="com.imchooser.infoms.action.biz.SportCjcxPjlAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxPjlService" />
+	</bean>
+	<!-- 代表团成绩查询  -->
+	<bean id="sportCjcxDbtAction" class="com.imchooser.infoms.action.biz.SportCjcxDbtAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxDbtService" />
+	</bean>
+	<!-- 项目成绩查询  -->
+	<bean id="sportDxmmcAction" class="com.imchooser.infoms.action.biz.SportDxmmcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportDxmmcService" />
+	</bean>
+	<!-- 项目成绩查询江苏优势 -->
+	<bean id="sportDxmmcJsysAction" class="com.imchooser.infoms.action.biz.SportDxmmcJsysAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportDxmmcJsysService" />
+	</bean>
+	<!-- 运动员成绩登记  -->
+	<bean id="sportCjYdyAction" class="com.imchooser.infoms.action.biz.SportCjYdyAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjYdyService" />
+	</bean>
+	<!-- 运动员二次报名(按人) -->
+	<bean id="sportYdybmxmCcAction" class="com.imchooser.infoms.action.biz.SportYdybmxmCcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportYdybmxmCcService" />
+	</bean>
+	<!-- 运动员成绩查询、运动员公开信息  -->
+	<bean id="sportCjcxYdyxxAction" class="com.imchooser.infoms.action.biz.SportCjcxYdyxxAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxYdyxxService" />
+	</bean>
+	<!-- 运动员个人信息登记  -->
+	<bean id="sportYdyxxAction" class="com.imchooser.infoms.action.biz.SportYdyxxAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportYdyxxService" />
+	</bean>
+	<!-- 赛次得分规则  -->
+	<bean id="sportScdfgzAction" class="com.imchooser.infoms.action.biz.SportScdfgzAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportScdfgzService" />
+	</bean>
+	<!-- 按比赛时间查询成绩  -->
+	<bean id="sportCjcxRcAction" class="com.imchooser.infoms.action.biz.SportCjcxRcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxRcService" />
+	</bean>
+	<!-- 团队成绩汇总表(网站首页显示)  -->
+	<bean id="sportCjTdHzAction" class="com.imchooser.infoms.action.biz.SportCjTdHzAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjTdHzService" />
+	</bean>
+	<!--赛程总表  -->
+	<bean id="sportCjcxRcZkAction" class="com.imchooser.infoms.action.biz.SportCjcxRcZkAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxRcZkService" />
+	</bean>
+	<!-- 按比赛项目查询成绩  -->
+	<bean id="sportCjcxDxmmcAction" class="com.imchooser.infoms.action.biz.SportCjcxDxmmcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxDxmmcService" />
+	</bean>
+	<!-- 团队成绩内部查询  -->
+	<bean id="sportCjcxNbbdAction" class="com.imchooser.infoms.action.biz.SportCjcxNbbdAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxNbbdService" />
+	</bean>
+	<!-- 区县成绩榜  -->
+	<bean id="sportCjcxXscjbAction" class="com.imchooser.infoms.action.biz.SportCjcxXscjbAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxXscjbService" />
+	</bean>
+	<!-- 代表团数据核对   -->
+	<bean id="sportSjhdDbtAction" class="com.imchooser.infoms.action.biz.SportSjhdDbtAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdDbtService" />
+	</bean>
+	<!-- 明细汇总数据核对  -->
+	<bean id="sportSjhdMxHzAction" class="com.imchooser.infoms.action.biz.SportSjhdMxHzAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdMxHzService" />
+	</bean>
+	<!-- 多人集体项目承训地数据核对  -->
+	<bean id="sportSjhdDrJtxmAction" class="com.imchooser.infoms.action.biz.SportSjhdDrJtxmAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdDrJtxmService" />
+	</bean>
+	<!-- 多人集体项目原籍地数据核对  -->
+	<bean id="sportSjhdJtxmYjAction" class="com.imchooser.infoms.action.biz.SportSjhdJtxmYjAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdJtxmYjService" />
+	</bean>
+	<!-- 21项数据核对  -->
+	<bean id="sportSjhd21Action" class="com.imchooser.infoms.action.biz.SportSjhd21Action"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhd21Service" />
+	</bean>
+	<!-- 代表团加减分维护表-->
+	<bean id="sportTdHzCjJjfAction" class="com.imchooser.infoms.action.biz.SportTdHzCjJjfAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportTdHzCjJjfService" />
+	</bean>
+	<!-- 市县赛次成绩预览\代表团赛次成绩预览   -->
+	<bean id="sportSxMxYLAction" class="com.imchooser.infoms.action.biz.SportSxMxYLAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSxMxYLService" />
+	</bean>
+	<!-- 数据核对协议地   -->
+	<bean id="sportSjhdXydAction" class="com.imchooser.infoms.action.biz.SportSjhdXydAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdXydService" />
+	</bean>
+	<!-- 数据核对区县   -->
+	<bean id="sportSjhdSxAction" class="com.imchooser.infoms.action.biz.SportSjhdSxAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportSjhdSxService" />
+	</bean>
+	<!-- 动态表单 管理员 -->
+    <bean id="dtbdManagePageAction" class="com.imchooser.infoms.action.biz.DtbdManagePageAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="dtbdManagePageService"/>
+	</bean>
+	<!-- 动态表单 使用者 -->
+    <bean id="dtbdUserPageAction" class="com.imchooser.infoms.action.biz.DtbdUserPageAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="dtbdUserPageService"/>
+	</bean>
+	<!-- 项目查询成绩 -->
+    <bean id="sportDyXmCxCjAction" class="com.imchooser.infoms.action.biz.SportDyXmCxCjAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sportDyXmCxCjService"/>
+	</bean>
+	  <!-- 代表团成绩查询(打印) -->
+    <bean id="sportDyDbtCjCxAction" class="com.imchooser.infoms.action.biz.SportDyDbtCjCxAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sportDyDbtCjCxService"/>
+	</bean>
+	<!-- 一次报名项目管理  -->
+    <bean id="sportYdybmxmCcGLAction" class="com.imchooser.infoms.action.biz.SportYdybmxmCcGLAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sportYdybmxmCcGLService"/>
+	</bean>
+	<!--统计核对  -->
+    <bean id="sportTjHdAction" class="com.imchooser.infoms.action.biz.SportTjHdAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sportTjHdService"/>
+	</bean>
+	<!--赛程得牌核对  -->
+    <bean id="sportScDpHdAction" class="com.imchooser.infoms.action.biz.SportScDpHdAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sportScDpHdService"/>
+	</bean>
+	<!-- 折算明细查询   -->
+	<bean id="sportCjCxZsMxAction" class="com.imchooser.infoms.action.biz.SportCjCxZsMxAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjCxZsMxService" />
+	</bean>
+	<!-- 代表团二次报名人数汇总   -->
+	<bean id="sportRcbmrsHzAction" class="com.imchooser.infoms.action.biz.SportRcbmrsHzAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportRcbmrsHzService" />
+	</bean>
+	<!-- 代表团综合成绩榜查询   -->
+	<bean id="sportCjcxZhcjbAction" class="com.imchooser.infoms.action.biz.SportCjcxZhcjbAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportCjcxZhcjbService" />
+	</bean>
+	<!-- 打印报表   -->
+	<bean id="sportPrintAction" class="com.imchooser.infoms.action.biz.SportPrintAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportPrintService" />
+	</bean>
+	<!-- 根据大项目打印报表   -->
+	<bean id="sportPrintDxmmcAction" class="com.imchooser.infoms.action.biz.SportPrintDxmmcAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="sportPrintDxmmcService" />
+	</bean>
+</beans>

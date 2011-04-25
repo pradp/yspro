@@ -1,0 +1,61 @@
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+	text-align:left;
+	/**
+	 * 下面这个设置解决了div dialog中iframe网页里调用此组件，下拉全都透明的问题。
+	推荐：http://www.onderhond.com/tools/ie6fixer/
+	 */
+	filter:alpha(opacity=90);
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+	/* 
+	下面这个才是真的最重要的，IE6这个倒霉游览器BUG太多。
+	加这个解决了div dialog中iframe网页里调用此组件，下拉全都透明的问题。
+	推荐：http://www.onderhond.com/tools/ie6fixer/
+	*/
+	zoom:1;
+	filter:alpha(opacity=90);
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
