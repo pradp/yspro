@@ -1,0 +1,2 @@
+games score publish system
+运动会成绩发布系统
