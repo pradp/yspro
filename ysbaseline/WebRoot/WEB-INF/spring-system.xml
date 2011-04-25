@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 此配置文件为系统功能配置 -->
+	
+<!-- action start -->
+	<!-- 系统字典维护-->
+	<bean id="sysCodeAction" class="com.yszoe.sys.action.SysCodeAction"
+		autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sysCodeService"/>
+	</bean>
+	<!-- 系统字典类别维护-->
+	<bean id="sysCodeSortAction" class="com.yszoe.sys.action.SysCodeSortAction"
+		autowire="byName" scope="prototype" >
+		<property name="baseService" ref="sysCodeSortService"/>
+	</bean>
+	<!-- 模块功能与开放规则 -->
+	<bean id="buttonEnumRuleAction" class="com.yszoe.sys.action.ButtonEnumRuleAction"
+		autowire="byName" scope="prototype" >
+		<property name="baseService" ref="buttonEnumRuleServiceImpl"/>
+	</bean>
+	<!-- 在线用户查询-->
+	<bean id="userOnlineAction" class="com.yszoe.sys.action.UserOnlineAction"
+		autowire="byName" scope="prototype" >
+		<property name="baseService" ref="userOnlineService"/>
+	</bean>
+	<!-- 消息发送 -->
+	<bean id="messageAction" class="com.yszoe.sys.action.MessageAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="messageService"></property>
+	</bean>
+	<!-- 消息管理 -->
+	<bean id="messageManagerAction" class="com.yszoe.sys.action.MessageManagerAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="messageManagerService"></property>
+	</bean>
+	<!-- 系统属性配置 -->
+	<bean id="xtpzAction" class="com.yszoe.sys.action.PropertityAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="xtpzService"></property>
+	</bean>
+	<!-- 部门信息维护 -->
+	<bean id="departAction" class="com.yszoe.sys.action.DepartAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="departService"></property>
+	</bean>
+	<!-- 区域信息维护 -->
+	<bean id="areaAction" class="com.yszoe.sys.action.AreaAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="areaService"></property>
+	</bean>
+	<!-- 下级登录用户维护 -->
+	<bean id="myUserAction" class="com.yszoe.sys.action.MyUserAction"
+		autowire="byName" scope="prototype" >
+		<property name="baseService" ref="myUserService"></property>
+	</bean>
+	<!-- 用户操作日志  -->
+	<bean id="sysBizLogAction" class="com.yszoe.sys.action.SysBizLogAction" autowire="byName" scope="prototype">
+	    <property name="baseService" ref="sysBizLogService"></property>
+	</bean>
+	<!-- Excel 导入 -->
+	<bean id="excelUserImportAction" class="com.yszoe.sys.action.ExcelUserImportAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="excelUserImportService"/>
+	</bean>
+	<!-- Excel 导入管理员设置 -->
+	<bean id="excelImportAdminSetupAction" class="com.yszoe.sys.action.ExcelImportAdminSetupAction" autowire="byName" scope="prototype">
+		<property name="baseService" ref="excelImportAdminSetupService"/>
+	</bean>
+	<!-- 导入模板设置 -->
+	<bean id="excelImprotAdminSetTempAction" class="com.yszoe.sys.action.ExcelImprotAdminSetTempAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="excelImprotAdminSetTempService"/>
+	</bean>
+	<!-- 管理会员资料 -->
+	<bean id="userExtAction" class="com.yszoe.sys.action.userExtAction" autowire="byName" scope="prototype" >
+		<property name="baseService" ref="userExtService"/>
+	</bean>
+	<!-- 支持AJAX的action。返回json数据 -->
+	<bean id="ajaxSysAction" class="com.yszoe.sys.action.AjaxSysAction" scope="prototype" >
+		<property name="ajaxService" ref="ajaxService"/>
+	</bean>
+<!-- action end -->
+<!-- service start -->
+	<!-- 系统字典维护 -->
+	<bean id="sysCodeService" class="com.yszoe.sys.service.impl.SysCodeServiceImpl" autowire="byName" />
+	<!-- 系统字典类别维护 -->
+	<bean id="sysCodeSortService" class="com.yszoe.sys.service.impl.SysCodeSortServiceImpl" autowire="byName" />
+	<!-- 在线用户查询 -->
+	<bean id="userOnlineService" class="com.yszoe.sys.service.impl.UserOnlineServiceImpl" autowire="byName" />
+	<!-- 模块功能与开放规则 -->
+	<bean id="buttonEnumRuleServiceImpl" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.sys.service.impl.ButtonEnumRuleServiceImpl" autowire="byName" />
+		</property>
+	</bean>
+	<!-- 字典封装服务 -->
+	<bean id="applicationEnumService" class="com.yszoe.sys.service.impl.ApplicationEnumImpl" autowire="byName" />
+	<!-- 属性配置维护 -->
+	<bean id="xtpzService" class="com.yszoe.sys.service.impl.PropertityServiceImpl" autowire="byName" />
+	<!-- 部门信息维护 -->
+	<bean id="departService" class="com.yszoe.sys.service.impl.DepartServiceImpl" autowire="byName" />
+	<!-- 区域信息维护 -->
+	<bean id="areaService" class="com.yszoe.sys.service.impl.AreaServiceImpl" autowire="byName" />
+	<!-- 消息维护 -->
+	<bean id="messageService" class="com.yszoe.sys.service.impl.MessageServiceImpl" autowire="byName" />
+	<bean id="messageManagerService" class="com.yszoe.sys.service.impl.MessageManagerServiceImpl" autowire="byName" />
+	<!-- 下级登录用户维护 -->
+	<bean id="myUserService" class="com.yszoe.sys.service.impl.MyUserServiceImpl" autowire="byName" />
+	<!-- 用户操作日志  -->
+	<bean id="sysBizLogService" class="com.yszoe.sys.service.impl.SysBizLogServiceImpl" autowire="byName" />
+	<!-- 导入 Excel 服务 -->
+	<bean id="excelUserImportService" class="com.yszoe.sys.service.impl.ExcelUserImportServiceImpl" autowire="byName"></bean>
+	<!-- Excel 导入 管理员设置 -->
+	<bean id="excelImportAdminSetupService" class="com.yszoe.sys.service.impl.ExcelImportAdminSetupServiceImpl" autowire="byName"></bean>
+	<!-- 统一身份认证服务，装配在IdUserAction -->
+	<bean id="uniIdService" class="com.yszoe.sys.uniid.server.UniIdServiceImpl" autowire="byName"></bean>
+	<bean id="localSessionService" class="com.yszoe.sys.uniid.client.impl.LocalSessionServiceImpl" autowire="byName"></bean>
+	<!--管理会员资料 -->
+	<bean id="userExtService" class="com.yszoe.sys.service.impl.userExtServiceImpl" autowire="byName"></bean>
+	<!--
+	<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+		<property name="serviceName" value="NodeSessionService"/>
+		<property name="service" ref="localSessionService"/>
+		<property name="serviceInterface" value="com.yszoe.sys.uniid.client.LocalSessionService"/>
+		<property name="registryPort" value="1399"/>
+	</bean>
+	 -->
+	<!-- 导入模板设置 -->
+	<bean id="excelImprotAdminSetTempService"
+	 	class="com.yszoe.sys.service.impl.ExcelImprotAdminSetTempServiceImpl"
+		autowire="byName" />
+	<!-- 专门辅助ajax action的类 -->
+	<bean id="ajaxService" class="com.yszoe.sys.service.impl.AjaxSysServiceImpl" autowire="byName" />
+<!-- service end -->
+</beans>

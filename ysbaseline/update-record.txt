@@ -1,0 +1,14 @@
+此项目目标是：可以独立运行，支持新项目在此基础上可以快速开发。
+此项目基于：
+1、ysframework.jar快速开发框架；
+2、以前项目里实践的system级别的现有模块，都已经迁移到这个项目。
+以后有最佳实践还会继续提取代码，加入到这里。
+
+version 1.0
+1、底层ysframework框架升级： struts2.2.1.1 spring3.0.5、 hibernate3.2.7
+2、包名改为com.yszoe
+3、去掉了struts2的rest和struts2-convention-plugin-2.2.1.1插件，rest没有spring的实现方便。用spring mvc支持RESTful url，请求后缀改为 .htm
+4、支持返回json结果。
+5、MVC支持struts2（.c后缀）和spring3 mvc（.htm后缀）。
+
+
