@@ -1,0 +1,94 @@
+
+support jndi, tomcat example:
+<Context docBase="d:/web_dist/infoms" path="/infoms"
+         privileged="true" antiResourceLocking="false" antiJARLocking="false">
+		 <Resource name="jdbc/DataSource" auth="Container" type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@jundu-server:1521:jundu" username="usr_loan" password="usr_loan" maxActive="20" maxIdle="10"/> 
+</Context>
+
+一、让hibernate不更新为null的字段，有几种方法可以达到此目的：
+     1、hibernate配置文件，设置不需要更新的字段属性为 update="false"；
+     2、页面采用hidden控件；
+     3、使用hql的update语句手动更新字段；
+     4、使用megre方法更新数据（需要配置hibernate配置文件属性dynamic-update="true"）。
+     
+  页面流程简单的时候，采用第一、二种方法都可以。如果流程多，每一步页面的元素不一样，这时候采用第四种就比较方便。
+  第三种方法很灵活，手写update，但不到不得已不必用。
+  *** jd-framework-3.0.jar版本中，baseDao类提供了updateNotNull方法，可以根据传入的对象，动态生成update语句，不更新值为null的字段。
+
+二、struts-biz.xml配置，包可以extends包"checkLogin" 即可验证登录
+父包拦截器有"mytoken、checkUserLogin"
+
+三、DWR实现AJAX控制级联菜单选择：
+页面进入JS（注意修改路径）：
+	<script type="text/javascript" src="dwr/engine.js"></script>
+	<script type="text/javascript" src="dwr/util.js"></script>
+	<script type="text/javascript" src="dwr/interface/ajaxService.js"></script>
+然后写函数：
+		function changeSelectHtml(obj){
+			var val = obj.value;
+			var sqlMapKey = "getApproveMan";
+			ajaxService.getSelectContents(sqlMapKey,val,cb);
+		}
+		function cb(result){
+			jQuery.noConflict();//注意这个，如果页面引入的JQUERY，就必须加这句和最后一句
+			var changeSelectId = "demo3";
+			DWRUtil.removeAllOptions(changeSelectId);
+			DWRUtil.addOptions( changeSelectId, result );
+			//DWRUtil.setValue( changeSelectId,1);//设置默认选中的项的值
+			$ = jQuery;//注意这个，如果页面引入的JQUERY，就必须加这句和第一句
+		}
+html例子：
+   <select name="demo1" onchange="changeSelectHtml(this)">
+   	<option value="sjbh">sjbh</option>
+   	<option value="syfw">syfw</option>
+   	<option value="xb">xb</option>
+   </select>
+   
+   <select id="demo3" name="demo3">
+   
+四、IE6报打不开网页的问题解决：
+有时候showModalDialog里的网页如果有反复请求JS等文件，
+那么<base target="_self">必须放在head最后。不然IE6报打不开网页。
+
+五、用struts2标签在jsp页面获取URL参数：
+http://...xx.c?canshuName=myValue  --->  <s:property value="#parameters.canshuName[0]"/> 
+另外使用#除了parameters外，还可以访问request,session,application的attribute。
+如：request.setAttribute("canshuName","myValue") ---> #request.canshuName
+
+六、日期控件的使用请看component/datepicker/readme.txt
+
+七、Google suggest example:
+参考 identity/idUser/input.jsp 
+url 如 "/suggest?aim=depart",aim 的值表示 sqlmap.properties 中定义的suggest部分的类型
+
+八、系统消息发送接口：
+引入包	<script type="text/javascript" src="<s:property value="basePath"/>/resources/js/p2pMessage.js"></script>
+页面循环里加入<s:hidden id="depart_%{resultData[#stuts.index][0]}" value="%{resultData[#stuts.index][1]}"/>输出departid
+接口会找depart_xxxxx控件取值，取得消息发送给哪个部门。
+加入发送按钮 <input type="button" id="sendMsgButton" value="消息发送" onClick="sendMessage(msgTypeCode)"> 
+msgTypeCode请查阅字典表中定义的类型。
+参考：ADMIN的“省中心审核市县”中，有发送消息。
+
+*九、统一JS客户端表单验证方式：
+	validate_required_fields = [
+			{fieldId:"userLoginId", message:"登录帐号不能为空！", mustMatch: true}, 
+			{fieldId:"departid", message:"所属部门不能为空！", mustMatch: true}
+		];
+	validate_length_range_fields = [
+			{fieldId:"userLoginId", minLen:1, maxLen:30, message:"用户登录账号长度在1-30个字节之间！", ignoreIfEmpty: true}, 
+			{fieldId:"userName", minLen:1, maxLen:90, message:"用户显示名称长度在1-90个字节之间(30汉字以内)！", ignoreIfEmpty: true}
+		];
+	validate_type_fields = [
+			{fieldId:"sqje", message:"申请金额格式不正确！", typeRule:{requiredType:"number", allowDot:true, allowNegative:false}}, 
+			{fieldId:"xsdh", message:"学生家庭电话格式不正确！", typeRule:{requiredType:"phone"}},
+			{fieldId:"xsyddh", message:"学生移动电话格式不正确！", typeRule:{requiredType:"mobile"}}
+		];
+validate_required_fields 中定义必填项。validate_length_range_fields 中定义校验长度的项。validate_type_fields 中定义字段类型。
+
+十、struts2标签方式访问静态方法和静态字段
+　　@class@method(args)　　　　　//调用静态方法
+　　@class@field　　　　　　　　   //调用静态字段
+　　其中class必须给出完整的类名(包括包名),如果省略class，那么默认使用的类是java.util.Math，如：
+　　@@min(5,3)
+　　@@max(5,3)
+　　@@PI
