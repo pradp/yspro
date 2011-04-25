@@ -1,0 +1,69 @@
+BODY {
+	
+}
+TABLE {
+	FONT-SIZE: 12px
+}
+TD {
+	FONT-SIZE: 12px
+}
+THEAD TH {
+	FONT-SIZE: 13px; BACKGROUND: #006699; COLOR: #ffffff; LINE-HEIGHT: 20px; HEIGHT: 30px; TEXT-ALIGN: center
+}
+TBODY#listContent TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: top; LINE-HEIGHT: 20px; PADDING-TOP: 5px; BORDER-BOTTOM: #95bce2 1px dashed; TEXT-ALIGN: left
+}
+TFOOT TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; HEIGHT: 35px; TEXT-ALIGN: center
+}
+TR.alt TD {
+	BACKGROUND: #ecf6fc
+}
+TR.over TD {
+	BACKGROUND: #bcd4ec
+}
+INPUT {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 9pt; BORDER-LEFT-COLOR: #e3e3e3; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #e3e3e3; BORDER-TOP-COLOR: #e3e3e3; LINE-HEIGHT: 15px; FONT-FAMILY: "Times New Roman", Times, serif; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #e3e3e3
+}
+DIV#error {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+DIV#inputarea {
+	VERTICAL-ALIGN: middle; TEXT-ALIGN: center
+}
+DIV#bodyhead {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/images/topbg_bg.jpg) #ffffff no-repeat right top; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; TOP: 0px
+}
+DIV#bodymain {
+	CLEAR: both; PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; TOP: 0px
+}
+DIV#bodyleft {
+	BORDER-RIGHT: #cccccc 1px dashed; LEFT: 0px; FLOAT: left; WIDTH: 199px; TOP: 0px
+}
+DIV#bodyright {
+	DISPLAY: inline; FLOAT: right; WIDTH: 77%; HEIGHT: 100%
+}
+DIV#bodyfooter {
+	CLEAR: both; BORDER-TOP: #ffffff 1px solid; BACKGROUND: #ece9d8; WIDTH: 100%; HEIGHT: 30px; TEXT-ALIGN: center
+}
+.titlefont {
+	FONT-WEIGHT: 700! important; FONT-SIZE: 10pt
+}
+.formtablebg {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eff7d2
+}
+.tablebg {
+	BACKGROUND-COLOR: #eff7d2
+}
+.tableBottonBg {
+	BACKGROUND-COLOR: #a6cf36
+}
+.leftMenuBg {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #e6ffe6 1px solid; BORDER-LEFT: #e6ffe6 1px solid; BORDER-BOTTOM: #e6ffe6 1px solid; BACKGROUND-COLOR: #eff7d2
+}
+.headfont {
+	FONT-WEIGHT: 500! important; FONT-SIZE: 13pt; CURSOR: pointer; FONT-FAMILY: "Times New Roman", Times, serif
+}
+.headclickedfont {
+	FONT-WEIGHT: 500! important; FONT-SIZE: 13pt; FONT-FAMILY: "Times New Roman", Times, serif
+}

@@ -1,0 +1,81 @@
+div{
+    font-size: 10pt;
+    width:99%;
+    float:left;
+}
+label{
+    cursor:pointer;
+    padding-left: 1px;
+    /*background-color:#f0f0f0;*/
+}
+Input
+{
+    font-size: 12px;
+    vertical-align: baseline;
+}
+td
+{
+    font-size: 9pt;
+}
+img
+{
+    cursor: default;
+    border: 0px none;
+    vertical-align: bottom;
+}
+a
+{
+    font-size: 9pt;
+    color: #000060;
+    text-decoration: none;
+}
+
+a.selected
+{
+    color: #FFFFFF;
+    background-color: #0A246A;
+}
+.hide
+{
+    display: none;
+}
+
+/******* tree node inputer *******/
+#YsTreeInputer
+{
+    width: 100%;
+    font-size: 12px;
+    background-color: #D4D0C8;
+}
+#YsTreeInputer col.caption
+{
+    width: 60px;
+    line-height: 20px;
+    text-align: right;
+    vertical-align: top;
+    background-color: #EAEAEA;
+}
+#YsTreeInputer col.content
+{
+    background-color: #FFFFFF;
+}
+#YsTreeInputer #mtinputeroption
+{
+    color: #000080;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#YsTreeInputer #mtinputerCheck
+{
+    width: 80px;
+}
+#YsTreeInputer input.text
+{
+    width: 80px;
+    font-size: 12px;
+    border: inset 1px #D4D0C8;
+}
+#YsTreeInputer select
+{
+    width: 80px;
+}

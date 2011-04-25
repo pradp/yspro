@@ -1,0 +1,285 @@
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TABLE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TH {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+IMG {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+BODY {
+	FONT-SIZE: 12px
+}
+TABLE {
+	FONT-SIZE: 12px
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+FIELDSET {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+OL {
+	LIST-STYLE-TYPE: none
+}
+A {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #878787; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+HTML {
+	TEXT-ALIGN: center; WIDTH: 100%; HEIGHT: 100%; OVERFLOW: hidden
+}
+BODY {
+	TEXT-ALIGN: center; WIDTH: 100%; HEIGHT: 100%; OVERFLOW: hidden
+}
+#vBody {
+	POSITION: relative; OVERFLOW-X: hidden; OVERFLOW-Y: scroll; WIDTH: 100%; HEIGHT: 100%; OVERFLOW: auto
+}
+#wrap {
+	POSITION: relative; TEXT-ALIGN: left; PADDING-BOTTOM: 5px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 950px; PADDING-RIGHT: 0px; PADDING-TOP: 5px
+}
+.Search {
+	BORDER-BOTTOM: #cdcec3 1px solid; BORDER-LEFT: #cdcec3 1px solid; BACKGROUND: #f6f5f1; BORDER-TOP: #cdcec3 1px solid; BORDER-RIGHT: #cdcec3 1px solid
+}
+.Search .Title {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_006.gif) no-repeat 0px 0px; HEIGHT: 31px
+}
+.Search .Title H2 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; FLOAT: left; COLOR: #5a5a5a; FONT-SIZE: 14px; PADDING-TOP: 10px
+}
+.Search .Title UL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; FLOAT: right; PADDING-TOP: 5px
+}
+.Search .Title UL LI {
+	BORDER-BOTTOM: #cdcdc1 1px; TEXT-ALIGN: center; BORDER-LEFT: #cdcdc1 1px solid; LINE-HEIGHT: 25px; WIDTH: 102px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_007.gif) #eae9dd repeat-x 0px -25px; FLOAT: left; HEIGHT: 25px; COLOR: #5a5a5a; MARGIN-LEFT: 5px; FONT-SIZE: 14px; BORDER-TOP: #cdcdc1 1px solid; CURSOR: pointer; FONT-WEIGHT: bold; BORDER-RIGHT: #cdcdc1 1px solid
+}
+.Search .Title UL LI.selected {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_007.gif) #f6f5f0 repeat-x 0px 0px
+}
+.Search .Se_Cont {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #333; PADDING-TOP: 0px
+}
+.Search .Se_Cont .formCont {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; ZOOM: 1; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_011.gif) repeat-x 0px 100%; HEIGHT: 34px; PADDING-TOP: 12px
+}
+.Search .Se_Cont .hotKey {
+	LINE-HEIGHT: 29px; OVERFLOW: hidden
+}
+.Search A:link {
+	COLOR: #333
+}
+.Search A:visited {
+	COLOR: #333
+}
+.Search A:hover {
+	COLOR: #f00
+}
+.Search .submit_01 {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 65px; BORDER-TOP-STYLE: none; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_008.gif) no-repeat 0px 0px; HEIGHT: 20px; COLOR: #fff; BORDER-LEFT-STYLE: none
+}
+.Search SELECT {
+	COLOR: #333
+}
+.Search INPUT {
+	COLOR: #333
+}
+.Search .func {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_041.gif) repeat-x 0px 0px; FLOAT: right
+}
+.Search .func .print {
+	BORDER-LEFT: #dbd8c7 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 35px; WIDTH: 54px; PADDING-RIGHT: 0px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_025.gif) no-repeat 8px 6px; FLOAT: left; COLOR: #333; PADDING-TOP: 2px
+}
+.Search .func .download {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 35px; WIDTH: 102px; PADDING-RIGHT: 0px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_025.gif) no-repeat 8px -24px; FLOAT: left; BORDER-RIGHT: #f2f2ea 1px solid; PADDING-TOP: 2px
+}
+.Search .func A:link {
+	COLOR: #000; TEXT-DECORATION: none
+}
+.Search .func A:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+.Search .func A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.BotToolsBar {
+	BORDER-BOTTOM: #dbd8c7 1px solid; BORDER-LEFT: #dbd8c7 1px solid; MARGIN-TOP: 10px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_026.gif) #eae7de repeat-x 0px 0px; HEIGHT: 26px; BORDER-TOP: #dbd8c7 1px solid; BORDER-RIGHT: #dbd8c7 1px solid
+}
+.BotToolsBar .print {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 55px; WIDTH: 84px; PADDING-RIGHT: 0px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_025.gif) no-repeat 8px 6px; FLOAT: left; COLOR: #333; BORDER-RIGHT: #dbd8c7 1px solid; PADDING-TOP: 2px
+}
+.BotToolsBar .download {
+	BORDER-LEFT: #f2f2ea 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 35px; WIDTH: 102px; PADDING-RIGHT: 0px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_025.gif) no-repeat 8px -24px; FLOAT: left; BORDER-RIGHT: #dbd8c7 1px solid; PADDING-TOP: 2px
+}
+.BotToolsBar .toTop {
+	BORDER-LEFT: #f2f2ea 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 45px; PADDING-RIGHT: 0px; BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_mj_025.gif) no-repeat 8px -54px; FLOAT: left; PADDING-TOP: 2px
+}
+.BotToolsBar .null {
+	BORDER-LEFT: #f2f2ea 1px solid; WIDTH: 336px; FLOAT: left; HEIGHT: 26px; BORDER-RIGHT: #dbd8c7 1px solid
+}
+.BotToolsBar .null_1 {
+	BORDER-LEFT: #f2f2ea 1px solid; WIDTH: 474px; FLOAT: left; HEIGHT: 26px; BORDER-RIGHT: #dbd8c7 1px solid
+}
+.BotToolsBar A:link {
+	COLOR: #333; TEXT-DECORATION: none
+}
+.BotToolsBar A:visited {
+	COLOR: #333; TEXT-DECORATION: none
+}
+.BotToolsBar A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.BotToolsBar .BTB_Cont {
+	PADDING-RIGHT: 10px; FLOAT: right
+}
+TABLE.mainTab {
+	MARGIN-TOP: 10px; WIDTH: 100%; BORDER-COLLAPSE: collapse
+}
+.mainTab TD {
+	BORDER-BOTTOM: #dbd8c5 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #dbd8c5 1px solid; LINE-HEIGHT: 28px; BORDER-TOP: #dbd8c5 1px solid; BORDER-RIGHT: #dbd8c5 1px solid
+}
+.mainTab .top TD {
+	BACKGROUND: #f6f5f0; HEIGHT: 40px; COLOR: #696969
+}
+.mainTab .top .tmpL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 4px
+}
+.mainTab .top .tmpR {
+	PADDING-LEFT: 20px; PADDING-RIGHT: 8px;  FLOAT: right
+}
+.mainTab .top .tmpR IMG {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; MARGIN-LEFT: 1px; VERTICAL-ALIGN: middle; PADDING-TOP: 1px
+}
+.mainTab .top SPAN {
+	COLOR: #f88101
+}
+.mainTab .top SPAN A {
+	COLOR: #f88101; TEXT-DECORATION: none
+}
+.mainTab .top SPAN A:hover {
+	TEXT-DECORATION: underline
+}
+.mainTab TH {
+	BORDER-BOTTOM: #dbd8c5 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #dbd8c5 1px solid; BACKGROUND: #807061; COLOR: #fff
+}
+.mainTab TH.on {
+	BACKGROUND: #f78701
+}
+.mainTab TH.matchDate {
+	LINE-HEIGHT: 28px; WIDTH: 145px; BACKGROUND: url(ay_lmy_007.gif) repeat-x; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 14px; FONT-WEIGHT: normal
+}
+.mainTab TH SPAN {
+	 DISPLAY: block; 
+}
+.mainTab TH SPAN.day_MON {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center 0px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_TUE {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -35px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_WED {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -70px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_THU {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -105px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_FRI {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -140px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_SAT {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -175px; CURSOR: pointer
+}
+.mainTab TH SPAN.day_SUN {
+	BACKGROUND: url(http://www.sinaimg.cn/ty/olympic08/match/m1/ay_lmy_010.gif) no-repeat center -210px; CURSOR: pointer
+}
+.mainTab TD.leSort {
+	TEXT-ALIGN: left; PADDING-LEFT: 25px
+}
+.mainTab TD.match {
+	TEXT-ALIGN: center; BACKGROUND: url(ay_lmy_006.jpg) no-repeat ;  HEIGHT: 28px; CURSOR: pointer
+}
+.mainTab .allMatch TD {
+	BACKGROUND: #f6f5f0
+}
+.mainTab SPAN.medal {
+	TEXT-ALIGN: center; LINE-HEIGHT: 21px; MARGIN: 0px auto; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(ay_mj_016.gif) no-repeat; HEIGHT: 21px; COLOR: #b72100; OVERFLOW: hidden; FONT-WEIGHT: bold
+}
+.footer {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px; MARGIN-TOP: 10px; COLOR: #666; BORDER-TOP: #9c9c9c 1px solid; PADDING-TOP: 10px
+}
+#printFlyDiv {
+	DISPLAY: none
+}
