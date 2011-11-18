@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- #start 权限系统 -->
+	<bean id="idButtonService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdButtonServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="idMenuService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdMenuServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="idRoleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdRoleServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="idGroupService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdGroupServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="idUserService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdUserServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<!-- 菜单按钮配置 -->
+	<bean id="idMenuButtonService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.identity.service.impl.IdMenuButtonServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<!-- #end 权限系统 -->
+	<!-- service end -->
+	
+	<!-- action start -->
+	<!-- #start 权限系统 -->
+	<bean id="idButtonAction" class="com.yszoe.identity.action.IdButtonAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idButtonService"></property>
+	</bean>
+	<bean id="idUserAction" class="com.yszoe.identity.action.IdUserAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idUserService"></property>
+	</bean>
+	<bean id="idMenuAction" class="com.yszoe.identity.action.IdMenuAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idMenuService"></property>
+	</bean>
+	<bean id="idRoleAction" class="com.yszoe.identity.action.IdRoleAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idRoleService"></property>
+	</bean>
+	<bean id="idGroupAction" class="com.yszoe.identity.action.IdGroupAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idGroupService"></property>
+	</bean>
+	<!-- 菜单按钮配置 -->
+	<bean id="idMenuButtonAction" class="com.yszoe.identity.action.IdMenuButtonAction"
+		autowire="byName" scope="prototype">
+		<property name="baseService" ref="idMenuButtonService"></property>
+	</bean>
+	<!-- #end 权限系统 -->
+
+	<!-- action end -->
+
+</beans>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+	<!-- 信息发布栏目管理 -->
+	<bean id="cmsSortAction" class="com.yszoe.cms.action.CmsSortAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsSortService"/>
+	</bean>
+	<!-- 信息发布内容审核 -->
+	<bean id="cmsApproveArticleAction" class="com.yszoe.cms.action.CmsApproveArticleAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsApproveArticleService"/>
+	</bean>
+	<!-- 信息发布内容供稿 -->
+	<bean id="cmsMyArticleAction" class="com.yszoe.cms.action.CmsMyArticleAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsMyArticleService"/>
+	</bean>
+	<!-- 信息发布评论信息管理 -->
+	<bean id="cmsApproveCommentAction" class="com.yszoe.cms.action.CmsApproveCommentAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsApproveCommentService"/>
+	</bean>
+	<!-- 信息发布查看我的评论信息 -->
+	<bean id="cmsMyCommentAction" class="com.yszoe.cms.action.CmsMyCommentAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsMyCommentService"/>
+	</bean>
+	<!-- 信息发布查看我的文章（管理员） -->
+	<bean id="cmsAdminArticleAction" class="com.yszoe.cms.action.CmsAdminArticleAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="cmsAdminArticleService"/>
+	</bean>
+	
+	<!-- 生产监测指标字典维护 -->
+	<bean id="scjcCodeAction" class="com.yszoe.biz.action.ScjcCodeAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcCodeService"></property>
+	</bean>
+	<!-- 生产监测任务维护 -->
+	<bean id="scjcDutyAction" class="com.yszoe.biz.action.ScjcDutyAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcDutyService"></property>
+	</bean>
+	<!-- 生产监测信息登记-->
+	<bean id="scjcXxAction" class="com.yszoe.biz.action.ScjcXxAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcXxService"></property>
+	</bean>
+	<!-- 生产监测预警-->
+	<bean id="scjcYjAction" class="com.yszoe.biz.action.ScjcYjAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcYjService"></property>
+	</bean>
+	<!-- 生产监测统计分析-->
+	<bean id="scjcTjfxAction" class="com.yszoe.biz.action.ScjcTjfxAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcTjfxService"></property>
+	</bean>
+	<!-- 查看下级场的监测任务 -->
+	<bean id="scjcFarmAction" class="com.yszoe.biz.action.ScjcFarmAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="scjcFarmService"></property>
+	</bean>
+	<!-- 专家信息维护 -->
+	<bean id="expertqaExpertsAction" class="com.yszoe.biz.action.ExpertqaExpertsAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaExpertsService"></property>
+	</bean>
+	<!-- 专家信息自我维护 -->
+	<bean id="expertqaExpertsMineAction" class="com.yszoe.biz.action.ExpertqaExpertsMineAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaExpertsMineService"></property>
+	</bean>
+	<!-- 管理员问题信息维护 -->
+	<bean id="expertqaManage4adminAction" class="com.yszoe.biz.action.ExpertqaAppealAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaAppealService"></property>
+	</bean>
+	<!-- 问题信息维护 -->
+	<bean id="expertqaAppealaddAction" class="com.yszoe.biz.action.ExpertqaAppealaddAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaAppealaddService"></property>
+	</bean>
+	<!-- 专家问题信息维护 -->
+	<bean id="expertqaAnswerAction" class="com.yszoe.biz.action.ExpertqaAnswerAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaAnswerService"></property>
+	</bean>
+	<!-- 向专家提问 -->
+	<bean id="expertqaQuestionAction" class="com.yszoe.biz.action.ExpertqaQuestionAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="expertqaQuestionService"></property>
+	</bean>
+	<!-- 品种品系字典维护 -->
+	<bean id="codePzpxAction" class="com.yszoe.biz.action.CodePzpxAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="codePzpxService"></property>
+	</bean>
+	<!-- 支持AJAX的action。返回json数据 -->
+	<bean id="ajaxBizAction" class="com.yszoe.biz.action.AjaxBizAction" scope="prototype">
+		<property name="ajaxBizService" ref="ajaxBizService"/>
+	</bean>
+	<!-- 管理员维护种畜禽场信息 -->
+	<bean id="zxqcDjAction" class="com.yszoe.biz.action.ZxqcDjAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcDjService"></property>
+	</bean>	
+	<!-- 管理员维护查询并审核种畜禽场信息 -->
+	<bean id="zxqcCxAction" class="com.yszoe.biz.action.ZxqcCxAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcCxService"></property>
+	</bean>
+	<!-- 管理员维护查询并审核种畜禽场信息 -->
+	<bean id="zxqcCxMineAction" class="com.yszoe.biz.action.ZxqcCxMineAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcCxMineService"></property>
+	</bean>
+	<!-- 按年度统计各个区县各畜种养殖情况 -->
+	<bean id="zxqcNdtjAction" class="com.yszoe.biz.action.ZxqcNdtjAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcNdtjService"></property>
+	</bean>
+	<!-- 按年度品种统计 -->
+	<bean id="zxqcNdpztjAction" class="com.yszoe.biz.action.ZxqcNdpztjAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcNdpztjService"></property>
+	</bean>
+	<!-- 变更申请 -->
+	<bean id="zxqcBgsqAction" class="com.yszoe.biz.action.ZxqcBgsqAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcBgsqService"></property>
+	</bean>
+	<!-- 用户变更申请查询 -->
+	<bean id="zxqcBgsqMineAction" class="com.yszoe.biz.action.ZxqcBgsqMineAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcBgsqMineService"></property>
+	</bean>
+	<!-- 注册种畜禽场用户 -->
+	<bean id="publiczxqcSqxxAction" class="com.yszoe.biz.action.ZxqcSqxxAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="zxqcSqxxService"></property>
+	</bean>
+	<!-- 游客向专家提问 -->
+	<bean id="publicquestionAction" class="com.yszoe.biz.action.QuestionAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="questionService"></property>			
+	</bean>
+	
+</beans>
