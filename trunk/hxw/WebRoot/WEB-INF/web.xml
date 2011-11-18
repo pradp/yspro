@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring-*.xml</param-value>
+	</context-param>
+	<context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>globalMessages</param-value>
+    </context-param>
+    <!-- ehcache needed for support http proxies  -->
+	<context-param>
+        <param-name>varyHeader</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+	<!-- 页面缓存配置 ehcache -->
+	<filter>
+		<filter-name>SimplePageCachingFilter</filter-name>
+		<filter-class>net.sf.ehcache.constructs.web.filter.SimplePageCachingFilter</filter-class>
+		<init-param>
+			<param-name>suppressStackTrace</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cacheName</param-name>
+			<param-value>SimplePageCachingFilter</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SimplePageCachingFilter</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	<!-- 页面片段缓存配置 ehcache -->
+	<filter>
+		<filter-name>StaticPageFragmentCachingFilter</filter-name>
+		<filter-class>net.sf.ehcache.constructs.web.filter.SimplePageFragmentCachingFilter</filter-class>
+		<init-param>
+			<param-name>suppressStackTrace</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cacheName</param-name>
+			<param-value>StaticPageFragmentCachingFilter</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>StaticPageFragmentCachingFilter</filter-name>
+		<url-pattern>/WEB-INF/view/jsp/cms/public/common/foot.jsp</url-pattern>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>Struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>0</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.jhtm</url-pattern>
+		<url-pattern>/rss/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>autosuggest</servlet-name>
+		<servlet-class>com.yszoe.sys.servlets.AutoSuggest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>autosuggest</servlet-name>
+		<url-pattern>/suggest/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SysInitAutoLoad</servlet-name>
+		<servlet-class>com.yszoe.sys.servlets.SysInitAutoLoad</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ajaxLogin</servlet-name>
+		<servlet-class>com.yszoe.sys.servlets.AjaxLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ajaxLogin</servlet-name>
+		<url-pattern>/ajaxLogin/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>u_v_i_c</servlet-name>
+		<servlet-class>
+			com.yszoe.identity.servlets.ValidateImage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>u_v_i_c</servlet-name>
+		<url-pattern>/generateImage/u_v_i_c</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<servlet-class>
+			net.fckeditor.connector.ConnectorServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<!-- Do not wrap this line otherwise Glassfish will fail to load this file -->
+		<url-pattern>/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/springtags</taglib-uri>
+			<taglib-location>/WEB-INF/TLD/spring.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/TLD/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+			<taglib-location>/WEB-INF/TLD/fmt.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

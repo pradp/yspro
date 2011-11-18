@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+            http://www.springframework.org/schema/context  
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+            http://www.springframework.org/schema/tx  
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<!-- 自动搜索@Controller标注的类 -->
+	<context:component-scan base-package="com.yszoe.cms.controller,com.yszoe.biz.controller" />
+
+	<!--
+		上面一句搞定加载所有注解形式的controller。或者用下面这种形式，但是每个controller都要写明。
+		<mvc:annotation-driven /> <bean id="ysCtrler"
+		class="com.yszoe.baseline.controller.YsCtrler"></bean>
+	-->
+	<!-- 针对类、方法级别的拦截器 -->
+	<mvc:interceptors>
+	    <mvc:interceptor>
+	        <mvc:mapping path="/member/**" />
+	        <bean class="com.yszoe.identity.springinterceptor.CheckLoginInterceptor4springmvc"></bean>    
+	    </mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="globalMessages">
+		<property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+	
+	<!-- @ResponseBody注解 中文乱码编码问题解决 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
+	   <property name="messageConverters"> 
+	         <list> 
+	             <bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+	                <property name="supportedMediaTypes"> 
+	                     <list> 
+	                         <value>text/plain;charset=UTF-8</value> 
+	                     </list> 
+	                </property> 
+	             </bean> 
+	         </list> 
+	   </property>
+	</bean>
+	
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.InternalResourceView" />
+		<property name="prefix" value="/WEB-INF/view/jsp/" />
+		<property name="suffix" value="" />
+		<property name="order"><value>0</value></property>
+	</bean>
+	
+	<!-- 可加入其他视图技术如 volacity jstl等
+	<bean id="freemarkerViewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="cache" value="true" />
+		<property name="prefix" value="/WEB-INF/view/freemarker/" />
+		<property name="suffix" value=".ftl" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="order"><value>1</value></property>
+	</bean>
+	-->
+
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="/common/error.jsp" />
+	</bean>
+	
+</beans>

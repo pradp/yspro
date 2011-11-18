@@ -1,0 +1,12 @@
+此目录下的文件作为模板之用。
+注意，各个项目的界面样式可能不同，所以模板文件仅供参考标签输出之用。
+文件的html样式根据实际项目调整。
+
+1、struts2
+使用struts2的标签输出
+文件名一般有规则
+
+2、springmvc
+使用jstl el表达式输出
+文件名由controller类确定，约定URL形式：http://www.123.com/appName/../modelName/methodName.jhtm 
+
