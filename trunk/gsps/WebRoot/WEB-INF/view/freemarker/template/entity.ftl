@@ -1,1 +1,0 @@
-<#include "input.ftl" parse="true">
