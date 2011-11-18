@@ -1,4 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="com.yszoe.framework.util.DBUtil"%>
+<%@page import="com.yszoe.cms.entity.TXxfbLm"%>
+<%@page import="com.yszoe.cms.util.CachedQuery"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 	<link type="text/css" rel="stylesheet" href="../faceui/css/front.css"/>
@@ -89,34 +92,35 @@ document.onclick = mclose;
 <%--header_begin--%>
 <div id="header" class="box">
   <div id="logo" class="page box">
-    <div class=""><img src="../faceui/images/index_03.gif" border="0" width="960" /></div>
+    <div class=""><img src="../faceui/images/logo.gif" border="0" width="960" /></div>
   </div>
   	<fmt:bundle basename="sysconfig" >
     <div id="menu" class="page box relative" align="center">
       <ul id="headmenu">
 	   <li class="menu_first"><a href="../index.jsp" id="index"><span>首 页</span></a></li>
-	   <li><a href="../channel/tzgg.jhtm" id="tzgg"><span>通知公告</span></a></li>
-	   <li><a href="../farms/index.jhtm" id="farms"><span>种畜禽场</span></a></li>
-	   <li><a href="#" id="zzyz" onmouseover="mopen('m1')" onmouseout="mclosetime()"><span>种猪育种</span></a>
-	       <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-		           <a href="http://www.bcage.org.cn/docc/zcxx.jsp" target="_blank">综合查询</a>
-		           <a href="http://www.bcage.org.cn/docc/cdxxquery.jsp?sendLocation=/docc/cdxxquery.jsp" target="_blank">网络育种</a>
+	   <li><a href="../public/takeiteasy.jhtm" id="xlzx"><span>心理咨询</span></a></li>
+	   <li><a href="../public/dosamething.jhtm" id="xlcs"><span>心理测试</span></a></li>
+	   <%
+	    java.util.List<TXxfbLm> lms = CachedQuery.getCmsChannels();
+	    for(TXxfbLm lm : lms){
+	    	if("000".equals(lm.getParentwid())){//一级栏目
+	    %>
+	   <li><a href="../channel/<%=lm.getLmbm() %>.jhtm" id="<%=lm.getLmbm() %>" onmouseover="mopen('m<%=lm.getLmbm() %>')" onmouseout="mclosetime()"><span><%=lm.getLmmc() %></span></a>
+	       <div id="m<%=lm.getLmbm() %>" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+	   <%
+			    for(TXxfbLm lmSon : lms){
+			    	if(lm.getWid().equals(lmSon.getParentwid())){
+	    %>
+		           <a href="../channel/<%=lmSon.getLmbm() %>.jhtm"><%=lmSon.getLmmc() %></a>
+	    <%
+			    	}
+			    }
+	    %> 
 	       </div>
 	   </li>
-	   <li><a href="../logindhi.jsp" id="dhi"><span style="font-family:新宋体;">奶牛DHI</span></a></li>
-	   <li><a href="../identity/index.action" id="scjc"><span>生产监测</span></a></li>
-	   <li><a href="../channel/zhzx.jhtm" onmouseover="mopen('m2')" onmouseout="mclosetime()" id="zxdt1"><span>综合资讯</span></a>
-	      <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-	           <a href="../channel/zxdt.jhtm">中心动态</a>
-	           <a href="../channel/hydt.jhtm">行业动态</a>
-		       <a href="../channel/gfbz.jhtm">规范标准</a>
-		       <a href="../channel/zcfg.jhtm">政策法规</a>
-	       </div>
-	   </li>
-	   <li><a href="../channel/pzjs.jhtm" id="pzjs"><span>品种介绍</span></a></li>
-       <li><a href="../channel/fyjs.jhtm" id="fyjs"><span>繁育技术</span></a></li>
-	   <li><a href="../answer/index.jhtm" id="answer"><span>网上答疑</span></a></li>
-       <li><a href="../channel/zlxz.jhtm" id="zlxz"><span>资料下载</span></a></li>
+	    <%} 
+	    }%> 
+	   <li><a href="../bbs" id="bbs"><span>互助论坛</span></a></li>
 	 </ul>   
     </div>
     </fmt:bundle>

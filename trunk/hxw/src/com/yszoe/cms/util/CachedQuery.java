@@ -28,7 +28,7 @@ public class CachedQuery {
 
 	@SuppressWarnings("unchecked")
 	public static final List<TXxfbLm> refreshedCmsChannels(){
-	    String sql = "select wid, lmmc, lmbm from t_xxfb_lm where state=1 order by ordernum, wid";
+	    String sql = "select * from t_xxfb_lm where state=1 order by length(wid), ordernum";
 	    lms = (List<TXxfbLm>)DBUtil.queryAllBeanList(sql, TXxfbLm.class);
 	    return lms;
 	}
@@ -39,9 +39,9 @@ public class CachedQuery {
 	 * @return 不存在的话，返回 null
 	 */
 	public static final String getCmsChannelIdByLmbm(String lmbm){
-		if(lms.isEmpty() || StringUtil.isBlank(lmbm)){
+//		if(lms.isEmpty() || StringUtil.isBlank(lmbm)){
 		    lms = refreshedCmsChannels();
-		}
+//		}
 		for(TXxfbLm lm : lms){
 			if(lmbm.equals(lm.getLmbm())){
 				return lm.getWid();

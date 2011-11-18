@@ -7,7 +7,7 @@
     <title>${lmbean.lmmc } - <fmt:message key="application_name"/></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-	<script type="text/javascript" src="../resources/jquery/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="../resources/jquery/jquery-1.6.4.min.js"></script>
 	<!--分页start-->
 	<script type="text/javascript" src="../component/jquery.pagination/jquery.pagination.js"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="../component/jquery.pagination/pagination.css" />

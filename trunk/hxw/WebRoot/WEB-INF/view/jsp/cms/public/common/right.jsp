@@ -21,21 +21,21 @@
  <%--right_begin--%>
   <div class="w250 fr">
     <div class="rb_right_top">
-      <h2>最新加入场:</h2>
+      <h2>推荐课程</h2>
     </div>
   <div class="rb_right_div">
-     <!--最新加入场Begin-->
+     <!--推荐课程Begin-->
        <div class="w98">
          <ul class="order">
-           <c:forEach var="Zxentity" items="${indexPageQuery.farmslist}" varStatus="status">
-           <li><a href="../farms/${Zxentity.departnamePy}.jhtm" target="_blank">${Zxentity.departname}</a></li>
-           </c:forEach>
+          <c:forEach var="Tjentity" items="${indexPageQuery.tjlist}" varStatus="status">
+	        <li><a href="../html/${Tjentity.lmwid }-${Tjentity.wid}.jhtm" target="_blank" title="${Tjentity.bt}">${Tjentity.bt}</a></li> 
+	      </c:forEach>
          </ul>
       </div>
-    <!--最新加入场End-->
+    <!--End-->
     <div id="ktabs">
-    <!--热门文章_Begin-->
-      <h2>热门文章</h2>
+    <!--热门活动_Begin-->
+      <h2>热门活动</h2>
       <div>
         <ul class="order">
           <c:forEach var="Rmentity" items="${indexPageQuery.rmlist}" varStatus="status">
@@ -43,9 +43,9 @@
 	      </c:forEach>
         </ul>
       </div>
-    <!--热门文章_End-->
-    <!--编辑推荐_Begin-->
-       <h2>编辑推荐</h2>
+    <!--_End-->
+    <!--最新文库_Begin-->
+       <h2>最新文库</h2>
        <div>
         <ul class="order">
           <c:forEach var="Tjentity" items="${indexPageQuery.tjlist}" varStatus="status">
@@ -53,10 +53,10 @@
 	      </c:forEach>
         </ul>
        </div>
-    <!--编辑推荐_End-->
+    <!--_End-->
     </div>
    <!-- 在线答疑_begin -->
-    <h2><span>在线答疑：</span></h2>
+    <h2><span>在线答疑</span></h2>
 	<div class="w98">
 	  <dl class="rmpl">
 	       <c:forEach var="Dyentity" items="${indexPageQuery.answerList}" varStatus="status" begin='0' end='3'>
