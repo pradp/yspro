@@ -13,16 +13,16 @@
 <jsp:useBean id="showBean" scope="application" class="com.yszoe.biz.IndexPageQuery" />
 <%
 //用于循环查询各栏目得出最新10条	
-String[] lmWids = {"20110704111911642101","20110707094012783101","20110729170433754102","20110727111128093108","20110729170408799101"};
+String[] lmWids = {"000001","000002001","000002003","000002002","000002004"};
 	
 	String tzgg = lmWids[0];//通知公告 
 	String zxdt = lmWids[1];//中心动态 
 	String gfbz = lmWids[2];//规范标准 
 	String hydt = lmWids[3];//行业动态 
 	String zcfg = lmWids[4];//政策法规 
-	String zlxz = "20110729170541030105";//资料下载
-	String pzjs = "20110729170452970103";//品种介绍 
-	String fyjs = "20110729170511058104";//繁育技术
+	String zlxz = "000005";//资料下载
+	String pzjs = "000007";//品种介绍 
+	String fyjs = "000008";//繁育技术
 
 	//String DhiLogoutUrl = SysConfigUtil.getString("DhiLogoutUrl");
 	
@@ -40,6 +40,7 @@ String[] lmWids = {"20110704111911642101","20110707094012783101","20110729170433
 		<script type="text/javascript" src="faceui/js/common.js"></script>
 		<script type="text/javascript" src="faceui/js/tab.js"></script>
 		<script type="text/javascript" src="faceui/js/wsdyIndex.js"></script>
+		<script type="text/javascript" src="faceui/js/indexSy.js"></script>
 		<style type="text/css">
 		body{
 			background-color: #FFFFFF
@@ -87,69 +88,6 @@ String[] lmWids = {"20110704111911642101","20110707094012783101","20110729170433
 			color: #FFF
 		}
 		</style>
-		<script type="text/javascript">
-		//判断浏览器 
-		$(function(){
-		   if (window.ActiveXObject){
-                $("input[type=text]").css("width","95px");
-                $("select").css("width","100px");
-                $("#inputCS input[type=text]").css("width","35px");
-		        $("#tableCSS input[type=text]").css("width","150px");
-		        $("#tableCSS select").css("width","74px");
-		        $("#yqlj select").css("width","235px");
-           }else{
-	        	$("input[type=text]").css("width","125px");
-                $("select").css("width","130px");
-                $("#TJFX select").css("width","120px");
-                $("#inputCS input[type=text]").css("width","50px");
-		        $("#tableCSS input[type=text]").css("width","163px");
-		        $("#tableCSS select").css("width","80px");
-		        $("#yqlj select").css("width","235px");
-	        	}
-	    })
-		function MM_jumpMenu(targ,selObj,restore){ //v3.0
-		  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-		  if (restore) selObj.selectedIndex=0;
-		}
-		
-		var timeout	= 500;
-		var closetimer	= 0;
-		var ddmenuitem	= 0;
-		// open hidden layer
-		function mopen(id){	
-			// cancel close timer
-			mcancelclosetime();
-			// close old layer
-			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-			// get new layer and show it
-			ddmenuitem = document.getElementById(id);
-			ddmenuitem.style.visibility = 'visible';
-		}
-		// close showed layer
-		function mclose(){
-			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-		}
-		// go close timer
-		function mclosetime(){
-			closetimer = window.setTimeout(mclose, timeout);
-		}
-		// cancel close timer
-		function mcancelclosetime(){
-			if(closetimer){
-				window.clearTimeout(closetimer);
-				closetimer = null;
-			}
-		}
-
-		$(function(){
-			$(".button").css({
-				"width":"72px","height":"25px",
-				"background-image":"url('faceui/images/button_bg.gif')",
-				"border": "0px solid #83B1F2","color":"#FFFFFF","font-size":"12px","cursor":"pointer"});
-		})
-		// close layer when click-out
-		document.onclick = mclose; 
-		</script>
 	</head>
 
 	<body>
@@ -172,11 +110,12 @@ String[] lmWids = {"20110704111911642101","20110707094012783101","20110729170433
 		   </li>
 		   <li><a href="logindhi.jsp" id="dhi"><span style="font-family:新宋体;">奶牛DHI</span></a></li>
 		   <li><a href="identity/index.action" id="scjc"><span style="font-family:新宋体;">生产监测</span></a></li>
-		   <li><a href="channel/zxdt1.jhtm" class="hide" id="zxdt1" onmouseover="mopen('m2')" onmouseout="mclosetime()"><span>资讯动态</span></a>
+		   <li><a href="channel/zhzx.jhtm" class="hide" id="zxdt1" onmouseover="mopen('m2')" onmouseout="mclosetime()"><span>综合资讯</span></a>
 		      <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
 		           <a href="channel/zxdt.jhtm">中心动态</a>
 		           <a href="channel/hydt.jhtm">行业动态</a>
 		           <a href="channel/gfbz.jhtm">规范标准</a>
+		           <a href="channel/zcfg.jhtm">政策法规</a>
 		       </div>
 		   </li>
 		   <li><a href="channel/pzjs.jhtm" id="pzjs" class="hide"><span>品种介绍</span></a></li>
@@ -239,26 +178,13 @@ AC_FL_RunContent(
 </script>
 							</div>
 							<div class="shrd">
-
 								<h2>
 									<a href="farms/index.jhtm" " target="_blank">种畜禽场展示</a>
 								</h2>
-								<ul class="order">
-												<%
-													List zxqcs = showBean.getFarmslist();
-													if (null != zxqcs) {
-														for (int a = 0; a < zxqcs.size(); a++) {
-															TSysDepart zxqc_1 = (TSysDepart) zxqcs.get(a);
-												%>
-												<li>
-													<a href="farms/<%=zxqc_1.getDepartnamePy()%>.jhtm"
-														target="_blank" title="<%=zxqc_1.getDepartname()%>"> <%=StringUtil.getShortTitle(zxqc_1.getDepartname(), 15)%></a>
-												</li>
-												<%
-														}
-													}
-												%>
-								</ul>
+								    <div id="scrollBox2" style="height: 145px;overflow:hidden;line-height:24px;">
+								        <ul class="order">
+									    </ul>
+								</div>			
 							</div>
 						</div>
 						<div class="w400 fr">
@@ -426,13 +352,13 @@ AC_FL_RunContent(
 				</div>
 				<!--mright_end-->
 			</div>
-				<!-- 服务通道区域  开始 -->
-				 <%@include file="indexMiddleTab.jsp" %>
-				<!-- 服务通道区域  结束 -->
 
 				<%-- 品种介绍 bigin --%>
-				<div class="page2">
-					<ul class="jctw">
+				<div id="scrollBox">
+				    <h2>
+					   <a href="channel/pzjs.jhtm" target="_blank">品种介绍</a>
+					</h2>
+					<ul class="jctw" id="scrolls">
 						<%
 							List pzjss = showBean.getTop10ArticlesByChannel(pzjs);
 							if (null != pzjss) {
@@ -440,9 +366,6 @@ AC_FL_RunContent(
 									TXxfbWz pzjs_1 = (TXxfbWz) pzjss.get(t);
 									if (t == 0) {
 						%>
-						<h2>
-							<a href="channel/<%=pzjs_1.getLmwid()%>.jhtm" target="_blank"><%=pzjs_1.getFbt()%></a>
-						</h2>
 						<%
 							}
 						%>

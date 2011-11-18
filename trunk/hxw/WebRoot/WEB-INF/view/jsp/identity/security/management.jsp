@@ -30,20 +30,6 @@
 	} else if (tsysMenues.isEmpty()) {
 		sysMessage = "用户没有被分配菜单，或者权限被禁用！";
 	}
-	String DhiLogoutUrl = SysConfigUtil.getString("DhiLogoutUrl");
-	//获取提示信息
-	List<TSysMessageCtrl> listMessageCtrl = SysInitAutoLoad.listMessageCtrl;
-	List<TSysMessageCtrl> list = new ArrayList<TSysMessageCtrl>();
-	for (int i = 0; i < listMessageCtrl.size(); i++) {
-		TSysMessageCtrl t = listMessageCtrl.get(i);
-		if (t.getDeparttype().equals(tdepart.getDeparttype())) {
-			long c = DBUtil.count(t.getSql(), tdepart.getDepartid() + "%");
-			if(c>0){
-				t.setCount(c);
-				list.add(t);
-			}
-		}
-	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -74,52 +60,12 @@
 <script type="text/javascript" src="js/method/pngFix/supersleight.js"></script>
 <!--修正IE6支持透明png图片end-->
 
-<!--弹出式提示框start-->
-<script type="text/javascript" src="js/attention/messager.js"></script>
-<script>
-	$(function(){
-		var count_list = <%=list.size()%>;
-		if(count_list != 0){
-			setTimeout("openMsg()",1000);
-		}
-	})
-	function openMsg(){
-		$.messager.lays(250, 180);
-		$.messager.show(0,'<ul>'
-		<%for (int i = 0; i < list.size(); i++) {
-			TSysMessageCtrl t = list.get(i);
-			if(t.getCount()>0){	
-		%>	
-		+'<li style="padding-top:10px"><span class="icon_lightOn">&nbsp;&nbsp;<a href="javascript:openWin(\'<%=t.getMenuid()%>\',\'<%=t.getMenupath()%>\')"><%=t.getName()%>：<%=t.getCount()%>条</span></a></li><div class="clear"></div>'
-		<%}}%>
-		+'</ul>','stay');
-		$(".box_msg_title").html("待办提醒");
-	}
-	function openWin(menuid,menupath){
-		var ifr1=document.getElementById('frmleft');
-		var me_up = ifr1.contentWindow.document.getElementById(menuid.substr(0,6));
-		if($(me_up).next("ul").css("display")=='none'){
-			$(me_up).click();
-		}
-		var me = ifr1.contentWindow.document.getElementById(menuid);
-		$(me).find("a span").click();
-		if($.browser.mozilla){ //火狐不支持非input控件的click()
-			document.getElementById('frmright').src = "../"+menupath;
-		}
-	}
-</script>
-<!--弹出式提示框end-->
-
 <script type="text/javascript">
 if(top.location != self.location){
 	top.location = self.location;
 }
 	var basePath = '<%=basePath%>';
 	function execLogout(){
-		//项目集成DHI系统，所以这里登出两个平台。
-		var dhiurl = "<%=DhiLogoutUrl%>?"+(new Date()).getTime();
-		//jQuery.getJSON(dhiurl);
-		Dialog.open({URL:dhiurl, Title:"退出DHI", Modal:false});
 		window.location = "../identity/logout.action?" + (new Date()).getTime();
 	}
 	$(function(){
@@ -238,7 +184,7 @@ a {
 					document.write(currentime)
 				</script>
 			</td>
-			<td width="90px" nowrap="nowrap">
+			<td width="100px" nowrap="nowrap">
 					&nbsp;&nbsp;字号:
 					<span class="fontChange"><a href="javascript:;" setFont="16">大</a></span>
 					<span class="fontChange"><a href="javascript:;" setFont="14">中</a></span>

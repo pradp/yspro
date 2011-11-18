@@ -105,11 +105,12 @@ document.onclick = mclose;
 	   </li>
 	   <li><a href="../logindhi.jsp" id="dhi"><span style="font-family:新宋体;">奶牛DHI</span></a></li>
 	   <li><a href="../identity/index.action" id="scjc"><span>生产监测</span></a></li>
-	   <li><a href="../channel/zxdt1.jhtm" onmouseover="mopen('m2')" onmouseout="mclosetime()" id="zxdt1"><span>资讯动态</span></a>
+	   <li><a href="../channel/zhzx.jhtm" onmouseover="mopen('m2')" onmouseout="mclosetime()" id="zxdt1"><span>综合资讯</span></a>
 	      <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
 	           <a href="../channel/zxdt.jhtm">中心动态</a>
 	           <a href="../channel/hydt.jhtm">行业动态</a>
 		       <a href="../channel/gfbz.jhtm">规范标准</a>
+		       <a href="../channel/zcfg.jhtm">政策法规</a>
 	       </div>
 	   </li>
 	   <li><a href="../channel/pzjs.jhtm" id="pzjs"><span>品种介绍</span></a></li>

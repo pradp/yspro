@@ -27,64 +27,6 @@
 	<!-- 信息发布 查看我的文章（管理员） -->
 	<bean id="cmsAdminArticleService" class="com.yszoe.cms.service.impl.CmsAdminArticleServiceImpl" autowire="byName" />
 	
-	<!-- 生产监测指标字典维护 -->
-	<bean id="scjcCodeService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ScjcCodeServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 生产监测任务维护 -->
-	<bean id="scjcDutyService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ScjcDutyServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 生产监测信息登记 -->
-	<bean id="scjcXxService" class="com.yszoe.biz.service.impl.ScjcXxServiceImpl" autowire="byName" />
-	<!-- 生产监测预警-->
-	<bean id="scjcYjService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ScjcYjServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 生产监测统计分析-->
-	<bean id="scjcTjfxService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ScjcTjfxServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 查看下级场的监测任务 -->
-	<bean id="scjcFarmService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ScjcFarmServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-
-	<!-- 定时任务：定时监测任务，过期时更新状态为已过期-->
-	<bean id="scjcTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-		<property name="jobDetail">
-			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
-				<property name="jobClass" value="com.yszoe.biz.service.ScjcJob" />
-			</bean>
-		</property>
-		<!-- 每天0点执行 -->
-		<property name="cronExpression" value="0 0 0 * * ?" />
-		<!-- 指定每天17:03:00执行 <property name="cronExpression" value="0 03 17 * * ?" /> -->
-	</bean>
-	<!-- 定时器 -->
-	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
-		autowire="no">
-		<property name="triggers">
-			<list>
-				<ref bean="scjcTrigger" />
-			</list>
-		</property>
-	</bean>
 	<!-- 专家信息维护 -->
 	<bean id="expertqaExpertsService" parent="txProxyTemplate">
 		<property name="target">
@@ -134,74 +76,9 @@
 				autowire="byName" />
 		</property>
 	</bean>
-	<!-- 品种品系字典维护  -->
-	<bean id="codePzpxService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.CodePzpxServiceImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员维护种畜禽场信息 -->
-	<bean id="zxqcDjService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcDjImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员维护种畜禽场规模信息 -->
-	<bean id="zxqcCxService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcCxImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员维护种畜禽场规模信息 -->
-	<bean id="zxqcCxMineService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcCxMineImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员维护种畜禽场规模信息 -->
-	<bean id="zxqcNdtjService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcNdtjImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 按年度品种统计 -->
-	<bean id="zxqcNdpztjService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcNdpztjImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 变更申请 -->
-	<bean id="zxqcBgsqService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcBgsqImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 用户变更申请查询 -->
-	<bean id="zxqcBgsqMineService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcBgsqMineImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 按年度品种统计 -->
-	<bean id="zxqcSqxxService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ZxqcSqxxImpl"
-				autowire="byName" />
-		</property>
-	</bean>
+	
 	<!-- 专门辅助ajax action的类 -->
 	<bean id="ajaxBizService" class="com.yszoe.biz.service.impl.AjaxBizServiceImpl" autowire="byName" />
-	
-	<!-- 种畜禽场前台展示 -->
-	<bean id="farmsShowService" class="com.yszoe.biz.service.impl.FarmsShowServiceImpl" autowire="byName" />
 	
 </beans>
 	

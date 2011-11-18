@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>${lmmc } - <fmt:message key="application_name"/></title>
+    <title>${lmbean.lmmc } - <fmt:message key="application_name"/></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<script type="text/javascript" src="../resources/jquery/jquery-1.6.2.min.js"></script>
@@ -17,28 +17,17 @@
   <body>
     <jsp:include page="common/head.jsp" />
     <div id="main">
-	    <div class="page2 position"> 您现在正在浏览： <a href="../index.jsp" >首页</a> 
-	    <c:if test="${channelpinyin == 'zxdt1'}">
-	       » 资讯动态
-	    </c:if>
-	    <c:if test="${channelpinyin != 'zxdt1'}">
-	       » ${lmmc}
-	    </c:if>
+	    <div class="page2 position"> 您现在正在浏览： <a href="../index.jsp" >首页</a>    » ${lmbean.lmmc}
 	    </div> 
     <!--cjbd_begin-->
 <div class="page2 box">
   <div class="w700 fl">
     <div class="left_top box" style="padding-left: 15px;">
-      <c:if test="${channelpinyin != 'zxdt1'}">
-      <h2 class="w340 fl"><a href="../channel/${lmbm}.jhtm" target="_blank">${lmmc}</a>
-          <c:if test="${zcrss=='1' }">
+      <h2 class="w340 fl"><a href="../channel/${lmbean.lmbm}.jhtm" target="_blank">${lmbean.lmmc}</a>
+          <c:if test="${lmbean.zcrss=='1' }">
 			<a href="../rss/${channelid }" target="_blank" title="RSS订阅"><img src="../clientui/images/icons/ico4.gif" border="0" alt="RSS订阅" width="14" /></a>
 	      </c:if>
       </h2>
-      </c:if>
-      <c:if test="${channelpinyin == 'zxdt1'}">
-      	<h2 class="w340 fl"><a href="../channel/zxdt1.jhtm" target="_blank">资讯动态</a></h2>	
-      </c:if>		
     </div>
     <div class="box"></div>
     <div class="left_div box">
@@ -52,13 +41,13 @@
          &nbsp;
 		<c:choose>
 			<c:when test="${entity.wzlx=='2'}">
-		         <c:if test="${channelpinyin == 'zxdt1'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="${entity.bturl}" target="_blank">${entity.bt}</a> 
+		         <c:if test="${channelpinyin == 'zhzx'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="${entity.bturl}" target="_blank">${entity.bt}</a> 
 			</c:when>
 			<c:when test="${entity.wzlx=='3'}">
-				<c:if test="${channelpinyin == 'zxdt1'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="../html/${lmbm}-${entity.wid}.jhtm" target="_blank">${entity.bt}</a> <img src="../clientui/icons/img.gif" border="0" alt="导读新闻" />
+				<c:if test="${channelpinyin == 'zhzx'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="../html/${lmbm}-${entity.wid}.jhtm" target="_blank">${entity.bt}</a> <img src="../clientui/icons/img.gif" border="0" alt="导读新闻" />
 			</c:when>
 			<c:otherwise>
-				<c:if test="${channelpinyin == 'zxdt1'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="../html/${lmbm}-${entity.wid}.jhtm" target="_blank">${entity.bt}</a> 
+				<c:if test="${channelpinyin == 'zhzx'}"><a style="color:#f54100">[${entity.lmwid}]</a>&nbsp;</c:if><a href="../html/${lmbm}-${entity.wid}.jhtm" target="_blank">${entity.bt}</a> 
 			</c:otherwise>
 		</c:choose>
 		<c:choose>
