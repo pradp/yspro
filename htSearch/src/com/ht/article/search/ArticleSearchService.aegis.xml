@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mappings>
-	<mapping>
-		<method name="search">
-			<return-type componentType="com.ht.article.search.model.Article" />
-		</method>
-	</mapping>
-</mappings>
