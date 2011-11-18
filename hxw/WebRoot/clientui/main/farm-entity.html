@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--表单拆分脚本start-->
+<script src="../js/form/stepForm.js" type="text/javascript"></script>
+<!--表单拆分脚本end-->
+
+<!--表单验证脚本start-->
+<script src="../js/form/validationEngine-cn.js" type="text/javascript"></script>
+<script src="../js/form/validationEngine.js" type="text/javascript"></script>
+<!--表单验证脚本end-->
+<body>
+<div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>当前位置：管理平台 >> 种畜禽场 >> 在线登记种畜禽场</span>
+	</div>	
+	</div>	
+	</div>
+</div>	
+<div id="scrollContent">
+<div class="box1" panelWidth="920">
+<form method="post" action="example4-6-content1.html" class="stepForm" stepFormTitle="true">
+	<div id="step1" class="stepForm" stepFormTitle="基本信息">
+		<table class="tableStyle" transMode="true">
+			<tr>
+				<td width="150">系统编号：</td>
+                <td><input id="user" type="text" value="F20110515151515004" class=" validate[custom[noSpecialCaracters]]"/><span class="star">*</span></td>
+				<td>单位名称：</td>
+				<td><input type="text" value="新余市瑞丰畜牧业有限公司"/><span class="star">*</span></td>
+			</tr>
+			<tr>
+				<td>许可证编号：</td>
+				<td><input type="text" value="赣K0101151" /><span class="star">*</span></td>
+				<td>法人代表：</td>
+				<td><input type="text" value="刘兴华" /><span class="star">*</span></td>
+			</tr>
+			<tr>
+				<td>电话：</td>
+				<td><input type="text" value="13507909185" /><span class="star">*</span></td>
+				<td>地址：</td>
+				<td><input type="text" value="新余高新区水西镇马洪内塘村" /><span class="star">*</span></td>
+			</tr>
+			<tr>
+				<td>申请日期：</td>
+				<td colspan="3"><input type="text" value="2011-05-11" class="date"/><span class="star">*</span></td>
+			</tr>
+
+			<tr>
+				<td colspan="4">
+					<input type="button" value="下一步" selfTarget="step1" nextTarget="step2"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="step2" class="stepForm" stepFormTitle="设施信息">
+	<table class="tableStyle" transMode="true">
+		<tr>
+			<td>
+				<img src="farmStep/2-1.png" border="0" width="900"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="farmStep/2-2.png" border="0" width="900"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step2" prevTarget="step1" />
+				<input type="button" value="下一步" selfTarget="step2" nextTarget="step3" />
+			</td>
+		</tr>
+	</table>
+	</div>
+	
+	
+	<div id="step3" class="stepForm" stepFormTitle="种畜禽规模">
+	<table class="tableStyle" transMode="true">
+		<tr>
+			<td>
+				<img src="farmStep/3.png" border="0" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step3" prevTarget="step2"/>
+				<input type="button" value="下一步" selfTarget="step3" nextTarget="step4"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="step4" class="stepForm" stepFormTitle="人员情况">
+	<table class="tableStyle" transMode="true">
+		
+		<tr>
+			<td>
+				<img src="farmStep/4.png" border="0" />
+			</td>
+		</tr>		
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step4" prevTarget="step3"/>
+				<input type="button" value="下一步" selfTarget="step4" nextTarget="step5"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+    
+	<div id="step5" class="stepForm" stepFormTitle="仪器设备清单">
+	<table class="tableStyle" transMode="true">
+		
+		<tr>
+			<td>
+				<img src="farmStep/5.png" border="0" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step5" prevTarget="step4"/>
+				<input type="button" value="下一步" selfTarget="step5" nextTarget="step6"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+    
+	<div id="step6" class="stepForm" stepFormTitle="动物防疫条件合格证">
+	<table class="tableStyle" transMode="true">
+		
+		<tr>
+			<td>
+				<img src="farmStep/6.png" border="0" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step6" prevTarget="step5"/>
+				<input type="button" value="下一步" selfTarget="step6" nextTarget="step7"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+    
+	<div id="step7" class="stepForm" stepFormTitle="生产经营情况">
+	<table class="tableStyle" transMode="true">
+		
+		<tr>
+			<td>
+				<img src="farmStep/7.png" border="0" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="上一步" selfTarget="step7" prevTarget="step6"/>
+				<input type="button" value="下一步" selfTarget="step7" nextTarget="step8"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+    
+	<div id="step8" class="stepForm" stepFormTitle="图片文档">
+	<table class="tableStyle" transMode="true" align="center">
+		
+		<tr>
+			<td align="center">
+				<img src="farmStep/8.png" border="0" />
+			</td>
+		</tr>
+		<tr>
+			<td align="center">上传照片：<input type="file"/></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="上一步" selfTarget="step8" prevTarget="step7"/>
+				<input type="submit" value=" 保 存 "/>
+			</td>
+		</tr>
+	</table>
+	</div>
+</form>
+</div>
+</div>				
+</body>
+</html>

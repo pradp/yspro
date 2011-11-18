@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+
+<!--多选框脚本start-->
+<script type="text/javascript" src="../js/form/multiselect.js"></script>
+<!--多选框脚本end-->
+
+<!--截取文字start-->
+<script type="text/javascript" src="../js/text/text-overflow.js"></script>
+<!--截取文字end-->
+
+<body>
+<div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>当前位置：管理系统 >> 种畜禽场管理 >> 全市种畜禽生产、销售数量柱状图</span>
+	</div>	
+	</div>	
+	</div>
+</div>	
+<div class="box_tool_mid padding_right5">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<div class="padding_top8 padding_left10">
+		<table>
+			<tr>
+				<td>数量：</td>
+				<td><input type="text" /></td>
+				<td>区域：</td>
+				<td><select >
+						    <option>请选择区域</option>
+						    <option>朝阳区</option>
+						    <option>鼓楼区</option>
+						 </select></td>
+				<td>畜禽种类：</td>
+				<td><select multiple >
+						    <option>种猪</option>
+						    <option>牛</option>
+						    <option>种羊</option>
+						    <option>种鸭</option>
+						    <option>蛋鸡</option>
+						    <option>肉鸡</option>
+						    <option>种马</option>
+						    <option>种兔</option>
+						    <option>其他</option>
+						 </select></td>
+				<td>状态：</td>
+				<td><select >
+						    <option>未审核</option>
+						    <option>审核通过</option>
+						    <option>审核退回</option>
+						 </select></td>
+				<td><button><span class="icon_find">查询</span></button></td>
+			</tr>
+		</table>
+		</div>			
+	</div>		
+	</div>	
+	</div>
+</div>
+
+<div id="scrollContent" >
+	<iframe src="../../component/FusionCharts/example/MSColumn2D.html" width="100%" height="400" frameborder="0"></iframe>
+</div>
+
+						
+</body>

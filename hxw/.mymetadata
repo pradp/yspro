@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="hxw"
+  id="myeclipse.1320925915629"
+  context-root="/hxw"
+  j2ee-spec="6.0"
+  archive="hxw.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="action" />
+	<!-- 允许最大上传100M的文件 -->
+	<constant name="struts.multipart.maxSize" value="102400000" />
+	<!-- ftl换成java，开启javatemplates，但要注意它没有checkboxlist等标签 -->
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	
+	<!-- public 是那些给公众可见的内容。为了安全性，所有公众业务类都必须以Public开头。 -->
+	<package name="public" namespace="/public" extends="default">
+		<action name="*-*" class="public{1}Action" method="{2}">
+			<result name="list">/WEB-INF/view/jsp/public/{1}/list.jsp</result>
+			<result name="input">/WEB-INF/view/jsp/public/{1}/input.jsp</result>
+			<result name="entity">/WEB-INF/view/jsp/public/{1}/entity.jsp</result>
+			<result name="targetView">/WEB-INF/view/jsp/public/{1}/${targetView}</result>
+		</action>
+	</package>
+	<!-- 下面为struts2提供的返回json数据的配置，为安全性，限制只能使用指定的ajaxSysAction类。 -->
+	<package name="jsonVisitor" namespace="/jsonVisitor" extends="json-exp">
+		<default-interceptor-ref name="jsonVisitorInterceptor" />
+		<action name="ajaxSys-*" class="ajaxSysAction" method="{1}">
+			<result name="loadTreeChild" type="json">
+				<param name="ignoreHierarchy">true</param>
+				<param name="excludeProperties">ajaxService</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result name="SUCCESS" type="json">
+				<param name="ignoreHierarchy">true</param>
+				<param name="excludeProperties">ajaxService</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		<action name="ajaxBiz-*" class="ajaxBizAction" method="{1}">
+			<result name="SUCCESS" type="json">
+				<param name="ignoreHierarchy">true</param>
+				<param name="excludeProperties">ajaxBizService</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 检查json请求是否已登录 -->
+	<package name="userjson" namespace="/userjson" extends="jsonVisitor">
+		<default-interceptor-ref name="checkJsonUserLogin" />
+	</package>
+
+	<package name="json-exp" abstract="true" extends="json-default">
+		<interceptors>
+			<interceptor name="userInterceptor"
+				class="com.yszoe.identity.security.CheckLoginInterceptor">
+			</interceptor>
+			<interceptor-stack name="checkJsonUserLogin">
+				<interceptor-ref name="userInterceptor"/>
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+				<interceptor-ref name="json"/>
+			</interceptor-stack>
+			<interceptor-stack name="jsonVisitorInterceptor">
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+				<interceptor-ref name="json"/>
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="login" type="json">
+				<param name="isLogin">false</param>
+			</result>
+			<result name="error">
+				/WEB-INF/view/jsp/common/error.jsp
+			</result>
+		</global-results>
+	</package>
+</struts>
+
