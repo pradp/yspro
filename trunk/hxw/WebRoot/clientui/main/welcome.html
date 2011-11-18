@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../"/>
+<!--框架必需end-->
+
+<!--修正IE6不支持PNG图start-->
+<script type="text/javascript" src="../js/method/pngFix/supersleight.js"></script>
+<!--修正IE6不支持PNG图end-->
+
+<!--鼠标移入变色start-->
+<script>
+	$(function(){
+		$(".navIcon").hover(function(){
+			$(this).addClass("navIcon_hover");
+		},function(){
+			$(this).removeClass("navIcon_hover");
+		})
+	})
+	function openMenu(menuid){
+		var ifr1=parent.document.getElementById('frmleft');
+		var me_up = ifr1.contentWindow.document.getElementById(menuid.substr(0,6));
+		if($(me_up).next("ul").css("display")=='none'){
+			$(me_up).click();
+		}
+		var me = ifr1.contentWindow.document.getElementById(menuid);
+		$(me).find("a span").click();
+	}
+</script>
+<!--鼠标移入变色end-->
+<body>
+<div>
+<div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>当前位置：管理中心  >>  快速导航</span>
+	</div>	
+	</div>	
+	</div>
+</div>	
+<div id="scrollContent">
+	<table width="100%" height="90%">
+		<tr><td class="ali02 ver02">
+			<div class="box2" panelTitle="欢迎使用" panelWidth="760" showStatus="false" style="margin:0 auto;">
+			<table class="ali01 ver01">
+				<tr height="140">
+					<td width="240">
+						<div class="navIcon" onclick="openMenu('000094')">
+							<div class="navIcon_left"><img src="../icons/png/50.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">网站新闻</div>
+								<div class="navIcon_right_con">
+									网站新闻供稿，供稿管理<br />
+									新闻评论，栏目管理<br />
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+					<td width="240">
+						<div class="navIcon" onclick="openMenu('000101')">
+							<div class="navIcon_left"><img src="../icons/png/71.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">专家在线问答</div>
+								<div class="navIcon_right_con">
+									管理在线问答，向专家提问<br />
+									专家管理，专家解答咨询<br />
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+					<td width="240">
+						<div class="navIcon" onclick="openMenu('000095')">
+							<div class="navIcon_left"><img src="../icons/png/48.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">种畜禽场管理</div>
+								<div class="navIcon_right_con">
+									场信息登记、查询、统计<br/>
+									区域信息维护等等
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+				</tr>
+				<tr height="140">
+					<td>
+						<div class="navIcon" onclick="openMenu('000097')">
+							<div class="navIcon_left"><img src="../icons/png/27.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">生产监测填报</div>
+								<div class="navIcon_right_con">
+									对种畜禽的生产情况登记，上报、审核等等
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+					<td>
+						<div class="navIcon" onclick="openMenu('000102')">
+							<div class="navIcon_left"><img src="../icons/png/20.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">生产监测统计分析</div>
+								<div class="navIcon_right_con">
+									对种畜禽的生产情况按年度，按场等来进行统计分析
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+					<td>
+						<div class="navIcon" onclick="openMenu('000099')">
+							<div class="navIcon_left"><img src="../icons/png/38.png"/></div>
+							<div class="navIcon_right">
+								<div class="navIcon_right_title">系统管理</div>
+								<div class="navIcon_right_con">
+									区域结构维护，数据字典管理等
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</td>
+				</tr>
+				
+			</table>
+			</div>
+		</td></tr>
+	</table>
+</div>
+</div>
+</body>
+</html>

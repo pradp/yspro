@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<script type="text/javascript" src="../js/pic/jomino.js"></script>
+<script>
+$(function(){
+	$('.framegrid.nocaption').each(function(){
+		$(".framegrid_cover", this).css({
+			top:"128px",
+			height:"0px"
+		})
+		$(".framegrid_title", this).hide()
+		$(".framegrid_con", this).hide()
+	})
+	$('.framegrid.nocaption').hover(function(){
+		$(".framegrid_cover", this).stop().animate({top:'58px',height:'70px'},{queue:false,duration:160});
+		$(".framegrid_title", this).show()
+		$(".framegrid_con", this).show()
+	}, function() {
+		$(".framegrid_cover", this).stop().animate({top:'125px',height:'0px'},{queue:false,duration:160});
+		$(".framegrid_title", this).hide()
+		$(".framegrid_con", this).hide()
+	});
+	$(".framegrid").jomino();
+})
+function showPreview(str){
+	top.Dialog.open({InnerHtml:"<div style=\"text-align:center;\"><img  width='900' height='544' src='../pages/main_preview/"+str+"'/></div>",Title:"皮肤预览",Width:920,Height:550});
+}
+</script>
+<style>
+	.framegrid_con{
+		padding:0 5px 0 0;
+		text-align:right;
+		height:20px;
+		overflow:hidden;
+		line-height:20px;
+	}
+</style>
+<body>
+	<div class="red font_bold">试用版只提供两套皮肤。如需要更多皮肤请购买个人版或企业版。</div>
+	<span class="red font_bold underLine hand" onclick="top.Dialog.open({URL:'lesson/useSkin.html',Title:'皮肤应用方法',Width:880,Height:550});">点击这里</span>查看皮肤应用方法
+	<div class="clear"></div>
+	<div class="framegrid nocaption" style="display:none;">
+		<div class="picItem3"><img src="../../pages/main_preview/sky_list_small.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">皮肤名称：sky<br />主题风格：blue</div>
+			<div class="framegrid_con">
+				designed by fukai
+			</div>
+		</div>
+		<div class="ali02"><button onclick="showPreview('sky_list.jpg')"><span class="icon_find">点击预览</span></button></div>
+	</div>
+	
+	<div class="framegrid nocaption" style="display:none;">
+		<div class="picItem3"><img src="../../pages/main_preview/grass_list_small.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">皮肤名称：grass<br />主题风格：green</div>
+			<div class="framegrid_con">
+				designed by fukai
+			</div>
+		</div>	
+		<div class="ali02"><button onclick="showPreview('grass_list.jpg')"><span class="icon_find">点击预览</span></button></div>
+	</div>
+	
+	<div class="clear"></div>
+</body>
+</html>

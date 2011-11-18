@@ -1,0 +1,17 @@
+﻿一、数据库迁移:
+比如将oracle数据库换成mysql，需要修改如下地方：
+1、dbconfig.properties 中 database_type(dbutil类用的方言) 改为mysql
+2、proxool.xml 
+3、spring-framework.xml 中 hibernate.dialect 方言改为mysql的
+
+导致数据库不支持的常见原因如下：
+1、SQL语句，且使用特有函数。如sysdate
+2、字符串拼接
+
+二、UUR界面，新项目要修改的文件及路径：
+1、登录界面：clientui\login\skin1 下面的 title.png   图片宽度在目录下的 style.css里修改
+2、登录后的标题：clientui\skins\sky\mainframe 下面的title.png   图片宽度在上层目录下的 style.css里修改
+
+三、项目名称。
+在国际化资源文件globalMessages_zh_CN.properties里
+

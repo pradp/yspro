@@ -1,0 +1,22 @@
+<chart palette='2' caption='全市种畜禽生产、销售数量柱状图' shownames='1' showvalues='0' decimals='0' numberPrefix='数量' useRoundEdges='1' legendBorderAlpha='0'>
+<categories>
+<category label='2008' />
+<category label='2009' />
+<category label='2010' />
+<category label='2011' />
+</categories>
+<dataset seriesName='生产数量' color='F6BD0F' showValues='0'>
+<set value='57401.85' />
+<set value='41941.19' />
+<set value='45263.37' />
+<set value='117320.16' />
+<set value='114845.27' />
+</dataset>
+<dataset seriesName='销售数量' color='AFD8F8' showValues='0'>
+<set value='25601.34' />
+<set value='20148.82' />
+<set value='17372.76' />
+<set value='35407.15' />
+<set value='38105.68' />
+</dataset>
+</chart>

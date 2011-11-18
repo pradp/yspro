@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- the proxool configuration can be embedded within your own application's.
+	Anything outside the "proxool" tag is ignored. -->
+<something-else-entirely>
+	<proxool>
+		<alias>DataSource</alias>
+		<driver-url>
+			jdbc:oracle:thin:@10.0.0.7:1521:orcl007
+		</driver-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-properties>
+			<property name="user" value="usr_angr" />
+			<property name="password" value="usr_angr" />
+		</driver-properties>
+		<minimum-connection-count>5</minimum-connection-count>
+		<maximum-connection-count>300</maximum-connection-count>
+		<simultaneous-build-throttle>20</simultaneous-build-throttle>
+		<!--
+			<maximum-connection-lifetime>1*60*60*1000</maximum-connection-lifetime>
+			<maximum-active-time>5*60*1000</maximum-active-time>
+		-->
+		<house-keeping-test-sql>
+			select sysdate from dual
+		</house-keeping-test-sql>
+
+	</proxool>
+
+</something-else-entirely>

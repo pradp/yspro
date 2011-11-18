@@ -1,0 +1,49 @@
+本项目同步注意事项:
+一、使用流程或规则：
+1、场的同步：
+  1）在"种畜禽场管理"菜单中选择"查询下属单位信息"；
+  2）对需要同步的场信息勾选（现只有种猪场和奶牛场有这个功能）；
+  3）点击列表上方的"同步"按钮；
+  4）等待完成，弹出"操作成功"的提示框；
+  5）只有审核通过的场才能同步；
+  6）同步时，如果勾选的场还有用户，用户也将同步到相应平台；
+2、用户的同步；
+  1）在"权限管理"菜单中选择"选择登记用户维护；
+  2）点击"新增"，新增一个已在DHI平台存在的牛场或则一个已在GBS种猪遗传评估中心存在的猪场用户，当系统提示注册成功，本系统会自动把该用户信息同步到相应的平台；
+  3）点击"修改"，更改用户的上级机构，如果修改后的机构是GBS种猪场或DHI奶牛场，系统将会自动把用户信息同步到相应的平台；
+3、对于区域的同步；
+  1）在"系统管理"中选择"维护区域树"；
+  2）当你添加新区域或修改新区域时，系统都会自动把改区域信息同步到相应的平台；
+  3）目前为止，只针对DHI平台这样做，由于GBS平台又些不同，暂时不自动同步；
+ 二、实现方法：
+  1、服务器端（GBS平台，奶牛DHI平台）
+    1）配置remoting-servlet.xml
+        <bean id="msysSyncUserToGbsServiceImpl"
+		class="com.farmstock.platform.bjzx.spring.imp.MsysSyncUserToGbsServiceImpl">		
+	</bean>
+	<bean name="/MsysSyncUserToGbsService"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="msysSyncUserToGbsServiceImpl" />
+		<property name="serviceInterface"
+			value="com.farmstock.platform.bjzx.spring.MsysSyncUserToGbsService" />
+	</bean>
+     2）在MsysSyncUserToGbsServiceImpl里写增删改功能；
+     3）/MsysSyncUserToGbsService是远端调用的接口；
+   2、客户端（种畜禽场管理信息平台）
+     1）配置spring-remote.xml
+	<!-- 负责向平台同步用户的类 -->
+	<bean id="syncUserService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.biz.remote.SyncUserService" autowire="byName" />
+		</property>
+	</bean>
+        <!-- 2.1.2  向GBS同步用户的远程接口类-->
+	<bean id="msysSyncUserToGbsService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+	    <property name="serviceUrl" value="http://10.0.0.33:80/remoting/MsysSyncUserToGbsService"/>
+	    <property name="serviceInterface" value="com.farmstock.platform.bjzx.spring.MsysSyncUserToGbsService"/>
+	</bean>
+     2）在SyncUserService里写相应的方法，调相应的远端接口；
+    3、注意事项;
+      1）MsysSyncUserToGbsService和相应的bean在服务器端和客户端的路径要一致；
+      2）实体bean都要序列化；
+      3）serviceUrl的value是远端服务器的地址加接口；

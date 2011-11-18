@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 此配置文件为框架级，其中配置项请勿更改 -->
+	<!-- dao start -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!-- 可以同时支持注解和XML -->
+		<!-- 
+		<property name="mappingResources">   
+			<list>
+				<value>com/yszoe/sys/entity/TDtbdCreatetable.hbm.xml</value>
+				<value>com/yszoe/sys/entity/TDtbdCreatetableFieldinfo.hbm.xml</value>
+			</list>
+		</property>
+		 -->
+		<property name="packagesToScan">
+			<list>
+				<value>com.yszoe.identity.entity</value>
+				<value>com.yszoe.sys.entity</value>
+				<value>com.yszoe.biz.entity</value>
+				<value>com.yszoe.cms.entity</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+           <props>
+              <prop key="hibernate.dialect">
+                  org.hibernate.dialect.Oracle9iDialect
+              </prop>
+              <prop key="hibernate.show_sql">true</prop>
+              <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+              <prop key="hibernate.connection.autocommit">true</prop>
+              <prop key="hibernate.query.substitutions">true 1,false 0</prop>
+              <prop key="hibernate.hbm2ddl.auto">none</prop>
+              <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+              <prop key="hibernate.cache.use_second_level_cache">true</prop>
+              <prop key="hibernate.cache.use_query_cache">true</prop>
+              <prop key="hibernate.jdbc.batch_size">50</prop>
+              <prop key="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</prop>
+              <prop key="hibernate.proxool.xml">proxool.xml</prop>
+              <prop key="hibernate.proxool.pool_alias">DataSource</prop>
+           </props>
+       </property>
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="baseDaoImpl" class="com.yszoe.framework.dao.impl.BaseDaoServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="baseDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.yszoe.framework.dao.BaseDao" />
+		<property name="target">
+			<ref bean="baseDaoImpl" />
+		</property>
+	</bean>
+	<!-- dao end -->
+	
+	<bean id="pager" class="com.yszoe.framework.util.Pager" scope="prototype"
+		lazy-init="true" />
+		
+	<!-- 下面是事务抽象bean，需要使用事务控制的bean可以继承此bean（作用于service层） -->
+	<bean id="txProxyTemplate" abstract="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="list">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="remove*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="changeState">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 下面3个bean为指定类每个方法执行作拦截打印执行时间。可用于调式，发布程序时必须注释掉此功能。 -->
+	<!-- 
+	<bean id="methodTimeInterceptor" class="com.yszoe.identity.springinterceptor.MethodTimeInterceptor" />
+	<bean id="methodTimeAdvisor"
+		class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="advice">
+			<ref bean="methodTimeInterceptor" />
+		</property>
+		<property name="patterns">
+			<value>.*.*</value>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*baseDao</value>
+				<value>*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>methodTimeAdvisor</value>
+			</list>
+		</property>
+	</bean>
+	 -->
+</beans>

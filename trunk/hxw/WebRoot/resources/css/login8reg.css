@@ -1,0 +1,115 @@
+*{margin:0; padding:0}
+
+#smartdemo2 {
+                width: 500px;
+                height: 350px;
+                overflow: hidden;
+				margin: 0;
+            }
+#smartdemo2 li{
+                width: 400px;
+                height: 300px;
+            }
+
+p {margin:0; padding:0;
+	float: left;
+	font-size: 12px;
+}
+#login_form{ height:400px; width:365px; background: url(img/login.png) no-repeat 0 0; float:left;
+	padding-left: 0px;
+}
+#login_form table{ margin:90px 35px 10px}
+#login_form table td{ padding:5px 0}
+a.forget-password{ color:#666; font-weight:bold; line-height:38px; text-decoration:underline}
+.to-register a{text-decoration:underline; font-weight:bold}
+p.to-register{ padding-top:10px; text-align: left;}
+#login-left{ text-align:right; width:56%; margin-top:10px;
+	float: left;
+}
+
+#user-face{ width:140px; text-align:center; margin:10px 30px 0 40px; -margin-left:20px; float:left}
+#user-face img{ border:1px solid #ccc; padding:6px; display:block; margin-bottom:10px}
+
+#message{ background:url(img/message_bg.png) repeat-x 0 -480px; height:240px; margin:50px 60px}
+.message_l,.message_r{background:url(img/message_bg.png) no-repeat 0 0; height:240px}
+.message_r{height:180px; background-position:100% -240px; padding:30px}
+#message h2{ font-family:'microsoft yahei'; font-size:21px; padding-bottom:10px}
+#message p{ margin:15px 0}
+
+.a_btn,.a_btn span{ display:inline-block; background:#656d71 url(img/abg.gif) no-repeat 0 0; color:#fff; line-height:20px; height:20px; font-size:12px; font-family:Arial}
+.a_btn{ padding-left:5px}
+.a_btn span{ cursor:pointer; background-position:100% -20px; padding-right:5px}
+.a_btn:hover{background-position:0 -40px}
+.a_btn:hover span{background-position:100% -60px;background-color:#9ea3a7}
+
+.btn_gray{ background-position:0 -40px}
+.btn_gray span{ background-position:100% -60px;background-color:#9ea3a7}
+.btn_gray:hover{background-position:0 0}
+.btn_gray:hover span{background-position:100% -20px; background-color:#656d71}
+
+.btn_blue{background-position:0 -80px}
+.btn_blue span{ background-position:100% -100px;background-color:#193550}
+
+h1{ font-family:'microsoft yahei'; font-size:21px; border-bottom:1px solid #ededed; margin:15px 5px; padding:0 25px 10px; clear:both}
+.mlr20{ margin:0 20px}
+.info_wrong,.info_right,.help_ico{ display:inline-block; background: url(img/ico.png) no-repeat 0 -32px;text-indent:30px; line-height:30px; height:28px; color:#ff6000; margin-left:10px; float:left; white-space:nowrap}
+.info_right{ background-position:0 3px}
+.errorMessage{display:inline-block; line-height:30px; height:28px; color:#ff6000; margin-left:0px; float:left; white-space:nowrap}
+.help_ico{background-position:0 -100px; text-indent:0; width:26px}
+.c6{ color:#666}
+.c9{ color:#999}
+#postButtonDiv{
+	float: left;
+	padding-top:15px
+	}
+.form-table td input.btn-confirm,.form-table td input.btn-login,.form-table td input.btn-agreen{ background:url(img/btn.png) no-repeat 0 -38px; width:66px; height:38px; border:0; cursor:pointer; color:#fff; padding:0;padding-bottom:4px; +padding-bottom:0}
+.form-table td input.btn-login{ background-position:0 0; width:106px; height:35px; margin-right:10px; font-weight: bold; }
+.form-table td input.btn-confirm:focus,.form-table td input.btn-login:focus{ border:0}
+.line-table td{ border-bottom:1px solid #e6e6e6; padding:10px}
+.fr{float:right}
+input{font: 12px/1.2em Arial,Tahoma;
+}
+h1 .a_btn{ vertical-align:middle}
+.form-table th{ font-weight:normal; color:#666; text-align:right;padding:8px 15px 8px 8px; font-size: 15px;}
+.form-table td{ padding:8px}
+.form-table td input[type="text"]:focus{ border:1px solid #09f}
+.form-table td input[type="text"]{ padding:6px; border:1px solid #cdcdcd;-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius:3px;float:left; overflow:hidden}
+.form-table td input[type="password"]:focus{ border:1px solid #09f}
+.form-table td input[type="password"]{ padding:6px; border:1px solid #cdcdcd;-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius:3px;float:left; overflow:hidden}
+.form-table td input.checkbox{ border:0; height:20px; vertical-align: middle; margin-right:5px}
+
+#register_step{ background:#eee url(img/stepbg.gif) no-repeat 0 0; margin:0 30px 10px; overflow:hidden; position:relative}
+.register_step_in{ background:url(img/stepbg.gif) no-repeat 100% -60px; height:57px;padding-top:3px}
+#stepbg{ background: url(img/register_step.gif) repeat-x 0 0;height:34px;width:330px; margin:0 auto}
+#register_step ul{ margin-left:280px}
+#register_step li{float: left;line-height:1.4em;width: 145px; color:#666}
+#step_now{background: url(img/register_step.gif) repeat-x scroll 0 -34px;height: 34px;left: 285px; top:3px;position: absolute}
+
+#register_left{ width: 700px; margin-left: 35px; float: left; -margin-left:17px}
+#register_left h1{ border:0; margin-bottom:0; padding-left:0; padding-bottom:5px}
+.info{ color:#999; padding-left:5px}
+p.b{ margin:5px 0 15px; padding-left:5px;width: 100%}
+p.b a{ text-decoration:underline; color:#0d72b0}
+.code-img{ float:left}
+.code-refresh{ color:#666; float:left; height:25px; line-height:25px; width:50px; margin:53px 0 0 15px;text-decoration:underline; color:#09f; font-weight:bold; background:url(img/ico.png) no-repeat 100% -70px; }
+.code-refresh a{ display: inline-block; text-decoration:underline; color:#09f; font-weight:bold; background:url(img/ico.png) no-repeat 100% -70px; padding-right:28px;
+}
+#register_left #term{border:1px solid #ccc; margin:5px 0; padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px; border-radius:8px; width:480px}
+#register_left #term div{ width:480px; height:110px;overflow-y:scroll}
+#register_left .form-table td input.btn-agreen{ height:32px; width:100px; background-position:-3px -3px}
+
+#register_right{width:210px; float:right; border-left:1px solid #efefef}
+#register_right li{ margin-left:20px;color:#999; line-height:1.6em; margin-bottom:15px}
+#register_right li img{ float:left; margin-right:10px}
+#register_right li.title{ padding:20px 0 10px; font-weight:bold; color:#333; margin-bottom:0}
+
+.password-strength{ margin-left:15px; float:left; width:180px; color:#666; font-weight:bold; height:28px; line-height:1.2em; position:relative}
+.password-strength #barbg,.password-strength #bar{ position:absolute; bottom:0; left:0; width:180px; height:10px; font-size:1px; line-height:1px;background:#ccc}
+.s1 #bar{width:0}
+.s2 #bar{ background:#ffc; width:50px}
+.s2 .fr,.s3 .fr{ color:#fc0}
+.s3 #bar{ background:#fc0; width:90px}
+.s4 #bar{ background:#69c; width:140px}
+.s4 .fr{ color:#69c}
+.s5 #bar{ background:#060; width:180px}
+.s5 .fr{color:#060}

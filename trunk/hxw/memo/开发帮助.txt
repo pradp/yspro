@@ -1,0 +1,136 @@
+
+support jndi, tomcat example:
+<Context docBase="d:/web_dist/myweb" path="/myweb"
+         privileged="true" antiResourceLocking="false" antiJARLocking="false">
+		 <Resource name="jdbc/DataSource" auth="Container" type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@db-server:1521:orcl" username="" password="" maxActive="20" maxIdle="10"/>
+</Context>
+
+一、让hibernate不更新为null的字段，有几种方法可以达到此目的：
+     1、hibernate配置文件，设置不需要更新的字段属性为 update="false"；
+     2、页面采用hidden控件；
+     3、使用hql的update语句手动更新字段；
+     4、使用megre方法更新数据（需要配置hibernate配置文件属性dynamic-update="true"）。
+
+  页面流程简单的时候，采用第一、二种方法都可以。如果流程多，每一步页面的元素不一样，这时候采用第四种就比较方便。
+  第三种方法很灵活，手写update，但不到不得已不必用。
+  *** jd-framework-3.0.jar版本中，baseDao类提供了updateNotNull方法，可以根据传入的对象，动态生成update语句，不更新值为null的字段。
+
+二、struts-ext.xml配置，包可以extends包"checkLogin" 即可验证登录
+父包拦截器有"mytoken、checkUserLogin"
+
+三、AJAX支持（服务端）
+1、对象转字符串：String outMsgString = JSONUtil.serialize(outData);
+2、字符串输出到response：putResultStringToView(outMsgString);
+3、action里的方法为void的。
+例如：action里某方法：
+	public void changeState() {
+		try {
+			String str = baseService.changeState(this);//service里方法自己任意写，返回字符串
+			//如果对象转字符串，可以在service里使用 String outMsgString = JSONUtil.serialize(objData);
+			putResultStringToView(str);//直接返回字符串，不需要视图了。
+		} catch (Throwable e) {
+			putResultStringToView("错误信息："+ e.getMessage() );//直接返回字符串，不需要视图了。
+		}
+	}
+
+四、IE6报打不开网页的问题解决：
+有时候showModalDialog里的网页如果有反复请求JS等文件，
+那么<base target="_self">必须放在head最后。不然IE6报打不开网页。
+
+五、用struts2标签在jsp页面获取URL参数：
+http://...xx.c?canshuName=myValue  --->  <s:property value="#parameters.canshuName[0]"/>
+另外使用#除了parameters外，还可以访问request,session,application的attribute。
+如：request.setAttribute("canshuName","myValue") ---> #request.canshuName
+
+六、日期控件的使用请看component/datepicker/readme.txt。
+
+七、Google suggest example:
+参考 identity/idUser/input.jsp
+url 如 "/suggest?aim=depart",aim 的值表示 sqlmap.properties 中定义的suggest部分的类型
+注意这个控件修改过，解决了中英文夹杂的时候，不能选中的问题。
+
+八、系统消息发送接口：
+引入包	<script type="text/javascript" src="<s:property value="basePath"/>/resources/js/p2pMessage.js"></script>
+页面循环里加入<s:hidden id="depart_%{resultData[#stuts.index][0]}" value="%{resultData[#stuts.index][1]}"/>输出departid
+接口会找depart_xxxxx控件取值，取得消息发送给哪个部门。
+加入发送按钮 <input type="button" id="sendMsgButton" value="消息发送" onClick="sendMessage(msgTypeCode)">
+msgTypeCode请查阅字典表中定义的类型。
+参考：ADMIN的“省中心审核市县”中，有发送消息。
+
+*九、统一JS客户端表单验证方式：
+	validate_required_fields = [
+			{fieldId:"userLoginId", message:"登录帐号不能为空！", mustMatch: true},
+			{fieldId:"departid", message:"所属部门不能为空！", mustMatch: true}
+		];
+	validate_length_range_fields = [
+			{fieldId:"userLoginId", minLen:1, maxLen:30, message:"用户登录账号长度在1-30个字节之间！", ignoreIfEmpty: true},
+			{fieldId:"userName", minLen:1, maxLen:90, message:"用户显示名称长度在1-90个字节之间(30汉字以内)！", ignoreIfEmpty: true}
+		];
+	validate_type_fields = [
+			{fieldId:"sqje", message:"申请金额格式不正确！", typeRule:{requiredType:"number", allowDot:true, allowNegative:false}},
+			{fieldId:"xsdh", message:"学生家庭电话格式不正确！", typeRule:{requiredType:"phone"}},
+			{fieldId:"xsyddh", message:"学生移动电话格式不正确！", typeRule:{requiredType:"mobile"}}
+		];
+validate_required_fields 中定义必填项。validate_length_range_fields 中定义校验长度的项。validate_type_fields 中定义字段类型。
+maxLen对应数据库表定义的长度，一个汉字自动转换为3个字节计算。
+
+十、struts2标签方式访问静态方法和静态字段
+　　@class@method(args)　　　　　//调用静态方法
+　　@class@field　　　　　　　　   //调用静态字段
+　　其中class必须给出完整的类名(包括包名),如果省略class，那么默认使用的类是java.util.Math，如：
+　　@@min(5,3)
+　　@@max(5,3)
+　　@@PI
+
+十一、在线富文本编辑器：
+1、FCKeditor 支持本地文件上传
+2、kingeditor 
+使用方法见各自目录下的example.jsp or example.html
+
+十二、FLASH图表控件
+见 /component/FusionCharts/目录，使用参考其中的example.html
+
+十三、实现AJAX控制级联菜单选择：
+客户端的html假设为：
+   <select name="demo1" onchange="changeSelectHtml(this)">
+   	<option value="sjbh">sjbh</option>
+   	<option value="syfw">syfw</option>
+   	<option value="xb">xb</option>
+   </select>
+   <select id="demo2" name="demo2"/>
+1、那么js这样控制：
+   function changeSelectHtml(){
+    var url = ... //根据前一个选择的id查询二级的内容
+	jQuery.getJSON(url, function(json){
+		changeSelectOption(json, 'demo2');//重新生成select
+	});
+   }
+2、服务端用第三条说明的方式返回json.
+   注意对象是ApplicationEnum，所以直接用id caption属性。
+
+十四、框架从1.2开始支持权限控制粒度到按钮级别。
+如果新开发的模块里需要用权限模块里的按钮权限分配来控制按钮。JSP页面上的按钮不能写死，需要使用如下方式输出按钮：
+<div id="userRoleMenuButton">
+	<s:property value="userRoleMenuButton" escape="false"/>
+</div>
+如果在输出按钮页面需要使用通用状态控制（启用禁用），只需如下写。然后分配一个启用禁用按钮，事件写doUniChangeState(2,this)
+注意下面的entityName值，写自己模块的数据模型。
+<div id="userRoleMenuButton">
+	<s:property value="userRoleMenuButton" escape="false"/>
+	<s:hidden name="changestate_parms" id="changestate_parms" value="entityName:t_sys_code"/>
+</div>
+
+十五、关于文件上传：
+使用struts2的文件上传方法。在service取得file对象后，统一使用FileUtil类进行保存文件。
+FileUtil结合项目要求，根据SysConfig.properties配置，实现存储到磁盘，还是hadoop等
+单服务器集群环境下的上传文件存储路径，在SysConfig.properties文件里根据实际情况设定绝对存储路径，结合tomcat7的路径别名特性部署。
+			......
+			FileUtil.checkFileIsImage(action.getSyydtContentType(), action.getSyydtFileName());
+			FileUtil.checkFileSize(photo.length(), maxPhotoSize);
+			String relativeHttpPath = FileUtil.saveFile(photo, "cms", action.getSyydtFileName());
+			txxfbWz.setSyydt(relativeHttpPath);
+			.....
+删除文件使用：FileUtil.deleteFileByRelativePath(file);
+
+十六、
+

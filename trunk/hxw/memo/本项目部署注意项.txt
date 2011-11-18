@@ -1,0 +1,22 @@
+一、本项目与其他系统接口配置：
+1、DHI系统
+我们添加用户（奶牛场用户）的时候，要同步添加一份到DHI系统。登录的时候（奶牛场用户登录），同时登录DHI系统，实现SSO。
+DHI系统使用spring公布服务供我们调用，添加用户是这样方式。登录使用对称加密用户名直接登录DHI。
+所以部署的时候一定要修改两处：
+a. 将spring-remote.xml里调用DHI接口的地址修改为DHI系统部署的地址。
+b. sysconfig.properties里也有DHI系统地址。
+
+DHI平台本身有两处要修改地址：a.菜单地址（在表fr_zidb里）；b.DBConfig.property文件里xqurl的值。
+
+2、种猪网：
+
+
+
+二、关于性能等的配置文件：
+1、log4j日志文件要改为ERROR
+2、spring-framework.xml里的hibernate.show_sql=false
+3、proxool.xml的连接数要优化，一般服务器用最小5 最大500 递增100 【这条很重要】
+4、单服务器集群环境下的上传文件存储路径，在SysConfig.properties文件里根据实际情况设定：a.绝对存储路径；b.相对访问路径
+结合tomcat7的路径别名特性使用。
+5、
+
