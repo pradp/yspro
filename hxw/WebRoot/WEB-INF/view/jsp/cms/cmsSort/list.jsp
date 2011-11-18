@@ -90,6 +90,9 @@
 					<th width="25%">
 						栏目名称（文章数）
 					</th>
+					<th width="8%">
+						前台排序值
+					</th>
 					<th width="10%">
 						开放RSS支持
 					</th>
@@ -99,7 +102,7 @@
 					<th width="10%">
 						默认评论权限
 					</th>
-					<th width="20%">
+					<th width="12%">
 						状态
 					</th>
 				</tr>
@@ -112,6 +115,9 @@
 									value="lmmc" /></a>
 							</span>
 							（<s:property value="children"/>篇）
+						</td>
+						<td>
+							<s:property value="ordernum"/>
 						</td>
 						<td>
 							<s:property value="zcrss"/>

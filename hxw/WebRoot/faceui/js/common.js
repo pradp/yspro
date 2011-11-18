@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 
 //默认指定导航
 function selectedMenu(){ 
-	var nameLabel = new Array("index.jsp","tzgg","farms","dhi","scjc","zzyz","zxdt1","gfbz","pzjs","fyjs","zlxz","answer"); 
+	var nameLabel = new Array("index.jsp","xlzx","xlcs","zhzx","xlxw","hdxz","xlwk","bbs"); 
     var locationUrl = location.href;//获得浏览器地址栏URL串 
     for(var i=0; i<nameLabel.length; i++){
     	var label_ = nameLabel[i];

@@ -60,7 +60,7 @@
 	  </td>
 	  <td align="right">前台排序值：</td>
 	  <td align="left">
-	    <s:textfield name="txxfbLm.ordernum" value="%{txxfbLm==null?0:txxfbLm.ordernum}" id="ordernum" maxlength="6" size="20" title="0-999999的数字"/> <label style="color:red">*</label></td>
+	    <s:textfield name="txxfbLm.ordernum" value="%{txxfbLm==null?0:txxfbLm.ordernum}" id="ordernum" maxlength="6" size="20" title="0-999999的数字，同一层栏目间排序"/> <label style="color:red">*</label></td>
 	</tr>
     <tr> 
       <td align="right">&nbsp;栏目别名：</td>
