@@ -23,9 +23,6 @@ import com.yszoe.util.StringUtil;
  */
 public class CmsPublicArticleServiceImpl extends AbstractBaseServiceSupport {
     
-	// private static final Log LOG =
-	// LogFactory.getLog(CmsPublicArticleServiceImpl.class);
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -40,61 +37,46 @@ public class CmsPublicArticleServiceImpl extends AbstractBaseServiceSupport {
 		if (StringUtil.isBlank(channelpinyin)) {
 			return Collections.EMPTY_LIST;
 		}
-		if (!"zxdt1".equals(channelpinyin)) {//判断是否点击资讯动态
-			String channelid = CachedQuery.getCmsChannelIdByLmbm(channelpinyin);
-			model.put("channelid", channelid);
-
-			String hql = "from TXxfbWz a where a.state=2";// 状态为已发布的数据
-
-			List<Object> params = new LinkedList<Object>();
-
-			if ("search".equals(channelid)) {
-				// 执行全频道搜索
-				model.put("lmmc", "搜索结果");
-			} else {
-				// 查询某频道数据
-				hql += " and a.lmwid = ?";
-				params.add(channelid);
-				String hql_lmmc = "select lmmc, zcrss,lmbm from TXxfbLm where wid=?";
-				List<Object[]> lmmcs = getBaseDao().findByHqlWithSecondCache(true, hql_lmmc, channelid);
-				if (lmmcs.isEmpty() == false) {
-					String lmmc = (String) lmmcs.get(0)[0];
-					String zcrss = (String) lmmcs.get(0)[1];
-					String lmbm = (String) lmmcs.get(0)[2];
-					model.put("lmmc", lmmc);
-					model.put("zcrss", zcrss);
-					model.put("lmbm", lmbm);
-				}
-			}
-
-			if (StringUtil.isNotBlank((String) model.get("bt"))) {
-				hql += " and a.bt like ?";
-				params.add("%" + (String) model.get("bt") + "%");
-			}
-			long c = getBaseDao().count("select count(*) as c " + hql, params.toArray());
-			pager.setTotalRows(c);
-
-			String hqlCol = "select new TXxfbWz(wid,(select lmmc from TXxfbLm where wid=a.lmwid) as lmwid, "
-					+ "bt, ly, sftj, ordernum, (select count(*) from TXxfbPl where wzwid=a.wid) as pls, "
-					+ "zhxgrq, djs, wzlx, bturl) ";
-			hql = hqlCol + hql + " order by a.ordernum desc, a.wid desc";
-			List<TXxfbWz> list = getBaseDao().findPageByHql(hql, pager, params.toArray());
-			return list;
-		} else {
-			
-			String zxdt = "20110707094012783101";//中心动态WID
-			String hydt = "20110727111128093108";//行业动态WID
-		    String hqlZx = "select new TXxfbWz(wid,(select lmmc from TXxfbLm where wid=a.lmwid) as lmwid, "
-				+ "bt, ly, sftj, ordernum, (select count(*) from TXxfbPl where wzwid=a.wid) as pls, "
-				+ "zhxgrq, djs, wzlx, bturl) from TXxfbWz a where a.state=2 and a.lmwid in (?,?) " 
-				+ "order by a.ordernum desc, a.wid desc";
-		    
-		    long c = getBaseDao().count("select count(*) as c from TXxfbWz a where a.state=2 and a.lmwid = ?", zxdt);
-		    long d = getBaseDao().count("select count(*) as c from TXxfbWz a where a.state=2 and a.lmwid = ?", hydt);
-			pager.setTotalRows(c+d);
-		    List<TXxfbWz> zxList = getBaseDao().findPageByHql(hqlZx, pager, zxdt, hydt);
-		    return zxList;
+		String channelid = CachedQuery.getCmsChannelIdByLmbm(channelpinyin);
+		if(StringUtil.isBlank(channelid)){
+			throw new RuntimeException("request channelid is blank.");
 		}
+		model.put("channelid", channelid);
+
+		String hql = "from TXxfbWz a where a.state=2";// 状态为已发布的数据
+
+		List<Object> params = new LinkedList<Object>();
+
+		if ("search".equals(channelpinyin)) {
+			// 执行全频道搜索
+			TXxfbLm lm = new TXxfbLm();
+			lm.setLmmc("搜索结果");
+			model.put("lmbean", lm);
+		} else {
+			// 查询某频道数据
+			hql += " and a.lmwid like ?";
+			params.add(channelid + "%");
+			String hql_lmmc = "from TXxfbLm where wid=?";
+			List<TXxfbLm> lmmcs = getBaseDao().findByHqlWithSecondCache(true, hql_lmmc, channelid);
+			if (lmmcs.isEmpty() == false) {
+				TXxfbLm lm = lmmcs.get(0);
+				model.put("lmbean", lm);
+			}
+		}
+
+		if (StringUtil.isNotBlank((String) model.get("bt"))) {
+			hql += " and a.bt like ?";
+			params.add("%" + (String) model.get("bt") + "%");
+		}
+		long c = getBaseDao().count("select count(*) as c " + hql, params.toArray());
+		pager.setTotalRows(c);
+
+		String hqlCol = "select new TXxfbWz(wid,(select lmmc from TXxfbLm where wid=a.lmwid) as lmwid, "
+				+ "bt, ly, sftj, ordernum, (select count(*) from TXxfbPl where wzwid=a.wid) as pls, "
+				+ "zhxgrq, djs, wzlx, bturl) ";
+		hql = hqlCol + hql + " order by a.ordernum desc, a.wid desc";
+		List<TXxfbWz> list = getBaseDao().findPageByHql(hql, pager, params.toArray());
+		return list;
 	}
 
 	/**

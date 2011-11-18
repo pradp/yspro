@@ -9,12 +9,12 @@
 		</driver-url>
 		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
 		<driver-properties>
-			<property name="user" value="usr_angr" />
-			<property name="password" value="usr_angr" />
+			<property name="user" value="u_hxw" />
+			<property name="password" value="u_hxw" />
 		</driver-properties>
-		<minimum-connection-count>5</minimum-connection-count>
+		<minimum-connection-count>2</minimum-connection-count>
 		<maximum-connection-count>300</maximum-connection-count>
-		<simultaneous-build-throttle>20</simultaneous-build-throttle>
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
 		<!--
 			<maximum-connection-lifetime>1*60*60*1000</maximum-connection-lifetime>
 			<maximum-active-time>5*60*1000</maximum-active-time>

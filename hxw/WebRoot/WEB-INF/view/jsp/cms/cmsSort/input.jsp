@@ -41,7 +41,7 @@
         <s:textfield name="txxfbLm.lmmc" id="lmmc" maxlength="50" size="20" title="最多16个汉字"/> <label style="color:red">*</label></td>
 	  <td align="right" width="15%">父栏目：</td>
 	  <td align="left">
-	    <s:select id="pwid" name="txxfbLm.parentwid" list="getParentwids()" listKey="id" listValue="caption" headerKey="" headerValue="根栏目"/> 
+	    <s:select id="pwid" name="txxfbLm.parentwid" disabled="%{txxfbLm==null?'false':'true'}" list="getParentwids()" listKey="id" listValue="caption" headerKey="000" headerValue="根栏目"/> 
 	  </td>
 	</tr>
     <tr> 

@@ -25,7 +25,7 @@
 			});
 		}
 		jQuery(document).ready(function() {
-			reBuildTreeOrderBy();
+			//reBuildTreeOrderBy();
 		});
 		
 		/**
@@ -35,7 +35,7 @@
 		function doRemove() {
 			var ids = CropCheckBoxValueAsString("selectNode");
 			if(ids != false){
-				var conf = window.confirm("您确定要删除已选中的这些数据吗？");
+				var conf = window.confirm("您确定要删除已选中的栏目吗？");
 				if (conf == true) {
 					var url_bak = document.forms[0].action;
 					var url = actionName + "-remove." + uri_suffix;
@@ -88,7 +88,7 @@
 				useMultColor="true" useCheckBox="true">
 				<tr>
 					<th width="25%">
-						栏目名称
+						栏目名称（文章数）
 					</th>
 					<th width="10%">
 						开放RSS支持
@@ -107,16 +107,11 @@
 					<tr id="node-${wid }" class="child-of-node-${parentwid }">
 						<td>
 							<s:checkbox id="%{wid}" name="selectNode" fieldValue="%{wid}" />
-							<s:if test="children==0">
-							<span class="file">
-							</s:if>
-							<s:else>
 							<span class="folder">
-							</s:else>
 							<a href="javascript:openEntity('<s:property value="wid"/>')"><s:property
-									value="lmmc" />
-							</a>
+									value="lmmc" /></a>
 							</span>
+							（<s:property value="children"/>篇）
 						</td>
 						<td>
 							<s:property value="zcrss"/>

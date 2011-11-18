@@ -36,7 +36,7 @@ public class CachedQuery {
 	/**
 	 * 根据栏目别名取得栏目的索引
 	 * @param lmbm
-	 * @return
+	 * @return 不存在的话，返回 null
 	 */
 	public static final String getCmsChannelIdByLmbm(String lmbm){
 		if(lms.isEmpty() || StringUtil.isBlank(lmbm)){
@@ -47,7 +47,7 @@ public class CachedQuery {
 				return lm.getWid();
 			}
 		}
-	    return "";
+	    return null;
 	}
 
 }
