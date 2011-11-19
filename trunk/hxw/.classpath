@@ -6,5 +6,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/copyjars-ysframework-s2sh"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/rsslibj-1_0RC2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/newrsslib4j.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
