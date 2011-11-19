@@ -120,6 +120,7 @@ document.onclick = mclose;
 	   </li>
 	    <%} 
 	    }%> 
+	   <li><a href="../public/xlyp.jhtm" id="xlyp"><span>心理研培</span></a></li>
 	   <li><a href="../bbs" id="bbs"><span>互助论坛</span></a></li>
 	 </ul>   
     </div>
