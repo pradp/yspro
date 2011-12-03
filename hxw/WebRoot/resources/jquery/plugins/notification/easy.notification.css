@@ -1,0 +1,37 @@
+/* notification styles */
+.ysTagboxParent {
+	border: 1px #F6D492 solid;
+	background: #FFF7E0;
+	margin: 15px auto 10px;
+	padding: 6px 0px 4px;
+	height: 24px;
+	text-align: center;
+}
+.ysTagboxParent #dd {
+	padding: 4px 0px 0px;
+}
+
+.ysTagbox { /*background: #fffed0;*/
+	background: #ffffff;
+	border: 1px solid #d4d287;
+	position: relative;
+	margin: 0px;
+	padding: 4px 0px 0px;
+	display: inline;
+	width: 120px;
+	height: 18px;
+}
+
+.ysTagbox label {
+	vertical-align: middle;
+	float: left;
+	clear: right;
+	width: 87%;
+}
+
+.ysTagbox span {
+	float: left;
+	clear: right;
+	cursor: pointer;
+	padding: 0px;
+}

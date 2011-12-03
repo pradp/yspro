@@ -11,14 +11,55 @@
 	<!--分页start-->
 	<script type="text/javascript" src="../component/jquery.pagination/jquery.pagination.js"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="../component/jquery.pagination/pagination.css" />
-		<!--分页end-->
+	<!--分页end-->
+	<script type="text/javascript" src="../resources/jquery/plugins/notification/easy.notification.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="../resources/jquery/plugins/notification/easy.notification.css" />
+	<script type="text/javascript">
+	jQuery(function() {
+		<c:if test="${bt!=null && bt!=''}">
+		$.easyNotification({parent:$('#tagboxspace'), text:'${bt }', callback:function(){alert('closed')}});
+		</c:if>
+			//$('#clickable').click(function(){ 
+			//	$.easyNotification('The paragraph has been clicked!'); 
+			//})
+    });
+	</script>
+
   </head>
   
   <body>
     <jsp:include page="common/head.jsp" />
     <div id="main">
-	    <div class="page2 position"> 您现在正在浏览： <a href="../index.jsp" >首页</a>    » ${lmbean.lmmc}
+			     
+		<!--search_begin--> 
+		<div id="search" class="page box">
+		      <div class="searchform fl">
+			  <form action="">
+		        <input name="q" value="${bt }" type="text" id="txtKey" onfocus="if(this.value=='请输入关键词')this.value=''" onblur="if(this.value=='')this.value='请输入关键词'" maxlength="24" autocomplete="off" />
+				<input type="hidden" name="lmwid" value="${lmbean.wid }" />
+				<span id="fid_box">
+				<select name="channelId" id="fid">
+				  <option value="">所有信息</option>
+				  <option value="1">新闻资讯</option>
+				  <option value="2">影视娱乐</option>
+				  <option value="9">下载中心</option>
+				  <option value="10">关于我们</option>
+				</select>
+				</span>
+		        <input type="submit" id="btnSearch" value=""/>
+		      </form>
+			  </div>	  
+			  <div class="hottag fr ">
+			  &nbsp;
+			  </div>
+		</div>
+		<!--search_end--> 
+	    <c:if test="${bt!=null && bt!=''}">
+	    <div class="page2 ysTagboxParent" style=""><div id="dd" style="float: left;width:140px"> 您当前的搜索条件是：</div><div id="tagboxspace" style="float: left;"></div> </div>
+	    </c:if> 
+	    <div class="page2 position" style="clear: both;"> 您现在正在浏览： <a href="../index.jsp" >首页</a>    » ${lmbean.lmmc}
 	    </div> 
+
     <!--cjbd_begin-->
 <div class="page2 box">
   <div class="w700 fl">
