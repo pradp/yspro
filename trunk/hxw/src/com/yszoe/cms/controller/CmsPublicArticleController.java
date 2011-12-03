@@ -75,6 +75,7 @@ public class CmsPublicArticleController {
 			HttpServletRequest request, ModelMap model, Pager pager) {
 		List<?> list = Collections.EMPTY_LIST;
 		model.put("channelpinyin", channelpinyin);
+		model.put("bt", request.getParameter("q"));
 		pager.setEachPageRows(20);
 		try {
 			list = cmsPublicArticleService.list(model, pager);

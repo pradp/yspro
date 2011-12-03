@@ -38,7 +38,7 @@ public class CmsPublicArticleServiceImpl extends AbstractBaseServiceSupport {
 			return Collections.EMPTY_LIST;
 		}
 		String channelid = CachedQuery.getCmsChannelIdByLmbm(channelpinyin);
-		if(StringUtil.isBlank(channelid)){
+		if(StringUtil.isBlank(channelid) && "search".equals(channelpinyin)){
 			throw new RuntimeException("request channelid is blank.");
 		}
 		model.put("channelid", channelid);
