@@ -5,9 +5,9 @@
 	<proxool>
 		<alias>DataSource</alias>
 		<driver-url>
-			jdbc:oracle:thin:@127.0.0.1:1521:ysorcl
+			jdbc:mysql://127.0.0.1:3306/hxw?useUnicode=true&amp;characterEncoding=UTF8
 		</driver-url>
-		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
 		<driver-properties>
 			<property name="user" value="u_hxw" />
 			<property name="password" value="u_hxw" />
@@ -20,7 +20,7 @@
 			<maximum-active-time>5*60*1000</maximum-active-time>
 		-->
 		<house-keeping-test-sql>
-			select sysdate from dual
+			select CURRENT_DATE
 		</house-keeping-test-sql>
 
 	</proxool>
