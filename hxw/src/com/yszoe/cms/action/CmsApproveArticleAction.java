@@ -2,8 +2,8 @@ package com.yszoe.cms.action;
 
 import java.util.List;
 
+import com.yszoe.cms.entity.TXxfbLm;
 import com.yszoe.cms.service.impl.CmsApproveArticleServiceImpl;
-import com.yszoe.framework.util.DBUtil;
 import com.yszoe.sys.entity.ApplicationEnum;
 
 /**
@@ -17,8 +17,7 @@ public class CmsApproveArticleAction extends CmsMyArticleAction {
 
 	@SuppressWarnings("unchecked")
 	public List<ApplicationEnum> getCmsSort(){
-//		String hql = "select new ApplicationEnum(wid, lmmc) from TXxfbLm where state=1";
-//		List<ApplicationEnum> list = applicationEnumService.getApplicationEnums(true, hql);
+		/*
 		String sql = "SELECT wid id, DECODE( NVL(LEVEL2,0),0, SUBSTR('││││││',1,LEVEL1 - 1)||'└', " +
 		"DECODE(LEVEL2 - LEVEL1, 0, SUBSTR('││││││',1,LEVEL1 - 1)||'├', 1,SUBSTR('││││││',1,LEVEL1 - 1)||'├', " +
 		"SUBSTR('││││││',1,LEVEL1 - 1)||'└' ) )||lmmc caption FROM (SELECT wid,lmmc,parentwid, " +
@@ -26,6 +25,12 @@ public class CmsApproveArticleAction extends CmsMyArticleAction {
 		"CONNECT BY parentwid=PRIOR wid START WITH (parentwid='000' and state=1) ORDER BY wid) ";
 		List<ApplicationEnum> list = DBUtil.queryAllBeanList(sql, ApplicationEnum.class);
 		return list;
+		*/
+		//用java实现，保证数据库兼容性
+		String hql = "from TXxfbLm where state=1 order by wid";
+		List<TXxfbLm> list = getApplicationEnumService().getBaseDao().getHibernateTemplate().find(hql);
+		
+		return buildTree(list);
 	}
 
 	public void removePic(){

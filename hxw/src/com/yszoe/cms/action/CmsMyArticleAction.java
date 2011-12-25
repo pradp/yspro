@@ -3,9 +3,8 @@ package com.yszoe.cms.action;
 import java.io.File;
 import java.util.List;
 
+import com.yszoe.cms.entity.TXxfbLm;
 import com.yszoe.cms.entity.TXxfbWz;
-import com.yszoe.framework.util.DBUtil;
-import com.yszoe.sys.action.AbstractBaseActionSupport;
 import com.yszoe.sys.entity.ApplicationEnum;
 
 /**
@@ -14,7 +13,7 @@ import com.yszoe.sys.entity.ApplicationEnum;
  * datetime 2011-7-4
  */
 @SuppressWarnings("serial")
-public class CmsMyArticleAction extends AbstractBaseActionSupport {
+public class CmsMyArticleAction extends CmsSortAction {
 
 	private TXxfbWz txxfbWz;
 	private File syydt;
@@ -62,13 +61,18 @@ public class CmsMyArticleAction extends AbstractBaseActionSupport {
 		
 //		String hql = "select new ApplicationEnum(wid, lmmc) from TXxfbLm where state=1 and yxwygg=1";
 //		List<ApplicationEnum> list = applicationEnumService.getApplicationEnums(true, hql);
-		String sql = "SELECT wid id, DECODE( NVL(LEVEL2,0),0, SUBSTR('││││││',1,LEVEL1 - 1)||'└', " +
-				"DECODE(LEVEL2 - LEVEL1, 0, SUBSTR('││││││',1,LEVEL1 - 1)||'├', 1,SUBSTR('││││││',1,LEVEL1 - 1)||'├', " +
-				"SUBSTR('││││││',1,LEVEL1 - 1)||'└' ) )||lmmc caption FROM (SELECT wid,lmmc,parentwid, " +
-				"LEVEL LEVEL1,LEAD(LEVEL,1) OVER (ORDER BY ROWNUM) LEVEL2 FROM t_xxfb_lm where state=1 and yxwygg=1 " +
-				"CONNECT BY parentwid=PRIOR wid START WITH (parentwid='000' and state=1 and yxwygg=1) ORDER BY wid) ";
-		List<ApplicationEnum> list = DBUtil.queryAllBeanList(sql, ApplicationEnum.class);
-		return list;
+//		String sql = "SELECT wid id, DECODE( NVL(LEVEL2,0),0, SUBSTR('││││││',1,LEVEL1 - 1)||'└', " +
+//				"DECODE(LEVEL2 - LEVEL1, 0, SUBSTR('││││││',1,LEVEL1 - 1)||'├', 1,SUBSTR('││││││',1,LEVEL1 - 1)||'├', " +
+//				"SUBSTR('││││││',1,LEVEL1 - 1)||'└' ) )||lmmc caption FROM (SELECT wid,lmmc,parentwid, " +
+//				"LEVEL LEVEL1,LEAD(LEVEL,1) OVER (ORDER BY ROWNUM) LEVEL2 FROM t_xxfb_lm where state=1 and yxwygg=1 " +
+//				"CONNECT BY parentwid=PRIOR wid START WITH (parentwid='000' and state=1 and yxwygg=1) ORDER BY wid) ";
+//		List<ApplicationEnum> list = DBUtil.queryAllBeanList(sql, ApplicationEnum.class);
+//		return list;
+		//用java实现，保证数据库兼容性
+		String hql = "from TXxfbLm where state=1 and yxwygg=1 order by wid";
+		List<TXxfbLm> list = getApplicationEnumService().getBaseDao().getHibernateTemplate().find(hql);
+		
+		return buildTree(list);
 	}
 
 }
