@@ -73,15 +73,17 @@ function doajaxlogin(){
 	    $.post(url_tz, {yonghu: userLoginId, mima: userPawd}, function(data){
 	    	data = eval("("+data+")");
 	    	if(data.msg=='ok'){
-	    		if(data.loginuser.usertype=='1'){
-	    			
+	    		if(data.userdepartid=='000'){//admin
+	    			window.location.href = '../identity/index.action';
+	    		}else{
+	    			window.location.href = '../usercenter/index.action';
 	    		}
-	    		window.location.href = '../identity/index.action';
+	    		
 		    }else{
 		    	  $("#postButtonDiv").show();
 	              $("#postButtonWait").hide();
 			      alert(data.msg);
-		}
+			}
 		});
 	}
 

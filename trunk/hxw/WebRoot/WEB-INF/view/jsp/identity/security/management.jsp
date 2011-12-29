@@ -116,8 +116,8 @@ if(top.location != self.location){
 			</div>
 			<div class="bs_navright">
 				<span class="icon_btn_up hand" id="fullSrceen" hideLeft="false">全屏&nbsp;&nbsp;</span> <!--如果将hideLeft设为true则全屏时左侧也会被隐藏-->
-				<span class="icon_no hand" onclick='top.Dialog.confirm("确定要退出系统吗",function(){execLogout();});' style="margin-right: ">退出系统&nbsp;&nbsp;</span>
-				<a href="../index.jsp"><span class="icon_home hand">回到首页</span></a>
+				<a href="../index.jsp"><span class="icon_home hand">回到首页&nbsp;&nbsp;</span></a>
+				<span class="icon_no hand" onclick='top.Dialog.confirm("确定要退出系统吗",function(){execLogout();});' style="margin-right: ">退出系统</span>
 				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>

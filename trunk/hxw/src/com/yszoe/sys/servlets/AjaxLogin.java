@@ -90,6 +90,7 @@ public class AjaxLogin extends HttpServlet {
 										outData.put("loginuser", loginuser);
 										TSysUser user_ = (TSysUser) session.getAttribute(IdConstants.SESSION_USER);
 										outData.put("userdepart", user_.getDepart().getDepartname());
+										outData.put("userdepartid", user_.getDepart().getDepartid());
 									} else {
 										outData.put("msg", "登录失败！");
 									}
