@@ -10,7 +10,7 @@
 	<title><fmt:message key="application_name" /> - 做中国最专业的心理门户网站 </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
-	<script type="text/javascript" src="resources/jquery/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="resources/jquery/jquery-1.6.4.min.js"></script>
   </head>
   
   <body>
@@ -39,7 +39,17 @@
 	    这是首页     
 	    <br/>
 	    ......     
-	    <br/><br/><br/>
+	    <br/>
+	    <!-- 登录 -->
+		<div class="rb_right_top">
+						<h2>
+							<a href="#">登录</a>
+						</h2>
+		</div>
+					<div class="rb_right_div">
+				  <iframe frameborder="0" scrolling="no" width="100%" height="150px" src="indexLogin.jsp" ></iframe>
+					</div>
+		<br/><br/>
 	    <a href="identity/index.action">会员登录</a>  
     </div>
   </body>
