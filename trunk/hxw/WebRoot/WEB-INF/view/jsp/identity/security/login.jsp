@@ -73,8 +73,11 @@ function doajaxlogin(){
 	    $.post(url_tz, {yonghu: userLoginId, mima: userPawd}, function(data){
 	    	data = eval("("+data+")");
 	    	if(data.msg=='ok'){
-	    			window.location.href = '../identity/index.action';
-		      }else{
+	    		if(data.loginuser.usertype=='1'){
+	    			
+	    		}
+	    		window.location.href = '../identity/index.action';
+		    }else{
 		    	  $("#postButtonDiv").show();
 	              $("#postButtonWait").hide();
 			      alert(data.msg);
