@@ -1,13 +1,17 @@
 var langList = 
 [
 	{name:'en',	charset:'UTF-8'},
-	{name:'zh-cn',	charset:'UTF-8'},
-	{name:'zh-tw',	charset:'UTF-8'}
+	{name:'zh-cn',	charset:'gb2312'},
+	{name:'zh-tw',	charset:'GBK'}
 ];
 
 var skinList = 
 [
-	{name:'default',	charset:'UTF-8'},
-	{name:'blue',	charset:'UTF-8'},
-	{name:'whyGreen',	charset:'UTF-8'}
+	{name:'green',	charset:'gb2312'},
+	{name:'blue',	charset:'gb2312'},
+	{name:'red',	charset:'gb2312'},
+	{name:'yellowGreen',	charset:'UTF-8'},
+	{name:'darkBlue',	charset:'gb2312'},
+	{name:'darkYellow',	charset:'gb2312'},
+	{name:'lightBlue',	charset:'UTF-8'}
 ];

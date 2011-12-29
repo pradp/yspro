@@ -1,6 +1,1 @@
-@import "framework/reset.css";     /*初始化页面*/
-@import "framework/basic.css";     /*基本布局、宽高、颜色、字号、缩进*/
-@import "framework/position.css";  /*控制定位：(margin,padding)*/
-@import "framework/form.css";      /*表单元素修饰*/
-@import "framework/icon.css";      /*定义图标*/
-@import "framework/code.css"; 
+@import "framework/reset.css";@import "framework/basic.css";@import "framework/position.css";@import "framework/form.css";@import "framework/icon.css";@import "framework/code.css";

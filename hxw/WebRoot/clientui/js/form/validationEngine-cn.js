@@ -52,9 +52,6 @@
 					"qq":{
 						"regex":"/^[1-9]\d{4,9}$/",
 						"alertText":"* 请输入有效的QQ号码."},
-					"myNumber":{
-						"regex":"/^\-?[0-9]+$/",
-						"alertText":"* 请输入数字."},
 					"onlyNumber":{
 						"regex":"/^[0-9]+$/",
 						"alertText":"* 请输入数字."},
@@ -75,13 +72,13 @@
 						"alertTextOk":"* This name is available",	
 						"alertTextLoad":"* Loading, please wait"},
 					"custom1":{
-						"regex":"/^\-?[0-9]+$/",
-						"alertText":"* 请输入数字."}
-				}
+    					"nname":"customFunc1",
+    					"alertText":"* 必须输入123"}
+					}	
 		}
 	}
 })(jQuery);
 
 $(document).ready(function() {	
-	$.validationEngineLanguage.newLang();
+	$.validationEngineLanguage.newLang()
 });

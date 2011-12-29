@@ -27,58 +27,11 @@
 	<!-- 信息发布 查看我的文章（管理员） -->
 	<bean id="cmsAdminArticleService" class="com.yszoe.cms.service.impl.CmsAdminArticleServiceImpl" autowire="byName" />
 	
-	<!-- 专家信息维护 -->
-	<bean id="expertqaExpertsService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaExpertsImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 专家信息自我维护 -->
-	<bean id="expertqaExpertsMineService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaExpertsMineImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员问题信息维护 -->
-	<bean id="expertqaAppealService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaAppealImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 回复信息维护 -->
-	<bean id="expertqaAppealaddService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaAppealaddImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员问题信息维护 -->
-	<bean id="expertqaAnswerService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaAnswerImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 管理员问题信息维护 -->
-	<bean id="expertqaQuestionService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.ExpertqaQuestionImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	<!-- 游客向专家提问题 -->
-	<bean id="questionService" parent="txProxyTemplate">
-		<property name="target">
-			<bean class="com.yszoe.biz.service.impl.QuestionImpl"
-				autowire="byName" />
-		</property>
-	</bean>
-	
 	<!-- 专门辅助ajax action的类 -->
 	<bean id="ajaxBizService" class="com.yszoe.biz.service.impl.AjaxBizServiceImpl" autowire="byName" />
 	
+	<!-- 活动 -->
+	<bean id="hdNrService" class="com.yszoe.biz.service.impl.HdNrServiceImpl" autowire="byName" />
+  
 </beans>
 	
