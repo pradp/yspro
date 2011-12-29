@@ -30,7 +30,7 @@
 	    <a href="channel/<%=lm.getLmbm() %>.jhtm"><%=lm.getLmmc() %></a>    
 	    <%} 
 	    }%>  
-	    <a href="public/xlyp.jhtm">心理研培</a>    
+	    <a href="service/activity/index">活 动</a>    
 	    <a href="bbs">互助论坛</a>      
     </div>
    <br/><br/>

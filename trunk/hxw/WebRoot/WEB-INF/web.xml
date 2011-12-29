@@ -85,7 +85,7 @@
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.jhtm</url-pattern>
-		<url-pattern>/resource/*</url-pattern>
+		<url-pattern>/service/*</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

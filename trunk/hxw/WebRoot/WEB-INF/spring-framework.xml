@@ -29,7 +29,7 @@
 		<property name="hibernateProperties">
            <props>
               <prop key="hibernate.dialect">
-                  org.hibernate.dialect.MySQLDialect
+                  org.hibernate.dialect.Oracle9iDialect
               </prop>
               <prop key="hibernate.show_sql">true</prop>
               <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
