@@ -24,7 +24,7 @@
 	<!-- 针对类、方法级别的拦截器 -->
 	<mvc:interceptors>
 	    <mvc:interceptor>
-	        <mvc:mapping path="/member/**" />
+	        <mvc:mapping path="/usercenter/**" />
 	        <bean class="com.yszoe.identity.springinterceptor.CheckLoginInterceptor4springmvc"></bean>    
 	    </mvc:interceptor>
 	</mvc:interceptors>

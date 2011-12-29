@@ -21,7 +21,7 @@
  * 年份月份相关
  ***************************/
 /* 年份月份栏 DIV */
-.WdateDiv #dpTitle { height:24px; margin-bottom:2px; background:#ea3017 url(qs.jpg) repeat-x bottom; }
+.WdateDiv #dpTitle { height:24px; margin-bottom:2px; background:#a99862 url(qs.jpg) repeat-x bottom; }
 /* 年份月份输入框 INPUT */
 .WdateDiv .yminput { width:50px; height:20px; margin-top:2px; border:0px; background:transparent; cursor:pointer; color:white; line-height:14px; text-align:center; }
 /* 年份月份输入框获得焦点时的样式 INPUT */

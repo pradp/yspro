@@ -23,30 +23,17 @@
 	String userName = tsysUser.getUsername();
 	String userid = tsysUser.getUserid();
 	
-	List tsysMenues = (List) session.getAttribute(com.yszoe.identity.IdConstants.SESSION_USER_RIGHT_MENUS);
-	String sysMessage = "";
-	if (tsysMenues == null) {
-		sysMessage = "系统警告：会话交互失败！";
-	} else if (tsysMenues.isEmpty()) {
-		sysMessage = "用户没有被分配菜单，或者权限被禁用！";
-	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<base href="<%=basePath%>clientui/">
+		<base href="<%=basePath %>clientui/" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title><s:text name="application_name" /></title>
 
 <!--框架必需start-->
-		<link href="css/framework/reset.css" rel="stylesheet" type="text/css"/>
-		<link href="css/framework/basic.css" rel="stylesheet" type="text/css"/>
-		<link href="css/framework/position.css" rel="stylesheet" type="text/css"/>
-		<link href="css/framework/form.css" rel="stylesheet" type="text/css"/>
-		<link href="css/framework/icon.css" rel="stylesheet" type="text/css"/>
-		<link href="css/framework/code.css" rel="stylesheet" type="text/css"/>
-		<link href="skins/sky/style.css" rel="stylesheet" type="text/css" id="skin" themeColor="blue" prePath="./"/>
-		<link href="skins/custom.css" rel="stylesheet" type="text/css" id="skin" themeColor="blue" prePath="./"/>
+		<link href="css/import_basic.css" rel="stylesheet" type="text/css"/>
+		<link href="skins/sky/import_skin.css" rel="stylesheet" type="text/css" id="skin" themeColor="blue"/>
 		<script type="text/javascript" src="js/jquery-1.4.js"></script>
 		<script type="text/javascript" src="js/bsFormat.js"></script>
 <!--框架必需end-->
@@ -84,95 +71,32 @@ if(top.location != self.location){
 			})
 		})
 	})
-	/**
-	 * 隐藏或显示头部
-	 */
-	function hideOrShowHeader(){
-		var height = $("#zw_id").height();
-		if($("#header").css("display") == 'block'){
-			 $("#header").hide();
-			 $("#zw_id").height(height + 80);
-			 $("#bs_left").height(height +80);
-			 $("#frmleft").height(height+80);
-			 $(document.getElementById('frmleft').contentWindow.document.getElementById("scrollContent")).height(height+80);
-			 $("#bs_right").height(height +80);
-			 $("#frmright").height(height+80);
-			 //子页面高度调整
-			 var div_0 = $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("div")[0]);
-			 if(div_0[0]){
-				 div_0.height(height+80);
-			 }else{ //树结构页面高度调整
-				 //树结构页面左侧的树结构
-				 var iframe_0 = document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[0];
-				 if(iframe_0){
-					 $(iframe_0).height(height+80);
-					 //树结构页面右侧的明细信息
-					 $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[1]).height(height+80);
-					 //树结构右侧明细信息里的div高度调整
-					 div_0 = $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[1]
-						 .contentWindow.document.getElementsByTagName("div")[0]);
-					 if(div_0[0]){
-					 	div_0.height(height+80);
-					 }
-				 }
-			 }
-		}else{
-			 $("#header").show();
-			 $("#zw_id").height(height - 80);
-			 $("#bs_left").height(height -80);
-			 $("#frmleft").height(height-80);
-			 $(document.getElementById('frmleft').contentWindow.document.getElementById("scrollContent")).height(height-80);
-			 $("#bs_right").height(height -80);
-			 $("#frmright").height(height-80);
-			 //子页面高度调整
-			 var div_0 = $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("div")[0]);
-			 if(div_0[0]){ 
-				 div_0.height(height-80);
-			 }else{ //树结构页面高度调整
-				 //树结构页面左侧的树结构
-				 var iframe_0 = document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[0];
-				 if(iframe_0){
-					 $(iframe_0).height(height-80);
-					 //树结构页面右侧的明细信息
-					 $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[1]).height(height-80);
-					 //树结构右侧明细信息里的div高度调整
-					 div_0 = $(document.getElementById('frmright').contentWindow.document.getElementsByTagName("iframe")[1]
-						 .contentWindow.document.getElementsByTagName("div")[0]);
-					 if(div_0[0]){ 
-					 	div_0.height(height-80);
-					 }
-				 }
-			 }
-		}
-	}
+	
 </script>
-<style>
-a {
-	behavior:url(js/method/focus.htc)
-}
-</style>
 
 	</head>
 	<body class="" style="height: 100%">
-		<div id="floatPanel-1"></div>		
+	
+<div id="floatPanel-1"></div>		
 <div id="mainFrame" style="height: 100%">
 <!--头部与导航start-->
 <div id="hbox">
-	<div id="header" style="width: 100%;height: 80px;background-image: url(skins/sky/mainframe/bs_header.jpg);background-repeat: repeat-x;">
+	<div id="bs_bannercenter">
 	<div id="bs_bannerleft">
-	<div id="bs_bannerright2">
-		<div class="bs_banner_logo_hmenu" id="header1"></div>
-		<div class="bs_banner_title" id="header2"></div>
-		<div class="nav_icon_h" id="header3">
-			<%=sysMessage.equals("")?"":sysMessage+"<br/>" %>
-			<div class="clear"></div>
-		</div>
+	<div id="bs_bannerright">
+		<div class="bs_banner_logo"></div>
+		<div class="bs_banner_title"></div>
+		<div class="subTitle"></div>
 	</div>
 	</div>
 	</div>
-	<table title="点击展开/收起上方区域" style="text-decoration:none;padding: 0 0 0 5px;color: #19366e;overflow:hidden;width: 100%;height: 28px;background-image: url(skins/sky/mainframe/bs_message.jpg);background-repeat: repeat-x;">
-		<tr>
-			<td align="left" width="20%" onclick="hideOrShowHeader()" style="cursor: pointer" nowrap="nowrap">
+	
+	<div id="bs_navcenter">
+	<div id="bs_navleft">
+	<div id="bs_navright">
+		<div class="bs_nav">
+			<div class="bs_navleft">
+				<li>
 					欢迎<%=userName %>(<%=userLoginId %>)，&nbsp;隶属：<%=userDepartname %>，&nbsp;今天是
 				<script>
 					var weekDayLabels = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
@@ -183,20 +107,24 @@ a {
 				    var currentime = year+"年"+month+"月"+day+"日 "+weekDayLabels[now.getDay()]
 					document.write(currentime)
 				</script>
-			</td>
-			<td width="100px" nowrap="nowrap">
-					&nbsp;&nbsp;字号:
-					<span class="fontChange"><a href="javascript:;" setFont="16">大</a></span>
-					<span class="fontChange"><a href="javascript:;" setFont="14">中</a></span>
-					<span class="fontChange"><a href="javascript:;" setFont="12">小</a></span>
-			</td>
-			<td width="" onclick="hideOrShowHeader()" style="cursor: pointer">&nbsp;</td>
-			<td align="right" width="160px" nowrap="nowrap">		
-				<span class="icon_home hand" onclick="window.location.href='../index.jsp'">回到首页&nbsp;&nbsp;</span>	
-				<span class="icon_no hand" onclick='top.Dialog.confirm("确定要退出系统吗",function(){execLogout();});' style="margin-right: ">退出系统</span>
-			</td>
-		</tr>
-	</table>
+				</li>
+				<li class="fontTitle">&nbsp;&nbsp;字号:</li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="16">大</a></span></li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="14">中</a></span></li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="12">小</a></span></li>
+				<div class="clear"></div>
+			</div>
+			<div class="bs_navright">
+				<span class="icon_btn_up hand" id="fullSrceen" hideLeft="false">全屏&nbsp;&nbsp;</span> <!--如果将hideLeft设为true则全屏时左侧也会被隐藏-->
+				<span class="icon_no hand" onclick='top.Dialog.confirm("确定要退出系统吗",function(){execLogout();});' style="margin-right: ">退出系统&nbsp;&nbsp;</span>
+				<a href="../index.jsp"><span class="icon_home hand">回到首页</span></a>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+	</div>
 </div>
 <!--头部与导航end-->
 
@@ -278,7 +206,7 @@ a {
 	<div id="bs_footcenter">
 	<div id="bs_footleft">
 	<div id="bs_footright" class="white">
-		<s:text name="application_name" />  CopyRight 2011 @ <s:text name="application_url" />
+		<s:text name="application_name" />  CopyRight 2012 @ <s:text name="application_url" />
 	</div>
 	</div>
 	</div>

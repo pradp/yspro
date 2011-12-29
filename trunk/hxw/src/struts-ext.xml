@@ -23,6 +23,16 @@
 			<result name="targetView">/WEB-INF/view/jsp/public/{1}/${targetView}</result>
 		</action>
 	</package>
+	<!-- usercenter 是会员登录后可见的内容。有登录验证。 -->
+	<package name="usercenter" namespace="/usercenter" extends="checklogin">
+		<action name="*-*" class="{1}Action" method="{2}">
+			<result name="list">/WEB-INF/view/jsp/usercenter/{1}/list.jsp</result>
+			<result name="input">/WEB-INF/view/jsp/usercenter/{1}/input.jsp</result>
+			<result name="entity">/WEB-INF/view/jsp/usercenter/{1}/entity.jsp</result>
+			<result name="remove">/WEB-INF/view/jsp/common/remove.jsp</result>
+			<result name="targetView">/WEB-INF/view/jsp/usercenter/{1}/${targetView}</result>
+		</action>
+	</package>
 	<!-- 下面为struts2提供的返回json数据的配置，为安全性，限制只能使用指定的ajaxSysAction类。 -->
 	<package name="jsonVisitor" namespace="/jsonVisitor" extends="json-exp">
 		<default-interceptor-ref name="jsonVisitorInterceptor" />
