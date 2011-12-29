@@ -30,8 +30,10 @@
 	<!-- 专门辅助ajax action的类 -->
 	<bean id="ajaxBizService" class="com.yszoe.biz.service.impl.AjaxBizServiceImpl" autowire="byName" />
 	
-	<!-- 活动 -->
+	<!-- 活动 会员菜单 -->
 	<bean id="hdNrService" class="com.yszoe.biz.service.impl.HdNrServiceImpl" autowire="byName" />
+	<!-- 活动 管理员菜单 -->
+	<bean id="hdNrAdminService" class="com.yszoe.biz.service.impl.HdNrAdminServiceImpl" autowire="byName" />
   
 </beans>
 	

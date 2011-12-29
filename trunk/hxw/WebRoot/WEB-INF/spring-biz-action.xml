@@ -35,8 +35,12 @@
 		<property name="ajaxBizService" ref="ajaxBizService"/>
 	</bean>
 	
-	<!-- 活动 -->
+	<!-- 活动 会员菜单 -->
 	<bean id="hdNrAction" class="com.yszoe.biz.action.HdNrAction" scope="prototype" autowire="byName">
 		<property name="baseService" ref="hdNrService"></property>			
+	</bean>
+	<!-- 活动 管理员菜单 -->
+	<bean id="hdNrAdminAction" class="com.yszoe.biz.action.HdNrAdminAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="hdNrAdminService"></property>			
 	</bean>
 </beans>
