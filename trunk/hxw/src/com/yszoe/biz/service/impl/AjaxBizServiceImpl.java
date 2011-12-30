@@ -1,14 +1,11 @@
 package com.yszoe.biz.service.impl;
 
 import java.text.MessageFormat;
-import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 
 import com.yszoe.biz.service.AjaxBizService;
-import com.yszoe.framework.util.DBUtil;
 import com.yszoe.sys.SysConstants;
-import com.yszoe.sys.entity.TDepartDetail;
 import com.yszoe.sys.service.impl.AjaxSysServiceImpl;
 import com.yszoe.sys.util.SQLConfigUtil;
 
@@ -17,7 +14,6 @@ import com.yszoe.sys.util.SQLConfigUtil;
  * 
  * @author Linyang datetime 2011-5-1
  */
-@SuppressWarnings("unchecked")
 public class AjaxBizServiceImpl extends AjaxSysServiceImpl implements AjaxBizService {
 
 	/**
@@ -38,10 +34,9 @@ public class AjaxBizServiceImpl extends AjaxSysServiceImpl implements AjaxBizSer
 					return loadDepartTreeChild(nodeid, type, dutyid, jcxl);
 				}
 			}
-		} 
+		}
 		return "{}";
 	}
-
 
 	/**
 	 * tree 加载子节点 单位树维护 在departTree模块使用ajax调用
@@ -77,41 +72,5 @@ public class AjaxBizServiceImpl extends AjaxSysServiceImpl implements AjaxBizSer
 			}
 		}
 		return loadTreeChild(sql, new Object[] { nodeid });
-	}
-
-
-	/**
-	 * 获取地图信息
-	 * 
-	 * @param areaid 区县id
-	 * @param xz 畜种
-	 * @return
-	 */
-	public String loadMapInfo(String areaid, String xz, String departname) {
-		String sql = "select a.departname as departname,b.jd as jd,b.wd as wd from t_sys_depart a,t_depart_detail b"
-				+ " where a.departid=b.departid and b.jd is not null and b.wd is not null";
-		if (StringUtils.isNotBlank(areaid)) {
-			sql += " and a.city = '" + areaid + "'";
-		}
-		if (StringUtils.isNotBlank(xz)) {
-			sql += " and b.xz = '" + xz + "'";
-		}
-		if (StringUtils.isNotBlank(departname)) {
-			sql += " and a.departname like '%" + departname + "%'";
-		}
-		List<TDepartDetail> list = DBUtil.queryAllBeanList(sql, TDepartDetail.class);
-		StringBuffer sb = new StringBuffer();
-		sb.append("[");
-		if (list != null && list.size() > 0) {
-			for (TDepartDetail code : list) {
-				sb.append("{jd:'").append(code.getJd()).append("',wd:'").append(code.getWd()).append("',departname:'")
-						.append(code.getDepartname()).append("'},");
-			}
-		}
-		sb.setCharAt(sb.toString().length() - 1, ']');
-		if (sb.toString().length() == 1) {
-			return "[]";
-		}
-		return sb.toString();
 	}
 }

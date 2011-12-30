@@ -1,6 +1,5 @@
 package com.yszoe.biz.action;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +46,6 @@ public class AjaxBizAction extends AjaxSysAction {
 	/**
 	 * 加载指定节点的所有下属节点
 	 * 
-	 * @param nodeid 树节点的ID
 	 * @return
 	 */
 	public String loadTreeChild() {
@@ -55,26 +53,6 @@ public class AjaxBizAction extends AjaxSysAction {
 		AjaxBizServiceImpl ajaxServiceImpl = (AjaxBizServiceImpl) ajaxBizService;
 		String tree = ajaxServiceImpl.loadTreeChild(treeType, param);
 		datamap.put("treedata", tree);
-		return "SUCCESS";
-	}
-
-	/**
-	 * 获取地图信息
-	 * 
-	 * @return
-	 */
-	public String loadMapInfo() {
-		String areaid = getRequest().getParameter("areaid");
-		String xz = getRequest().getParameter("xz");
-		String departname = "";
-		try {
-			departname = new String(getRequest().getParameter("departname").getBytes("iso8859-1"), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			putResultStringToView(e.getMessage());
-		}
-		AjaxBizServiceImpl ajaxServiceImpl = (AjaxBizServiceImpl) ajaxBizService;
-		String info = ajaxServiceImpl.loadMapInfo(areaid, xz, departname);
-		datamap.put("info", info);
 		return "SUCCESS";
 	}
 }
