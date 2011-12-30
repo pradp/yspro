@@ -1,6 +1,5 @@
 package com.yszoe.biz.entity;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,7 +14,7 @@ import javax.persistence.Transient;
  * THdNr entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "t_hd_nr", catalog = "hxw")
+@Table(name = "t_hd_nr")
 public class THdNr implements java.io.Serializable {
 
 	// Fields
@@ -33,8 +32,11 @@ public class THdNr implements java.io.Serializable {
 	private Long bmrs; //manual add 已经报名人数
 	private String zbfzz;
 	private String cjr;
+	private String cjrName;
 	private Date cjrq;
 	private Date zhxgrq;
+	private Date zhxgrqStart;
+	private Date zhxgrqEnd;
 	private Long djs;
 	private String state;
 	private Date shrq;
@@ -53,9 +55,8 @@ public class THdNr implements java.io.Serializable {
 
 	/** list constructor */
 	public THdNr(String wid, String bt, String syydt, String zzz, String hddd, String hdsj, Double jg, 
-			Integer zdrs, Date zhxgrq, Long djs, String hdlx, String state, Long bmrs) {
+			Integer zdrs, String zbfzz, String cjr, Date zhxgrq, Long djs, String hdlx, String state, Date shrq, Long bmrs) {
 		this.wid = wid;
-		this.hdlx = hdlx;
 		this.bt = bt;
 		this.syydt = syydt;
 		this.zzz = zzz;
@@ -63,32 +64,14 @@ public class THdNr implements java.io.Serializable {
 		this.hdsj = hdsj;
 		this.jg = jg;
 		this.zdrs = zdrs;
-		this.zhxgrq = zhxgrq;
-		this.djs = djs;
-		this.state = state;
-		this.bmrs = bmrs;
-	}
-
-	/** full constructor */
-	public THdNr(String wid, String hdlx, String bt, String zzz, String nr, String hddd, String hdsj, Double jg, Integer zdrs, String zbfzz,
-			String cjr, Timestamp cjrq, Timestamp zhxgrq, Long djs, String state, Timestamp shrq, String shyj) {
-		this.wid = wid;
-		this.hdlx = hdlx;
-		this.bt = bt;
-		this.zzz = zzz;
-		this.nr = nr;
-		this.hddd = hddd;
-		this.hdsj = hdsj;
-		this.jg = jg;
-		this.zdrs = zdrs;
 		this.zbfzz = zbfzz;
-		this.cjr = cjr;
-		this.cjrq = cjrq;
+		this.cjrName = cjr;
 		this.zhxgrq = zhxgrq;
 		this.djs = djs;
+		this.hdlx = hdlx;
 		this.state = state;
 		this.shrq = shrq;
-		this.shyj = shyj;
+		this.bmrs = bmrs;
 	}
 
 	// Property accessors
@@ -264,6 +247,33 @@ public class THdNr implements java.io.Serializable {
 
 	public void setBmrs(Long bmrs) {
 		this.bmrs = bmrs;
+	}
+
+	@Transient
+	public String getCjrName() {
+		return cjrName;
+	}
+
+	public void setCjrName(String cjrName) {
+		this.cjrName = cjrName;
+	}
+
+	@Transient
+	public Date getZhxgrqStart() {
+		return zhxgrqStart;
+	}
+
+	public void setZhxgrqStart(Date zhxgrqStart) {
+		this.zhxgrqStart = zhxgrqStart;
+	}
+
+	@Transient
+	public Date getZhxgrqEnd() {
+		return zhxgrqEnd;
+	}
+
+	public void setZhxgrqEnd(Date zhxgrqEnd) {
+		this.zhxgrqEnd = zhxgrqEnd;
 	}
 
 }

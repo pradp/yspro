@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * THdGsfx entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "t_hd_gsfx", catalog = "hxw")
+@Table(name = "t_hd_gsfx")
 public class THdGsfx implements java.io.Serializable {
 
 	// Fields
@@ -17,6 +17,7 @@ public class THdGsfx implements java.io.Serializable {
 	private String wid;
 	private String bmwid;
 	private String fxdx;
+	private String fxly;
 
 	// Constructors
 
@@ -30,10 +31,11 @@ public class THdGsfx implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public THdGsfx(String wid, String bmwid, String fxdx) {
+	public THdGsfx(String wid, String bmwid, String fxdx, String fxly) {
 		this.wid = wid;
 		this.bmwid = bmwid;
 		this.fxdx = fxdx;
+		this.fxly = fxly;
 	}
 
 	// Property accessors
@@ -63,6 +65,15 @@ public class THdGsfx implements java.io.Serializable {
 
 	public void setFxdx(String fxdx) {
 		this.fxdx = fxdx;
+	}
+
+	@Column(name = "fxly", length = 3)
+	public String getFxly() {
+		return fxly;
+	}
+
+	public void setFxly(String fxly) {
+		this.fxly = fxly;
 	}
 
 }
