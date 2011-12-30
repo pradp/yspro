@@ -1,9 +1,32 @@
 @charset "utf-8";
 
-.kandyTabs{margin:0;padding:2px;border:0px solid #DDD;background:#f5f5f5;overflow:hidden;zoom:1}
-.kandyTabs .tabtitle{margin:0;padding:0;line-height:26px;border-bottom:0px solid #DDD; cursor: pointer;}
-.kandyTabs .tabtitle .tabbtn{margin:0 8px 0 0;padding:0 5px;display:inline-block;background:#e5e5e5;border:0px solid #DDD;border-width:1px 1px 0;}
-.kandyTabs .tabtitle .tabcur{line-height:27px;background:#FFF;border-bottom:0px solid #FFF;font-weight:bold;color:#F00;margin-bottom:-2px}
+.kandyTabs{margin:0;padding:2px;border:0px solid #DDD;background:#ffffff;overflow:hidden;zoom:1}
+.kandyTabs .tabtitle{
+	margin:0;padding:0;line-height:33px;border-bottom:0px solid #DDD; cursor: pointer;
+	background: url("img/menuBg.gif") repeat-x scroll center bottom transparent;
+}
+.kandyTabs .tabtitle .tabbtn{
+	margin:0 0px 0 0;padding:0 18px 0 18px;display:inline-block;
+	border:0px solid #DDD;border-width:0px 0px 0px 1px;height: 33px;line-height:33px;
+	background: url("img/rd_tabPage_bg2.gif") repeat scroll right center transparent;
+}
+.kandyTabs .tabtitle .tabcur{
+	background: url("img/rd_tabPage_bg.gif") repeat scroll right center transparent;
+    height: 33px;line-height:33px;
+	border-bottom:0px solid #FFF;font-weight:bold;margin-bottom:-2px
+}
+.kandyTabs .tabtitle .tabLink {
+    background: url("img/rd_tabPage_bg3.gif") repeat scroll 0 0 transparent;
+    font-size: 12px;
+    color:#F00;
+    height: 33px;
+    line-height: 33px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 136px;
+}
 .kandyTabs .tabbody{padding:5px;background:#FFF;border:0px solid #DDD;border-width:0 1px 1px;overflow:hidden;zoom:1;margin:0}
 .kandyTabs .tabbody .tabcont{background:#FFF}
 .kandyTabs .tabbody .tabroll .tabcont{margin:5px 0 0}
@@ -14,17 +37,19 @@
 .tabprevno,.tabnextno{cursor:default!important}
 .tabprocess{height:5px;overflow:hidden;}
 
-.kandyFold{border:3px double #DDD;overflow:hidden;zoom:1}
-.kandyFold .tabbtn{border-top:1px solid #DDD;display:block;margin:-1px 0 0;padding:0 10px;line-height:24px;background:#EEE;zoom:1}
-.kandyFold .tabcur{background:#FFF;border-bottom:1px dashed #EEE;font-weight:bold;color:#F00;}
+.kandyFold{border:0px double #DDD;overflow:hidden;zoom:1}
+.kandyFold .tabbtn{
+	border-top:1px solid #B2D5D9;display:block;margin:-1px 0 0;padding:0 10px;
+	height:26px;line-height:26px;background:#FCFCFC;zoom:1}
+.kandyFold .tabcur{background:#F5F5F5;font-weight:bold;color:#F00;}
 .kandyFold .tabon{background:#F5F5F5;font-weight:bold}
 .kandyFold .tabcont{display:block;margin:0;padding:5px;}
 
 .kandySlide{position:relative;zoom:1;}
-.kandySlide .tabtitle{position:absolute;bottom:8px;right:8px;z-index:10}
+.kandySlide .tabtitle{position:absolute;bottom:4px;right:8px;z-index:10}
 .kandySlide .tabtitle .tabbtn{float:left;background:#000;color:#FFF;padding:0 4px;font:bold 12px/16px Arial;margin:0 0 0 5px;filter:alpha(opacity=50);opacity:.5;-moz-border-radius:8px}
 .kandySlide .tabtitle .tabcur{background:#F30;padding:0 6px;filter:alpha(opacity=70);opacity:.7;font-size:13px}
-.kandySlide .tabcont img{vertical-align:text-bottom;display:block;background:#FFF url(loading.gif) center no-repeat}
+.kandySlide .tabcont img{vertical-align:text-bottom;display:block;background:#FFF url(img/loading.gif) center no-repeat}
 
 .kandyLoop{position:relative;zoom:1;border:1px solid #DDD;padding:2px;background:#EEE;}
 .kandyLoop .tabtitle{float:right;padding:3px 5px 5px;}
