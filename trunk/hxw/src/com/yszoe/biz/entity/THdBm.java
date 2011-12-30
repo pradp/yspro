@@ -6,11 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 /**
  * THdBm entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "t_hd_bm", catalog = "hxw")
+@Table(name = "t_hd_bm")
 public class THdBm implements java.io.Serializable {
 
 	// Fields
@@ -22,6 +24,7 @@ public class THdBm implements java.io.Serializable {
 	private Timestamp bmsj;
 	private String state;
 	private String hdgs;
+	private String xlfx;
 	private String fxjb;
 
 	// Constructors
@@ -104,7 +107,8 @@ public class THdBm implements java.io.Serializable {
 		this.state = state;
 	}
 
-	@Column(name = "HDGS", length = 65535)
+	@Type(type="text")
+	@Column(name = "HDGS")
 	public String getHdgs() {
 		return this.hdgs;
 	}
@@ -120,6 +124,16 @@ public class THdBm implements java.io.Serializable {
 
 	public void setFxjb(String fxjb) {
 		this.fxjb = fxjb;
+	}
+
+	@Type(type="text")
+	@Column(name = "XLFX")
+	public String getXlfx() {
+		return xlfx;
+	}
+
+	public void setXlfx(String xlfx) {
+		this.xlfx = xlfx;
 	}
 
 }
