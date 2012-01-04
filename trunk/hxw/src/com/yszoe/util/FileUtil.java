@@ -41,13 +41,14 @@ public class FileUtil {
 			fileStoreRootPath = fileStoreRootPath + File.separator;
 		}
 	}
+	
 	/**
 	 * 把一个文件复制到另一个文件里
 	 * 
 	 * @param src 被复制的文件
 	 * @param dst 目标写入文件
 	 */
-	public static void copyFile(File src, File dst) {
+	public static void copyFile(InputStream src, File dst) {
 		File dstDir = dst.getParentFile();
 		if( dstDir==null ){
 			LOG.error("ParentFile return null !");
@@ -63,7 +64,7 @@ public class FileUtil {
 		InputStream in = null;
 		OutputStream out = null;
 		try {
-			in = new BufferedInputStream(new FileInputStream(src), BUFFER_SIZE);
+			in = new BufferedInputStream(src, BUFFER_SIZE);
 			out = new BufferedOutputStream(new FileOutputStream(dst), BUFFER_SIZE);
 			byte[] buffer = new byte[BUFFER_SIZE];
 			while (in.read(buffer) > 0) {
@@ -92,6 +93,24 @@ public class FileUtil {
 					throw new RuntimeException(e);
 				}
 			}
+		}
+	}
+
+	/**
+	 * 把一个文件复制到另一个文件里
+	 * 
+	 * @param src 被复制的文件
+	 * @param dst 目标写入文件
+	 */
+	public static void copyFile(File src, File dst) {
+		
+		FileInputStream file;
+		try {
+			file = new FileInputStream(src);
+			copyFile(file, dst);
+		} catch (FileNotFoundException e) {
+			LOG.error(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -359,6 +378,16 @@ public class FileUtil {
 		FileUtil.copyFile(src, dstFile);
 		return relativePathFileName;
 	}
+	
+	public static String saveFile(InputStream src, String modelCatalog, String oldfilename, String newfilename) {
+		//单机集群，存本地磁盘
+		String relativePathFileName = getNewRelativePathFilename(modelCatalog, oldfilename, newfilename);
+		String dst = getFullPathInDist( relativePathFileName );
+		File dstFile = new File(dst);
+		FileUtil.copyFile(src, dstFile);
+		return relativePathFileName;
+	}
+
 
 	/**
 	 * 保存文件在集群环境里，relativePathFileName传入相对路径文件名，自动加上配置的绝对路径根目录存储文件。
@@ -372,6 +401,11 @@ public class FileUtil {
 	 */
 	public static String saveFile(File src, String modelCatalog, String oldfilename) {
 		//单机集群，存本地磁盘
+		return saveFile(src, modelCatalog, oldfilename, null);
+	}
+	
+	public static String saveFile(InputStream src, String modelCatalog, String oldfilename) {
+
 		return saveFile(src, modelCatalog, oldfilename, null);
 	}
 	
