@@ -19,7 +19,7 @@
 })
 </script>
  <%--right_begin--%>
-  <div class="w250 fr">
+<div class="w250 fr">
     <div class="rb_right_top">
       <h2>推荐课程</h2>
     </div>
@@ -55,17 +55,7 @@
        </div>
     <!--_End-->
     </div>
-   <!-- 在线答疑_begin -->
-    <h2><span>在线答疑</span></h2>
-	<div class="w98">
-	  <dl class="rmpl">
-	       <c:forEach var="Dyentity" items="${indexPageQuery.answerList}" varStatus="status" begin='0' end='3'>
-			<dt><span> ${status.index+1}、${StringUtil.getShortTitle( Dyentity.appealid, 5 )}</span>： <a>${StringUtil.getShortTitle( Dyentity.attach, 10) }</a></dt>
-			<dd>${StringUtil.getShortTitle( Dyentity.expertid, 5 )}：${StringUtil.getShortTitle( Dyentity.answer, 30) }</dd>
-			<dd class="line"></dd>
-		   </c:forEach>
-	  </dl>
-	</div>
-	</div>
+   
+  </div>
 </div>
  <%--right_end--%>

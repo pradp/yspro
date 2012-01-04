@@ -2,7 +2,7 @@
 <jsp:useBean id="indexPageQuery" scope="application" class="com.yszoe.biz.IndexPageQuery" />
 <jsp:useBean id="StringUtil" scope="application" class="com.yszoe.util.StringUtil" />
 <link rel="stylesheet" rev="stylesheet" href="../resources/jquery/plugins/tab/kandytabs.css" />
-<script type="text/javascript" src="../resources/jquery/plugins/tab/kandytabs.pack.js"></script>
+<script type="text/javascript" src="../resources/jquery/plugins/tab/kandytabs.js"></script>
 <script type="text/javascript">
   $(function(){
     $("#ktabs").KandyTabs();
@@ -55,17 +55,7 @@
        </div>
     <!--_End-->
     </div>
-   <!-- 在线答疑_begin -->
-    <h2><span>在线答疑</span></h2>
-	<div class="w98">
-	  <dl class="rmpl">
-	       <c:forEach var="Dyentity" items="${indexPageQuery.answerList}" varStatus="status" begin='0' end='3'>
-			<dt><span> ${status.index+1}、${StringUtil.getShortTitle( Dyentity.appealid, 5 )}</span>： <a>${StringUtil.getShortTitle( Dyentity.attach, 10) }</a></dt>
-			<dd>${StringUtil.getShortTitle( Dyentity.expertid, 5 )}：${StringUtil.getShortTitle( Dyentity.answer, 30) }</dd>
-			<dd class="line"></dd>
-		   </c:forEach>
-	  </dl>
-	</div>
+   
 	</div>
 </div>
  <%--right_end--%>
