@@ -113,4 +113,20 @@ public class AjaxSysAction extends AbstractBaseActionSupport {
 		}
 		return "SUCCESS";
 	}
+
+	/**
+	 * 校验输入的信息是否存在
+	 * 
+	 * @return
+	 */
+	public String checkDuplicate() {
+		String entityName = getRequest().getParameter("entityName");
+		String column = getRequest().getParameter("column");
+		String value = getRequest().getParameter("value");
+		String wid = getRequest().getParameter("wid");
+		AjaxSysServiceImpl ajaxServiceImpl = (AjaxSysServiceImpl) ajaxService;
+		String tree = ajaxServiceImpl.checkDuplicate(entityName, column, value, wid);
+		datamap.put("exists", tree);
+		return "SUCCESS";
+	}
 }
