@@ -91,6 +91,8 @@ public interface SysConstants {
 	String CZDX_T_SCJC_CODE = "TScjcCode"; // 生产监测指标字典
 	String CZDX_T_SCJC_XX = "TScjcXx"; // 生产监测信息登记
 	String CZDX_T_SYS_MESSAGE_CTRL = "TSysMessageCtrl"; // 消息管理
+	String CZDX_T_CS_LX = "TCsLx"; // 测试类型
+	String CZDX_T_CS_XM = "TCsXm"; // 测试项目
 
 	/**
 	 * 是与否
