@@ -123,8 +123,8 @@ public class TCsXm implements java.io.Serializable {
 		this.cjr = cjr;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "CJSJ", length = 7)
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "CJSJ")
 	public Date getCjsj() {
 		return this.cjsj;
 	}
