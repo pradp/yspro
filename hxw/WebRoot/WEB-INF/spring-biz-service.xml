@@ -27,6 +27,19 @@
 	<!-- 信息发布 查看我的文章（管理员） -->
 	<bean id="cmsAdminArticleService" class="com.yszoe.cms.service.impl.CmsAdminArticleServiceImpl" autowire="byName" />
 	
+	<!-- 显示咨询列表 -->
+	<bean id="consultingService" class="com.yszoe.biz.service.impl.ConsultingServiceImpl" autowire="byName" />
+	<!-- 显示咨询信息 -->
+	<bean id="consultingTjService" class="com.yszoe.biz.service.impl.ConsultingTjServiceImpl" autowire="byName" />
+	<!-- 测试类别 -->
+	<bean id="testTypeService" class="com.yszoe.biz.service.impl.TestTypeServiceImpl" autowire="byName" />
+	<!-- 测试项目 -->
+	<bean id="testProjectService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.yszoe.biz.service.impl.TestProjectServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
 	<!-- 专门辅助ajax action的类 -->
 	<bean id="ajaxBizService" class="com.yszoe.biz.service.impl.AjaxBizServiceImpl" autowire="byName" />
 	

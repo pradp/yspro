@@ -35,6 +35,23 @@
 		<property name="ajaxBizService" ref="ajaxBizService"/>
 	</bean>
 	
+	<!-- 显示咨询列表 -->
+	<bean id="consultingAction" class="com.yszoe.biz.action.ConsultingAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="consultingService"></property>			
+	</bean>
+	<!-- 显示咨询信息 -->
+	<bean id="consultingTjAction" class="com.yszoe.biz.action.ConsultingTjAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="consultingTjService"></property>			
+	</bean>
+	<!-- 测试类别 -->
+	<bean id="testTypeAction" class="com.yszoe.biz.action.TestTypeAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="testTypeService"></property>			
+	</bean>
+	<!-- 测试项目 -->
+	<bean id="testProjectAction" class="com.yszoe.biz.action.TestProjectAction" scope="prototype" autowire="byName">
+		<property name="baseService" ref="testProjectService"></property>			
+	</bean>
+	
 	<!-- 活动 会员菜单 -->
 	<bean id="hdNrAction" class="com.yszoe.biz.action.HdNrAction" scope="prototype" autowire="byName">
 		<property name="baseService" ref="hdNrService"></property>			
