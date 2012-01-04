@@ -48,6 +48,25 @@ jQuery(document).ready(function() {
 			}
 		}
 	});
+    /**
+     * 校验是否存在
+     * @param {Object} entityName 实体名
+     * @param {Object} column 字段名
+     * @param {Object} columnName 字段中文名
+     */
+    function checkDuplicate(entityName,column,columnName){
+    	var value_ = $("#"+column).val();
+    	var wid_ = $("#wid").val();
+		var url = "../jsonVisitor/ajaxSys-checkDuplicate.action?"+(new Date()).getTime();
+		$.getJSON(url, {entityName: entityName, column: column, value: value_, wid: wid_}, function(data){
+		    var exists = data.datamap.exists;
+			if(exists == 'true'){
+				$("#"+column).val('');
+				alert(columnName+"已存在，请重新输入！");
+			}
+		});
+    }
+    
 	/**
 	 * 解决IE中浮动层滑动问题
 	 * @memberOf {TypeName} 
