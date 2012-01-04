@@ -22,15 +22,8 @@
 	    <a href="index.jsp">首页</a>      
 	    <a href="public/takeiteasy.jhtm">心理咨询</a>  
 	    <a href="public/dosamething.jhtm">心理测试</a>  
-	    <%
-	    java.util.List<TXxfbLm> lms = CachedQuery.getCmsChannels();
-	    for(TXxfbLm lm : lms){
-	    	if("000".equals(lm.getParentwid())){
-	    %>
-	    <a href="channel/<%=lm.getLmbm() %>.jhtm"><%=lm.getLmmc() %></a>    
-	    <%} 
-	    }%>  
-	    <a href="service/activity/index">活 动</a>    
+	    <a href="s/activities">活 动</a>    
+	    <a href="usercenter/index">我的活动</a>   
 	    <a href="bbs">互助论坛</a>      
     </div>
    <br/><br/>

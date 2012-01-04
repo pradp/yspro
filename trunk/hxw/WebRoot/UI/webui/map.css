@@ -1,0 +1,243 @@
+.maginB {
+	margin-bottom: 10px;
+}
+
+/* @group nav */
+
+#nav {
+	height: 37px;
+}
+#nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+
+}
+#nav ul li {
+	float: left;
+	margin: 0;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding: 0;
+		background: url(img/nav_textbg.png) repeat-x 0 top;
+		
+
+}
+#nav ul li a {
+	color: #000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	height: 28px;
+	display: block;
+	padding-top: 9px;
+	padding-right: 10px;
+	padding-left: 10px;
+	float: left;
+	background: url(img/nav_normal.png) no-repeat right top;
+}
+#nav ul li a:hover,
+#nav ul li a.active {
+	background: url(img/mapmod_nav_hover.png) repeat-x left top;
+	color: #fff;
+} 
+#nav ul li.mapmodel,
+#nav ul li.textmodel,#nav ul li.mobmodel {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+	background-image: none;
+}
+#nav ul li.mapmodel a {
+	font-size: 18px;
+	display: block;
+	height: 37px;
+	padding: 0;
+	background: url(img/mapmod_nav_map.png) no-repeat left top;
+	width: 122px;
+}
+#nav ul li.mapmodel a span {
+	display: block;
+	text-indent: -9999px;
+}
+
+#nav ul li.textmodel a {
+	font-size: 18px;
+	display: block;
+	height: 37px;
+	padding: 0;
+	background: url(img/mapmod_nav_test.png) no-repeat 0 top;
+	width: 130px;
+}
+#nav ul li.textmodel a:hover {
+	background-image: url(img/mapmod_nav_test_hover.png);
+}
+#nav ul li.textmodel a span {
+	display: block;
+	text-indent: -9999px;
+}
+#nav ul li.mobmodel a {
+	font-size: 18px;
+	display: block;
+	height: 37px;
+	padding: 0;
+	background: url(img/mapmod_nav_right.png) no-repeat left top;
+	width: 17px;
+}
+#nav ul li.mobmodel a span {
+	display: block;
+	text-indent: -9999px;
+}
+
+
+#nav ul li.home {
+	height: 34px;
+	padding: 3px 0 0 15px;
+}
+#nav ul li.home a {
+	width: 35px;
+	padding: 7px 0 0;
+	height: 29px;
+	text-align: center;
+	background-image: none;
+}#nav ul li.home a span {
+	display: block;
+	text-indent: -9999px;
+}
+#nav ul li.home a:hover,
+#nav ul li.home a.active {
+	background: url(img/nav_hover.png) repeat-x center top;
+	margin: 0;
+}
+#nav p {
+	margin: 0;
+	padding: 4px 0 0;
+	line-height: 1.2em;
+}
+#nav p a {
+	color: #6d6d6d;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+/* @end */
+
+/* @group My Group */
+
+
+
+/* @end */
+
+.box-1,
+.box-2 {
+	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;
+	background-color: #d1d7e4;
+	-webkit-box-shadow: 3px 3px 5px #000000;
+-moz-box-shadow: 3px 3px 5px #000000;
+box-shadow: 3px 3px 5px #000000;
+	border: 1px solid #b0c2d5;
+	position: relative;
+	padding: 10px;
+}
+
+.box-1 h3 {
+	background: url(img/mapmod_btn_ribbon_title1.png) no-repeat center top;
+	text-align: center;
+	height: 32px;
+	color: #fffeff;
+	margin-top: -20px;
+}
+.box-1 {
+	width: 400px;
+}
+
+div.btn {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+a.close {
+	display: block;
+	background: url(img/mapmod_btn_close.png) no-repeat left top;
+	width: 18px;
+	height: 18px;
+}
+a.close span {
+	text-indent: -9999px;
+	display: block;
+}
+.box-2 {
+	width: 320px;
+}
+.box-2 h3 {
+	background: url(img/mapmod_btn_ribbon_title2.png) no-repeat left top;
+	text-align: center;
+	height: 35px;
+	color: #000;
+	margin-left: -20px;
+	font-size: 14px;
+	padding-top: 3px;
+	margin-bottom: 5px;
+	width: 350px;
+}
+
+.lineboder {
+	background: #fffeff url(img/lineboxbg.png) repeat-x left top;
+	border: 1px solid #c1c1c1;
+	-webkit-box-shadow: inset 0px 0px 3px #000000;
+-moz-box-shadow: inset 0px 0px 3px #000000;
+box-shadow: inset 0px 0px 3px #000000;
+	padding: 10px;
+}
+.lineborder1 {
+	border: 1px solid #dedede;
+	border-top-style: none;
+}
+
+.lineborder1 h5 {
+	margin-bottom: 0;
+	padding-left: 15px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.nr {
+	padding: 10px;
+}
+
+.BMtitle {
+	background-image: url(img/stripe-bg.png);
+}
+a.search {
+	width: 71px;
+	height: 20px;
+	display: block;
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	background-image: url(img/mapmod_btn_search.png);
+	text-align: center;
+	padding-right: 25px;
+	padding-top: 3px;
+	margin: 2px;
+}
+a.add {
+	width: 50px;
+	height: 20px;
+	display: block;
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	background-image: url(img/mapmod_btn_add.png);
+	text-align: center;
+	padding-right: 20px;
+	padding-top: 3px;
+	margin: 2px;
+}

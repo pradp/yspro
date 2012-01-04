@@ -1,0 +1,59 @@
+.suckerdiv {
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+}
+.suckerdiv ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+.suckerdiv ul.sub {
+	border: 1px solid #ccc;
+}	
+.suckerdiv ul li{
+position: relative;
+}
+	
+/*1st level sub menu style */
+.suckerdiv ul li ul{
+left: 130px; /* Parent menu width - 1*/
+position: absolute; /*sub menu width*/
+top: 0;
+display: none;
+	z-index: 100;
+	width: 130px;
+}
+
+/*All subsequent sub menu levels offset */
+.suckerdiv ul li ul li ul{ 
+left: 140px;
+	z-index: 20;
+}
+
+/* menu links style */
+.suckerdiv ul li a{
+display: block;
+text-decoration: none;
+padding: 7px 5px 7px 15px;
+	font-size: 12px;
+	background-color: #fffeff;
+}
+
+
+.suckerdiv ul li a:hover{
+color: white;
+background-color: #5399d4;
+}
+
+.suckerdiv .subfolderstyle{
+	background: url(../img/next-btn.png) no-repeat 125px center;
+}
+
+	
+/* Holly Hack for IE \*/
+* html .suckerdiv ul li { float: left; height: 1%; }
+* html .suckerdiv ul li a { height: 1%; }
+/* End */
+
+
+
