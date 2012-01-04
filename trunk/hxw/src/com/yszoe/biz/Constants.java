@@ -66,10 +66,8 @@ public interface Constants {
 	/**
 	 * 登录用户（部门）类型
 	 */
-	String DEPARTTYPE_ADMIN = "0"; // 管理员
-	String DEPARTTYPE_COMPANY = "1"; // 公司
-	String DEPARTTYPE_FARM = "2"; // 种畜禽场
-	String DEPARTTYPE_AREA = "3"; // 区县
+	String DEPARTTYPE_ADMIN = "0"; // 系统管理员/网站管理员
+	String DEPARTTYPE_MEMBER = "1"; // 会员
 
 	/**
 	 * 审核状态
@@ -94,46 +92,15 @@ public interface Constants {
 	String EXPERTSTATE = "2";// 专家用户默认状态
 
 	/**
-	 * 种畜禽场用户申请会员信息表相应数据值
+	 * 咨询类型
 	 */
-	String ZXQCTEAM = "20110507165715219161";// 种畜禽组WID
-	String GSTEAM = "20110622171143093151";// 公司领导组WID
-	String ZXQCSTATE = "0";// 种畜禽用户默认状态：禁用
-	
-	
-	/**
-	 * DHI平台奶牛场组相应数据值
-	 */
-	String TSYSBUSERTEAM = "AutoMake03";// DHI平台奶牛场组ID
+	String ZXLB_GY = "1"; // 公益
+	String ZXLB_SF = "2"; // 收费
+	String ZXLB_JB = "3"; // 疾病
 
 	/**
-	 * 数据字段为奶牛相应数据值
+	 * 咨询状态
 	 */
-	String DHIXZ = "02";// 数据字段为奶牛相应数据值
-	String GBSXZ = "01";// 数据字段为奶牛相应数据值
-
-	/**
-	 * 报送周期
-	 */
-	String BSZQ_YF = "1"; // 月份
-	String BSZQ_JD = "2"; // 季度
-	String BSZQ_BN = "3"; // 半年
-	String BSZQ_NF = "4"; // 年份
-
-	/**
-	 * 统计规则
-	 */
-	String TJGZ_QH = "1"; // 求和
-	String TJGZ_QPJ = "2"; // 求平均
-
-	/**
-	 * 树机构类型
-	 */
-	String TREETYPE_CODE_PZPX = "4"; // 畜种品种品系树
-
-	/**
-	 * 监测任务填报时间过期后是否允许填报
-	 */
-	String SFYXTB_YX = "1"; // 允许
-	String SFYXTB_JZ = "0"; // 禁止
+	String ZXZT_DD = "0"; // 等待
+	String ZXZT_ZX = "1"; // 咨询中
 }
