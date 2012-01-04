@@ -132,7 +132,7 @@
       <td width="3%">&nbsp;</td>
       <td align="center" width="28%" nowrap="nowrap">用户名称：<s:textfield id="userName" name="tsysUser.username" maxlength="50" size="30"/> <label style="color:red">*</label></td>
       <td align="left" width="30%" nowrap="nowrap">所属部门：<s:textfield id="departname" name="tsysUser.depart.departname" maxlength="25" size="30" /> <label style="color:red">*</label></td>
-      <td align="left" nowrap="nowrap">身份类型：<s:select id="usertype" name="tsysUser.usertype"  list="#{'':'无特殊身份','1':'专家'}" listKey="key" listValue="value"/></td>
+      <td align="left" nowrap="nowrap">身份类型：<s:select id="usertype" name="tsysUser.usertype"  list="#{'':'网站管理员','1':'个人会员','2':'企业会员'}" listKey="key" listValue="value"/></td>
 	<td>&nbsp;</td>
     </tr>
   </table>

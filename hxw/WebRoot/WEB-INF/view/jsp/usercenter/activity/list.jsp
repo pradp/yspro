@@ -23,7 +23,7 @@
 	<br/> <br/>
 	<div align="left">
 	<c:forEach var="entity" items="${resultList}" varStatus="status">
-		${status.index+1}、<a href="activity/${entity.wid }" target="_blank">${entity.bt}</a> 
+		${status.index+1}、<a href="myactivity/${entity.wid }" target="_blank">${entity.bt}</a> 
 		
 		&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${entity.zhxgrq}" pattern="yyyy.MM.dd"/> <br>
 	</c:forEach>

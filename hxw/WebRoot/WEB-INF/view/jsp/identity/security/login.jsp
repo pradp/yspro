@@ -24,7 +24,7 @@ $(document).ready(function() {
 						invertHorizontal: true, 
 						invertVertical: true
 					});
-	
+	document.getElementById("yh").focus();
 });
 function doajaxlogin(){
 	    var userLoginId = document.getElementById('yh').value;
@@ -73,10 +73,14 @@ function doajaxlogin(){
 	    $.post(url_tz, {yonghu: userLoginId, mima: userPawd}, function(data){
 	    	data = eval("("+data+")");
 	    	if(data.msg=='ok'){
-	    		if(data.userdepartid=='000'){//admin
+	    		if(data.loginuser.usertype=='1'){//personal center
+	    			window.location.href = '../usercenter/index';
+	    		}else if(data.loginuser.usertype=='2'){//corp center
+	    			window.location.href = '../usercenter/index';
+	    		}else if(data.loginuser.usertype=='0'){//
 	    			window.location.href = '../identity/index.action';
 	    		}else{
-	    			window.location.href = '../usercenter/index.action';
+	    			window.location.href = '../usercenter/index';
 	    		}
 	    		
 		    }else{
@@ -149,11 +153,11 @@ function doajaxlogin(){
 
     		<div id="login-left">
     		<ul id="smartdemo2" style="float:right">
-	            <li><img src="../resources/css/img/loginback.jpg" /></li>
-	            <li><img src="../resources/css/img/loginback.jpg" /></li>
-	            <li><img src="../resources/css/img/loginback.jpg" /></li>
-	            <li><img src="../resources/css/img/loginback.jpg" /></li>
-	            <li><img src="../resources/css/img/loginback.jpg" /></li>
+	            <li><img src="../UI/webui/imgs/loginback.gif" /></li>
+	            <li><img src="../UI/webui/imgs/loginback.gif" /></li>
+	            <li><img src="../UI/webui/imgs/loginback.gif" /></li>
+	            <li><img src="../UI/webui/imgs/loginback.gif" /></li>
+	            <li><img src="../UI/webui/imgs/loginback.gif" /></li>
 	        </ul>
 	        </div>
     		<div id="login_form">
@@ -190,8 +194,8 @@ function doajaxlogin(){
     									<td>&nbsp;</td>
     									<td>
     										<p class="to-register">
-    											还没有种畜禽场的帐户？<br />
-    											现在就&nbsp;<a href="../public/zxqcSqxx-input.action">创建一个帐户</a>
+    											还没有自己的帐户？<br />
+    											现在就&nbsp;<a href="../public/reg.jhtm">创建一个帐户</a>
     										</p>
     									</td>
     								</tr>
@@ -201,7 +205,7 @@ function doajaxlogin(){
     </div>
     <!-- end maincontant -->
 <%-- 引入页脚文件 start --%>
-    <div align="center"><%@include file="../../cms/public/common/foot.jsp" %>
+    <div align="center"><%@include file="../../common/public_foot.jsp" %>
 <%-- 引入页脚文件 end --%>
   	<div class="clear">&nbsp;</div>
 

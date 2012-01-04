@@ -74,6 +74,16 @@
 		<filter-name>Struts2</filter-name>
 		<url-pattern>*.action</url-pattern>
 	</filter-mapping>
+	<filter>
+		<filter-name>MemberLoginFilter</filter-name>
+		<display-name>MemberLoginFilter</display-name>
+		<filter-class>com.yszoe.sys.servlets.MemberLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MemberLoginFilter</filter-name>
+		<url-pattern>/usercenter/*</url-pattern>
+	</filter-mapping>
+  
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -85,7 +95,8 @@
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.jhtm</url-pattern>
-		<url-pattern>/service/*</url-pattern>
+		<url-pattern>/s/*</url-pattern>
+		<url-pattern>/usercenter/*</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

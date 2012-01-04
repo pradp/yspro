@@ -1,8 +1,8 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 
-    <link type="text/css" rel="stylesheet" href="../../faceui/css/layout.css"/>
-    <script type="text/javascript" src="../../faceui/js/jquery.js"></script>
-    <script type="text/javascript" src="../../faceui/js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/faceui/css/layout.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/faceui/js/jquery.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/faceui/js/common.js"></script>
 	<style>
 	<!--
 	#headmenu li

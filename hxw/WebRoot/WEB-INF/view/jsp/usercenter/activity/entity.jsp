@@ -33,7 +33,6 @@
 <body>
 	<%@include file="../../common/usercenter_head.jsp" %>	
 	<div id="main">
-    <div class="page2 position"> 您现在正在浏览： <a href="../../index.jsp">首页</a> » <a href="../activities" >活动 </a> » 正文</div>
         <!--cjbd_begin-->
   <div class="page2 box">
     <div class="w700 fl">
