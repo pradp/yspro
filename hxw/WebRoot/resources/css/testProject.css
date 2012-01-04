@@ -1,0 +1,78 @@
+/**
+ * 设计测试问卷
+ * 
+ * @author Linyang datetime 2011-12-27
+ */
+.csTm {
+	margin: 10px 10px 10px 10px;
+	padding: 5px 5px 5px 5px;
+	outline: medium none;
+}
+
+.tmbh {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tmbt {
+	float: left;
+	font-size: 14px;
+}
+
+.edit {
+	float: left;
+	margin-top: 10px;
+}
+
+.tmh {
+	clear: both;
+	display: block;
+}
+
+.whtm {
+	clear: both;
+	display: block;
+	margin-top: 5px;
+	background-color: #eee;
+	width: 100%;
+}
+
+.divwh {
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.xxlist {
+	background-color: #FFF9DD;
+	width: 90%;
+}
+
+.lookupxm {
+	width: 800px;
+}
+
+.xmml {
+	border-bottom:1px solid #11FF00;
+}
+
+.xmbt {
+	color: #F53D05;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	vertical-align: middle;
+}
+
+.xmzz {
+	float: right;
+	margin: 5px 0;
+	line-height: 20px;
+	text-align: center;
+	word-wrap: break-word;
+}
+
+.xmxx {
+	margin: 5px;
+}
