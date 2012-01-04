@@ -32,7 +32,7 @@ public class AjaxSysServiceImpl implements AjaxService {
 	private static final Log LOG = LogFactory.getLog(AjaxSysServiceImpl.class);
 
 	private BaseDao baseDao;
-	
+
 	public void setBaseDao(BaseDao baseDao) {
 		this.baseDao = baseDao;
 	}
@@ -242,5 +242,25 @@ public class AjaxSysServiceImpl implements AjaxService {
 		String sql = "SELECT column_name as id,column_name as caption FROM user_tab_columns"
 				+ " WHERE table_name=upper(?) order by column_id";
 		return loadJsonValue(sql, new Object[] { tableName }, true);
+	}
+
+	/**
+	 * 
+	 * 校验输入的信息是否存在
+	 * 
+	 * @param entityName 实体名
+	 * @param column 字段名
+	 * @param value 字段值
+	 * @param wid 主键值
+	 * @return
+	 */
+	public String checkDuplicate(String entityName, String column, String value, String wid) {
+		StringBuffer hql = new StringBuffer("from ").append(entityName).append(" where ").append(column).append(" = '")
+				.append(value).append("'");
+		if (StringUtils.isNotBlank(wid)) {
+			hql.append(" and wid != '").append(wid).append("'");
+		}
+		long c = baseDao.count(hql.toString());
+		return String.valueOf(c > 0);
 	}
 }
