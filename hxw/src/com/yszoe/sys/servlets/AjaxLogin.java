@@ -87,6 +87,7 @@ public class AjaxLogin extends HttpServlet {
 									String ss = idUserAction.login(false);// 参数一定要传。false表示服务端登录
 									if (Action.SUCCESS.equals(ss)) {
 										outData.put("msg", "ok");
+										outData.put("usertype",loginuser.getUsertype());
 										outData.put("loginuser", loginuser);
 										TSysUser user_ = (TSysUser) session.getAttribute(IdConstants.SESSION_USER);
 										outData.put("userdepart", user_.getDepart().getDepartname());
