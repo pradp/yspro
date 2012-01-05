@@ -12,13 +12,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 <meta name="keywords" content="心理测试,心理学,心理年龄测试,心理咨询,心理咨询师,心理学书籍,心理测试题,心理医生,心理学与生活,心理游戏,心理健康,心理体检,心理,心理培训,心理学课程,情绪调节,情商,催眠,压力管理,NLP">
 <meta name="description" content="心理学门户,专业心理测试,心理咨询,心理学课程,心理健康服务平台。提供心理测试,心理咨询,心理咨询师,心理学书籍,情绪调节,情商,心理年龄测试,心理医生,心理学与生活,心理游戏,心理培训,心理体检,情绪调节,情商,催眠,压力管理,NLP等">
-<link rel="shortcut icon" href="http://sns.lansin.com/resources/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://sns.lansin.com/resources/img/favicon.ico" type="image/x-icon">
 <script type="text/javascript">
 </script>
-<script src="../faceui/js/jquery-1.js" type="text/javascript"></script>
-<script src="../faceui/js/jquery.js" type="text/javascript"></script>
-<script src="../faceui/js/tools.js" type="text/javascript"></script>
-<link href="../faceui/css/main_m.css" type="text/css" rel="stylesheet">
+<script src="../UI/webui/js/jquery-1.js" type="text/javascript"></script>
+<script src="../UI/webui/js/jquery.js" type="text/javascript"></script>
+<script src="../UI/webui/js/tools.js" type="text/javascript"></script>
+<link href="../UI/webui/css/main_m.css" type="text/css" rel="stylesheet">
 <link rel="shortcut icon" href="http://www.lansin.com/favicon.ico" type="image/x-icon">
 <title>乐天无双的主页 | 护心网 </title>
 <script type="text/javascript">
@@ -315,11 +315,11 @@ $('document').ready(function(){
 			<form action="/login" method="post" id="loginForm" name="loginForm">
 				Email<input id="userName" name="userRealm.userLogin.userName" type="text">&nbsp;
 				密码<input id="password" name="userRealm.userLogin.password" type="password">
-				<input src="../faceui/images/smallLogin.jpg" id="simple_login" align="absmiddle" type="image"> 
+				<input src="../UI/webui/img/smallLogin.jpg" id="simple_login" align="absmiddle" type="image"> 
 				<a href="http://sns.lansin.com/register">会员注册</a>&nbsp;|&nbsp;<a href="http://sns.lansin.com/findPassword">找回密码</a>
-				<a href="http://sns.lansin.com/qq/login" title="QQ登录"><img src="../faceui/images/qq_16.png"></a>
-				<a href="http://sns.lansin.com/sinat/login" title="新浪微博连接"><img src="../faceui/images/w_16.png"></a>
-				<a href="http://sns.lansin.com/pcn/login" title="P.CN连接"><img src="../faceui/images/pcn_16.png"></a>
+				<a href="http://sns.lansin.com/qq/login" title="QQ登录"><img src="../UI/webui/img/qq_16.png"></a>
+				<a href="http://sns.lansin.com/sinat/login" title="新浪微博连接"><img src="../UI/webui/img/w_16.png"></a>
+				<a href="http://sns.lansin.com/pcn/login" title="P.CN连接"><img src="../UI/webui/img/pcn_16.png"></a>
 			</form>
 			</span>
 			
@@ -336,7 +336,7 @@ $('document').ready(function(){
          <!--左边导航开始 -->
 		<div class="userleft">
 		<div>
-			<div><img src="../faceui/images/left_k_1_t.jpg" align="top"></div>
+			<div><img src="../UI/webui/img/left_k_1_t.jpg" align="top"></div>
 				<div class="left_k_1">
 					<ul class="gdico">
 					    <li class=""><a href="" target="_blank">个人信息</a></li>
@@ -351,7 +351,7 @@ $('document').ready(function(){
 						<li class=""><a href="" target="_blank">我的研陪</a></li>
 					</ul>
 				</div>
-			<div><img src="../faceui/images/left_k_1_f.jpg" align="bottom"></div>
+			<div><img src="../UI/webui/img/left_k_1_f.jpg" align="bottom"></div>
 		</div>
 		</div>
  	</div>
@@ -395,7 +395,7 @@ function searchUser(){
 	    <div style=" float:left;width:220px; height:26px; border:1px #d5c9b1 solid;background-color:#FFF" "="">
 		  <input value="请输入会员昵称" class="zhaoreninput" id="searchArgs_nickName" name="searchArgs.nickName" onblur="resetInput()" onclick="emptyInput()" type="text">
 		  
-		  <img src="../faceui/images/searchPersonButton.jpg" onclick="searchUser();" align="absmiddle">
+		  <img src="../UI/webui/img/searchPersonButton.jpg" onclick="searchUser();" align="absmiddle">
 		 </div> 
 		</div>
 		</form>
@@ -411,7 +411,7 @@ function searchUser(){
 				 
 			 </div>
 		
-        <div class="sb_yqhy" id="yqhy"><a href="http://sns.lansin.com/invite/view" target="_blank"><img src="../faceui/images/sb_yqhy.jpg" align="absmiddle"></a></div>
+        <div class="sb_yqhy" id="yqhy"><a href="http://sns.lansin.com/invite/view" target="_blank"><img src="../UI/webui/img/sb_yqhy.jpg" align="absmiddle"></a></div>
         
         <!-- Post bar -->
         
@@ -422,7 +422,7 @@ function searchUser(){
 <!--个人主页互助吧信息包含用-->
 <div class="tiebaList">
 			<ul>
-		        <li><img src="../faceui/images/lansin_1284365553696_16.jpg" height="48" align="absmiddle" width="48"><a href="http://tieba.lansin.com/postbar/detail/795" title="爱贴图" target="_blank">爱贴图</a><span>378个帖</span></li>
+		        <li><img src="../UI/webui/img/lansin_1284365553696_16.jpg" height="48" align="absmiddle" width="48"><a href="http://tieba.lansin.com/postbar/detail/795" title="爱贴图" target="_blank">爱贴图</a><span>378个帖</span></li>
 			</ul>
 </div>
 
@@ -441,7 +441,7 @@ function searchUser(){
 		
 		<li>
 			<a href="http://sns.lansin.com/user/535695" target="_blank" title="xingfu2010"> 
-				<img src="../faceui/images/lansin_user.gif">
+				<img src="../UI/webui/img/lansin_user.gif">
 			</a> 
 			<a href="http://sns.lansin.com/user/535695" target="_blank" title="xingfu2010" class="mz">
 			
@@ -458,7 +458,7 @@ function searchUser(){
     </div>
 <div class="middle">
 <ul>
-   <div><img src="../faceui/images/mid_k_1_t.jpg" align="top"></div>
+   <div><img src="../UI/webui/img/mid_k_1_t.jpg" align="top"></div>
    <div class="mid_k_1" align="center">
        
 
@@ -490,13 +490,13 @@ function diplayIns(){
 	  <div class="left">
 	    <ul>
 		<li>
-		 <img src="../faceui/images/large_lansin_566373.jpg" class="hypicbg">
+		 <img src="../UI/webui/img/large_lansin_566373.jpg" class="hypicbg">
 		</li>
 		 <li>
 			<span style="color:#D98B05">&nbsp;&nbsp;心情：&nbsp;
 			
 			
-			<img id="heartImg" src="../faceui/images/1232705603984_002.jpg" alt="无奈" height="22" align="absmiddle" width="22">
+			<img id="heartImg" src="../UI/webui/img/1232705603984_002.jpg" alt="无奈" height="22" align="absmiddle" width="22">
 			
 			
 			</span>
@@ -505,7 +505,7 @@ function diplayIns(){
 		</span></li>
 		<li>
 		
-		    <img src="../faceui/images/dqzx.jpg" alt="在线" align="absmiddle"><span style="color:#D98B05">&nbsp;当前在线</span>
+		    <img src="../UI/webui/img/dqzx.jpg" alt="在线" align="absmiddle"><span style="color:#D98B05">&nbsp;当前在线</span>
 		  
 		
 		</li>
@@ -518,7 +518,7 @@ function diplayIns(){
 		<span class="span1">
 		
 		
-		<img src="../faceui/images/xb_boy.gif" alt="boy" align="absmiddle">
+		<img src="../UI/webui/img/xb_boy.gif" alt="boy" align="absmiddle">
 		
 		<span style="font-size:14px; color:#0f8895; font-weight:bold;">乐天无双</span>
 		 		
@@ -650,18 +650,18 @@ function removeFriend(reciverId){
 		
 	  	
 	  	
-	  		<a target="_blank" href="http://sns.lansin.com/message/addfriend/566373"><img src="../faceui/images/jwhy.jpg"></a>
+	  		<a target="_blank" href="http://sns.lansin.com/message/addfriend/566373"><img src="../UI/webui/img/jwhy.jpg"></a>
 	  	
 	  	</li>
 	  	
 	  	<li>
-	     <a target="_blank" href="http://sns.lansin.com/message/send/566373"><img src="../faceui/images/gtfx.jpg"></a>
+	     <a target="_blank" href="http://sns.lansin.com/message/send/566373"><img src="../UI/webui/img/gtfx.jpg"></a>
 	  	</li>
 	  	<li>
-	   <a target="_blank" href="http://sns.lansin.com/message/touch/566373"><img src="../faceui/images/dtyx.jpg"></a>
+	   <a target="_blank" href="http://sns.lansin.com/message/touch/566373"><img src="../UI/webui/img/dtyx.jpg"></a>
 	  	</li>
 	  	<li>
-	  	<a href="#gtaly"><img src="../faceui/images/gtly.jpg"></a>
+	  	<a href="#gtaly"><img src="../UI/webui/img/gtly.jpg"></a>
 	   	</li>
  		
 	</ul>
@@ -670,7 +670,7 @@ function removeFriend(reciverId){
   </div>
    </div>
    <div style="height:10px;width:98%;_margin-top:-50px">
-   <img class="middle_foot_img" src="../faceui/images/mid_k_1_f.jpg" align="top">
+   <img class="middle_foot_img" src="../UI/webui/img/mid_k_1_f.jpg" align="top">
     </div>
  </ul>
 		
@@ -950,7 +950,7 @@ function removeFriend(reciverId){
 					乐天无				
 					</a>
 					<span style="height:18px;width:350px;display:inline-block;*margin-top:-3px;_margin-top:0">
-					最近的心情：<a href="http://sns.lansin.com/user/566373" target="_blank"><img src="../faceui/images/1232705603984.jpg" height="20" width="20">无奈</a>
+					最近的心情：<a href="http://sns.lansin.com/user/566373" target="_blank"><img src="../UI/webui/img/1232705603984.jpg" height="20" width="20">无奈</a>
 					</span>
 					<span class="span">2011-12-04 18:54:57</span>
 				</li>
@@ -1059,7 +1059,7 @@ function removeFriend(reciverId){
 				
 				<li>
 					<div class="freshFriendPic"></div><a href="http://sns.lansin.com/user/566373">乐天无双</a>
-					最近的心情：<a href="http://sns.lansin.com/user/566373" target="_blank"><img src="../faceui/images/1232705603984.jpg" height="20" width="20">无奈</a>
+					最近的心情：<a href="http://sns.lansin.com/user/566373" target="_blank"><img src="../UI/webui/img/1232705603984.jpg" height="20" width="20">无奈</a>
 					<span class="span">2011-12-04 18:54:57</span>
 				</li>
 			
@@ -1149,7 +1149,7 @@ $('#cancel').click(function() {
 </script>
 <ul class="ly" id="ly">
  
-			<li><img src="../faceui/images/gtaly.jpg"></li>
+			<li><img src="../UI/webui/img/gtaly.jpg"></li>
              <li>
               <form id="saveLeaveWord" action="/leaveword/save" method="post">
                <input name="id" value="566373" id="id" type="hidden">
@@ -1158,7 +1158,7 @@ $('#cancel').click(function() {
 
 
             	<a name="gtaly"><textarea id="content" name="leaveWordRealm.leaveWord.content"></textarea></a>   			
-    			<img onclick="saveLeaveWord()" class="cursor_pointer" src="../faceui/images/tijiaob.jpg">
+    			<img onclick="saveLeaveWord()" class="cursor_pointer" src="../UI/webui/img/tijiaob.jpg">
 			 </form>
 			 </li>
 			 
