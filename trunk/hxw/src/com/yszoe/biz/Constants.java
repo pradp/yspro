@@ -88,8 +88,6 @@ public interface Constants {
 	 * 添加专家 用户信息表相应数据值
 	 */
 	String USERDEPART = "110";// 直属部门
-	String EXPERTTEAM = "20110614151332765113";// 专家组WID
-	String EXPERTSTATE = "2";// 专家用户默认状态
 
 	/**
 	 * 咨询类型
