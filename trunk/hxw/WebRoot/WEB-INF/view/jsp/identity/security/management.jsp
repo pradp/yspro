@@ -53,7 +53,15 @@ if(top.location != self.location){
 }
 	var basePath = '<%=basePath%>';
 	function execLogout(){
-		window.location = "../identity/logout.action?" + (new Date()).getTime();
+		var url_tz = "../ajaxLogin?act=logout";
+		$.post(url_tz, function(data){
+		    data = eval("("+data+")");
+		    if(data.msg=='ok'){
+		    	window.location.href = '../index.jsp';
+			}else{
+				alert(data.msg);
+			}
+		});
 	}
 	$(function(){
 		var hiconIdx=0;
