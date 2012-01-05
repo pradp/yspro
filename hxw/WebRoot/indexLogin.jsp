@@ -141,13 +141,13 @@ String user_name = user!=null?user.getDepart().getDepartname():"";
 								$.post('ajaxLogin?act=login', {yonghu : userloginid,mima: userpwd}, function(data) {
 									var jsonarray = eval("("+data+")");
 									var obj = jsonarray;
-									if(obj.msg == 'ok'){
-										$('#drh_table').show();
-										$("#button_td").html(button_td);
-										$('#login_id1').html(userloginid);
-										$('#login_id2').html(obj.userdepart);
-										$('#drq_table').hide();
-									}else{
+							    	if(obj.msg=='ok'){
+							    		if(obj.usertype == '0'){
+							    			parent.window.location.href = 'identity/index.action';
+							    		}else{
+							    			parent.window.location.href = 'memberInfo/'+userloginid+'.jhtm';
+							    		}
+								    }else{
 										$("#button_td").html(button_td);
 										$('#msg_id').html(obj.msg);
 									}
