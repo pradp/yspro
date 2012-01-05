@@ -9,30 +9,17 @@
   <head>
 	<title><fmt:message key="application_name" /> - 会员中心 </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=7" />
-	<script type="text/javascript" src="resources/jquery/jquery-1.6.4.min.js"></script>
+	<%@include file="../../common/usercenter_head_meta.jsp" %>	
   </head>
   
   <body>
-    <div align="center">
-	    <br/>
-	    <a href="../index.jsp">首页</a>      
-	    <a href="../public/takeiteasy.jhtm">心理咨询</a>  
-	    <a href="../public/dosamething.jhtm">心理测试</a>  
-	    <%
-	    java.util.List<TXxfbLm> lms = CachedQuery.getCmsChannels();
-	    for(TXxfbLm lm : lms){
-	    	if("000".equals(lm.getParentwid())){
-	    %>
-	    <a href="../channel/<%=lm.getLmbm() %>.jhtm"><%=lm.getLmmc() %></a>    
-	    <%} 
-	    }%>  
-	    <a href="../s/activity/index">活 动</a>    
-	    <a href="../usercenter/myactivities">我的活动</a>   
-	    <a href="../bbs">互助论坛</a>      
-    </div>
+  
+	<%@include file="../../common/usercenter_head.jsp" %>
+	
+	<%@include file="../../common/usercenter_left.jsp" %>
+	
    <br/><br/>
-    <div align="center">
+    <div style="float: left; width:69%">
 	    <br/>
 	    这是会员主页     
 	    <br/>
@@ -40,5 +27,8 @@
 	    <br/>
 	    
     </div>
+    
+	<%@include file="../../common/public_foot.jsp" %>	
+	
   </body>
 </html>
