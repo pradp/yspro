@@ -12,7 +12,7 @@
 		<title><s:text name="login.name" /></title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<SCRIPT language="JavaScript" src="../resources/jquery/jquery-1.6.4.min.js"></SCRIPT>
+		<%@include file="../../common/public_head_meta.jsp" %>
 		<SCRIPT language="JavaScript" src="../resources/jquery/plugins/jquery.smart3d.js"></SCRIPT>
 		<link href="../resources/css/login8reg.css" rel="stylesheet" type="text/css" />
 		<SCRIPT language="JavaScript">
@@ -144,7 +144,7 @@ function doajaxlogin(){
 
 <div class="">
 <%-- 引入页头文件 start --%>
-<%@include file="../../cms/public/common/head.jsp" %>
+<%@include file="../../common/public_head.jsp" %>
 <%-- 引入页头文件 end --%>
 <br/>
     <div class="clear">&nbsp;</div>
@@ -205,9 +205,9 @@ function doajaxlogin(){
     </div>
     <!-- end maincontant -->
 <%-- 引入页脚文件 start --%>
-    <div align="center"><%@include file="../../common/public_foot.jsp" %>
+    <%@include file="../../common/public_foot.jsp" %>
 <%-- 引入页脚文件 end --%>
-  	<div class="clear">&nbsp;</div>
+  	<div class="clear"></div>
 
 	</body>
 </html>
