@@ -9,30 +9,20 @@
   <head>
 	<title><fmt:message key="application_name" /> - 做中国最专业的心理门户网站 </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=7" />
-	<script type="text/javascript" src="resources/jquery/jquery-1.6.4.min.js"></script>
+	<%@include file="WEB-INF/view/jsp/common/public_head_meta.jsp" %>	
   </head>
   
   <body>
-    <div align="center">
-  <div id="logo" class="page box">
-    <div class=""><img src="./faceui/images/logo.gif" border="0" width="960" /></div>
-  </div>
-	    <br/>
-	    <a href="index.jsp">首页</a>      
-	    <a href="public/takeiteasy.jhtm">心理咨询</a>  
-	    <a href="public/dosamething.jhtm">心理测试</a>  
-	    <a href="s/activities">活 动</a>    
-	    <a href="usercenter/index">我的活动</a>   
-	    <a href="bbs">互助论坛</a>      
-    </div>
+
+	<%@include file="WEB-INF/view/jsp/common/public_head.jsp" %>	
+
    <br/><br/>
     <div align="center">
 	    <br/>
 	    这是首页     
 	    <br/>
 	    ......     
-	    <br/>
+	    <br/><br/><br/> 
 	    <!-- 登录 -->
 		<div class="rb_right_top">
 						<h2>
@@ -42,8 +32,8 @@
 					<div class="rb_right_div">
 				  <iframe frameborder="0" scrolling="no" width="100%" height="150px" src="indexLogin.jsp" ></iframe>
 					</div>
-		<br/><br/>
-	    <a href="identity/index.action">会员登录</a>  
+		
     </div>
+	<%@include file="WEB-INF/view/jsp/common/public_foot.jsp" %>	
   </body>
 </html>
