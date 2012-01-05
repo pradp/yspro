@@ -16,16 +16,16 @@
   
 	<%@include file="../../common/usercenter_head.jsp" %>
 	
+    <div class="middler">
 	<%@include file="../../common/usercenter_left.jsp" %>
 	
-   <br/><br/>
-    <div style="float: left; width:69%">
+		<div class="middleright">
 	    <br/>
 	    这是会员主页     
 	    <br/>
 	    ......     
 	    <br/>
-	    
+	    </div>
     </div>
     
 	<%@include file="../../common/public_foot.jsp" %>	

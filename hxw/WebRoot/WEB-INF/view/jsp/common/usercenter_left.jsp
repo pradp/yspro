@@ -1,9 +1,9 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 
-<table width="30%" style="float: left;">
+<table class="middleleft">
   <tr>
-    <th width="30%"></th>
-    <th width="70%"></th>
+    <th width="10%"></th>
+    <th width="90%"></th>
   </tr>
   <tr>
     <td></td>
