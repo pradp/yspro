@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
 <%@include file="../../common/public_head.jsp" %>	
 
 	<div class="box page" align="center">
@@ -37,8 +38,8 @@
 				<input type="hidden" name='eachPageRows' id='yspager_eachPageRows'/>
 		</form>
 	 <br/>
-
 	</div>
+	
 <%@include file="../../common/public_foot.jsp" %>	
 
   </body>
