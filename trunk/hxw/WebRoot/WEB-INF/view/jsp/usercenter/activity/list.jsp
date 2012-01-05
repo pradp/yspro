@@ -15,30 +15,31 @@
 <body>
 <%@include file="../../common/usercenter_head.jsp" %>	
 
-	<%@include file="../../common/usercenter_left.jsp" %>	
-	<div class="box page" align="center" style="float: left; width:69%">
-
-    <hr />
+    <div class="middler">
+		<%@include file="../../common/usercenter_left.jsp" %>	
+		<div class="middleright">
 	
-	<br/> <br/>
-	<div align="left">
-	<c:forEach var="entity" items="${resultList}" varStatus="status">
-		${status.index+1}、<a href="myactivity/${entity.wid }" target="_blank">${entity.bt}</a> 
+	    <hr />
 		
-		&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${entity.zhxgrq}" pattern="yyyy.MM.dd"/> <br>
-	</c:forEach>
-	</div>
-	<hr />
-	<div align="left">
-		${pager.postToolBar }
-	</div>
-		<form name="ysform" method="get">
-				<input type="hidden" name="formname" value="ysform"/>
-				<input type="hidden" name="currentPageno" id="yspager_currentPageno"/>
-				<input type="hidden" name='eachPageRows' id='yspager_eachPageRows'/>
-		</form>
-	 <br/>
-
+		<br/> <br/>
+		<div align="left">
+		<c:forEach var="entity" items="${resultList}" varStatus="status">
+			${status.index+1}、<a href="myactivity/${entity.wid }" target="_blank">${entity.bt}</a> 
+			
+			&nbsp;&nbsp;&nbsp;<fmt:formatDate value="${entity.zhxgrq}" pattern="yyyy.MM.dd"/> <br>
+		</c:forEach>
+		</div>
+		<hr />
+		<div align="left">
+			${pager.postToolBar }
+		</div>
+			<form name="ysform" method="get">
+					<input type="hidden" name="formname" value="ysform"/>
+					<input type="hidden" name="currentPageno" id="yspager_currentPageno"/>
+					<input type="hidden" name='eachPageRows' id='yspager_eachPageRows'/>
+			</form>
+		 <br/>
+	    </div>
 	</div>
 <%@include file="../../common/public_foot.jsp" %>	
 

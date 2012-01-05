@@ -26,6 +26,19 @@ textarea {
     height: 100px;
 }
 
+.middler{
+	width: 960px;
+	margin:0 auto;/**居中*/
+}
+.middleleft{
+	width:20%;
+	float: left;
+}
+.middleright{
+	width:80%;
+	float: left;
+}
+	
 .footer{
 	width: 960px;
 	margin:0 auto;/**居中*/
