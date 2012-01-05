@@ -4,12 +4,10 @@
  *auth:yangjianliang
  */
 body {
-    background: #fff url(../../../UI/userui/imgs/Bubbles.jpg) repeat top left;
+    background: #fff url(../../../UI/userui/img/Bubbles.jpg) repeat top left;
     font-size: 12px;
     text-align: center;
-    
 	font-family: Segoe UI;
-	font-size: 10pt;
 	color: 000000;
 	margin-left: 10 px;
 	margin-top: 15 px;
@@ -26,6 +24,10 @@ input {
 textarea {
     border: 1px solid #DDD;
     height: 100px;
-} #SystemErrorMessage {
-    color: red;
 }
+
+.footer{
+	width: 960px;
+	margin:0 auto;/**居中*/
+}
+
