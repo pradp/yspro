@@ -14,9 +14,7 @@ String user_name = user!=null?user.getDepart().getDepartname():"";
 		<title><fmt:message key="application_name" /> </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=7" />
-		<link type="text/css" rel="stylesheet" href="faceui/css/layout.css" />
 		<script type="text/javascript" src="resources/jquery/jquery-1.6.4.min.js"></script>
-		<script type="text/javascript" src="faceui/js/common.js"></script>
 	</head>
 
 	<body style="background-color: #FFFFFF">
@@ -145,7 +143,7 @@ String user_name = user!=null?user.getDepart().getDepartname():"";
 							    		if(obj.usertype == '0'){
 							    			parent.window.location.href = 'identity/index.action';
 							    		}else{
-							    			parent.window.location.href = 'memberInfo/'+userloginid+'.jhtm';
+							    			parent.window.location.href = 'usercenter/index';
 							    		}
 								    }else{
 										$("#button_td").html(button_td);
