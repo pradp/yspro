@@ -93,9 +93,7 @@ public class DepartServiceImpl extends AbstractBaseServiceSupport {
 			TSysDepart object = new TSysDepart();
 			object.setUpdepartid(upobject.getDepartid());
 			object.setUpdepartname(upobject.getDepartname());
-			if (Constants.DEPARTTYPE_COMPANY.equals(upobject.getDeparttype())) {
-				object.setDeparttype(Constants.DEPARTTYPE_FARM);
-			}
+			object.setDeparttype(Constants.DEPARTTYPE_MEMBER);
 			action.setTsysDepart(object);
 			action.setParameter("type", action.getParameter("type"));
 		}

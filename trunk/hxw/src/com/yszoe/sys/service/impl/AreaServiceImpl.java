@@ -110,7 +110,7 @@ public class AreaServiceImpl extends AbstractBaseServiceSupport {
 				t.setDepartname(object.getAreaname());
 				t.setUpdepartid(object.getUpareaid());
 				t.setCity(object.getUpareaid());
-				t.setDeparttype(Constants.DEPARTTYPE_AREA);
+//				t.setDeparttype(Constants.DEPARTTYPE_AREA);
 				t.setDepartnamePy(Char2spell.getPYString(object.getAreaname()).toUpperCase());
 				t.setDepth(String.valueOf(deptid.length() / SysConstants.DEPART_CODE_STEP));
 				t.setState("1");
