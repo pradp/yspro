@@ -230,9 +230,6 @@ dl.list3 dt a:hover{font-size:14px; color:#ff3300;}
 dl.list3 dd{color:#000;}
 dl.list3 dd.zy{height:50px; text-indent:20px; text-indent:20px; color:#999;}
 
-#SystemErrorMessage {
-    color: red;
-}
 .footer{
 	width: 960px;
 	margin:0 auto;/**居中*/
