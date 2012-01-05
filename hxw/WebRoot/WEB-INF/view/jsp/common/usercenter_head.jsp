@@ -9,12 +9,12 @@
   	<fmt:bundle basename="sysconfig" >
     <div id="menu" class="page box relative" align="center">
       <ul id="headmenu">
-	   <li class="menu_first"><a href="<%=request.getContextPath() %>/index.jsp" id="index"><span>首 页</span></a></li>
-	   <li><a href="<%=request.getContextPath() %>/public/takeiteasy.jhtm" id="xlzx"><span>心理咨询</span></a></li>
-	   <li><a href="<%=request.getContextPath() %>/public/dosamething.jhtm" id="xlcs"><span>心理测试</span></a></li>
-	   <li><a href="<%=request.getContextPath() %>/s/activities" id="xlyp"><span>活动</span></a></li>
-	   <li><a href="<%=request.getContextPath() %>/usercenter/myactivities" id="xlyp"><span>我的活动</span></a></li>
-	   <li><a href="<%=request.getContextPath() %>/bbs" id="bbs"><span>互助论坛</span></a></li>
+	   <a href="<%=request.getContextPath() %>/index.jsp" id="index"><span>首 页</span></a>
+	   <a href="<%=request.getContextPath() %>/public/takeiteasy.jhtm" id="xlzx"><span>心理咨询</span></a>
+	   <a href="<%=request.getContextPath() %>/public/dosamething.jhtm" id="xlcs"><span>心理测试</span></a>
+	   <a href="<%=request.getContextPath() %>/s/activities" id="xlyp"><span>活动</span></a>
+	   <a href="<%=request.getContextPath() %>/usercenter/myactivities" id="xlyp"><span>我的活动</span></a>
+	   <a href="<%=request.getContextPath() %>/bbs" id="bbs"><span>互助论坛</span></a>
 	 </ul>   
     </div>
     </fmt:bundle>
