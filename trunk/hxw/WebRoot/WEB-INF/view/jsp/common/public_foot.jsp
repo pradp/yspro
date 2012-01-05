@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
 	<!--footer_begin-->
-	<div class="footer page2">
+	<div class="footer" align="center">
 		<img src="<%=request.getContextPath() %>/faceui/images/index_90.jpg" border="0" height="6" width="960" />
 		版权所有     护心网   
 		<%

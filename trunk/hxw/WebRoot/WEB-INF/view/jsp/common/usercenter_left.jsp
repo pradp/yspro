@@ -1,17 +1,21 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 
 <table width="30%" style="float: left;">
   <tr>
-    <th>Column 1 Heading</th>
-    <th>Column 2 Heading</th>
+    <th width="30%"></th>
+    <th width="70%"><a href="index">我的主页</a></th>
   </tr>
   <tr>
-    <td>Row 1: Col 1</td>
-    <td>Row 1: Col 2</td>
+    <td></td>
+    <td><a href="myactivities">我的活动</a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><a href="myask">我的咨询</a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><a href="mytest">我的测量</a></td>
   </tr>
 </table>
 

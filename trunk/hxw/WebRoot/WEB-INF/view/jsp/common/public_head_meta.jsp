@@ -1,8 +1,11 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/faceui/css/layout.css"/>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/faceui/js/jquery.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/faceui/js/common.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/UI/common/css/base.css"/>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/UI/webui/css/webface.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/UI/common/js/jquery.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/UI/common/js/common.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/UI/webui/js/webutil.js"></script>
 	<style>
 	<!--
 	#headmenu li
@@ -50,38 +53,6 @@
 	-->
 	</style>
 	<script type="text/javascript">
-	<!--
-	var timeout	= 500;
-	var closetimer	= 0;
-	var ddmenuitem	= 0;
-	// open hidden layer
-	function mopen(id){	
-		// cancel close timer
-		mcancelclosetime();
-		// close old layer
-		if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-		// get new layer and show it
-		ddmenuitem = document.getElementById(id);
-		ddmenuitem.style.visibility = 'visible';
-	}
-	// close showed layer
-	function mclose(){
-		if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-	}
-	// go close timer
-	function mclosetime(){
-		closetimer = window.setTimeout(mclose, timeout);
-	}
-	// cancel close timer
-	function mcancelclosetime(){
-		if(closetimer){
-			window.clearTimeout(closetimer);
-			closetimer = null;
-		}
-	}
 	
-	// close layer when click-out
-	document.onclick = mclose; 
-	//-->
 	</script>
 
